@@ -1,5 +1,5 @@
 import {ApiClient} from "market_place"
-import { Cookies } from "react-cookie";
+import { AUTH_KEY } from "./consts";
 
 export const Instance = new ApiClient()
 Instance.basePath = "http://localhost:8000"
@@ -7,7 +7,7 @@ let OAuth2PasswordBearer = Instance.authentications['OAuth2PasswordBearer'];
 
 export function setToken(token, setCookie) { 
     OAuth2PasswordBearer.accessToken = token 
-    setCookie(AUTH_KEY, data.access_token); // Устанавливаем cookie с access_token
+    setCookie(AUTH_KEY, token); // Устанавливаем cookie с access_token
 }
 
 export function isAuthorized(cookies) { 

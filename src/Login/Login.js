@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "./Login.css";
 import { useCookies } from 'react-cookie';
 import gmail from "../img/Ellipse50.png";
 import vk from "../img/Ellipse49.png";
-import { Instance, isAuthorized, setToken } from '../GateWay/base';
+import { Instance, setToken } from '../GateWay/base';
 import { AuthApi } from 'market_place';
 import { TEMP_EMAIL_KEY } from '../GateWay/consts';
 
@@ -15,6 +15,7 @@ const Login = (props) => {
 
   const [tempPassword, setTempPassword] = useState('');
   const [cookies, setCookie] = useCookies(['access_token']);
+  const navigate = useNavigate(); 
   const email = localStorage.getItem(TEMP_EMAIL_KEY);
   let apiInstance = new AuthApi(Instance);
 
@@ -32,9 +33,7 @@ const Login = (props) => {
             } else {
                 // Как то перенаправить на афтер регистрацию!!
                 setToken(data.access_token, setCookie)
-                if (isAuthorized(cookiesList)) {  
-                    return <Navigate to="/after-register/" />
-                } 
+                navigate('/register')
             }
             
         });
@@ -53,7 +52,7 @@ const Login = (props) => {
                     </div>
                     <div className='log-form'>
                     <form>
-                         <input className='log-input' type="email" placeholder="Введите 6 значный код" onInput={setTempPassword}/>
+                         <input className='log-input' type="email" placeholder="Введите 6 значный код" onChange={e => setTempPassword(e.target.value)}/>
                          <Link to="/login/code">
                          <button onClick={handleLogin} className='log-button' type="submit">Проверить код</button>
                          </Link>

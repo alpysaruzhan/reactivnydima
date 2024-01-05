@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; 
 import { AuthApi } from 'market_place';
 import whitegh from "../img/logowhit.png";
 import gmail from "../img/Ellipse50.png";
@@ -10,6 +11,7 @@ import { TEMP_EMAIL_KEY } from '../GateWay/consts';
 
 const Regcod = () => {
     const [email, setEmail] = useState('');
+    const navigate = useNavigate(); 
     let apiInstance = new AuthApi(Instance);
 
     function Rest(event) {
@@ -18,12 +20,10 @@ const Regcod = () => {
             if (error) {
                 console.error(error);
             } else {
-                console.log('API called that Arhuzhan tupaia:', data);
+                console.log('API called that Galymzhan tupaia chmoshka tupoiiiiiiiiiiiiiii:', data);
                 
-                // Save email in local storage
                 localStorage.setItem(TEMP_EMAIL_KEY, email);
-
-                // Redirect to the page for entering the 6-digit code
+                navigate('/login'); 
             }
         });
     }
@@ -45,9 +45,7 @@ const Regcod = () => {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
-                            {/* <Link to="/login"> TODO: Как то сделать так что бы переходила только при сабмите */}
                             <button className='log-button' type="submit">Получить код</button>
-                            {/* </Link> */}
                         </form>
                         <div className='soc'>
                             <Link to="/">
