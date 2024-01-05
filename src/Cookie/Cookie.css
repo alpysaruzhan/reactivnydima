@@ -1,0 +1,34 @@
+.hcook{
+    font-size: 31px;
+    font-weight: 531;
+    margin-left: 6px;
+
+}
+
+.cooki{
+    max-width: 1040px;
+    margin: 10px;
+
+}
+
+.spcook{
+    font-size: 31px;
+    color: #4A307F;
+    font-weight: 531;
+}
+
+.gtcook{
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.sqcook{
+    font-size: 15px;
+    font-weight: 510;
+
+}
+
+.brcook{
+    margin-bottom: 6px;
+}

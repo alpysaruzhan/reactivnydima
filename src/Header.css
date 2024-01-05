@@ -1,0 +1,134 @@
+.header {
+  background-color: #4A307F;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.header-input {
+  margin-left: 40px;
+  background-color: white;
+  width: 467px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.pi {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.re {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+input {
+  width: 400px;
+  height: 40px;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.header-buttons {
+  margin-right: 40px;
+}
+
+.header-button1,
+.header-button2 {
+  margin-left: 10px;
+  color: #4A307F;
+  background-color: white;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  padding: 0 15px;
+  font-weight: 600;
+}
+
+.mobile{
+  display: none;
+}
+
+.header-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #4A307F;
+  z-index: -1;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  width: 1123px;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.header-input input {
+  width: 467px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  align-items: center;
+  margin-left: 40px;
+}
+
+@media (max-width: 767px) {
+
+  .header-input input {
+    width: 100%;
+    max-width: 300px;
+    margin-left: 10px;
+  }
+
+
+  .header-buttons .mobile-button {
+    display: inline-block;
+  }
+
+  .header-buttons a {
+    display: inline-block;
+    color: #4A307F;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .mobile{
+    display: none;
+
+  }
+  .header-input{
+    display: none;
+  }
+  .header {
+    background-color: #4A307F;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+}

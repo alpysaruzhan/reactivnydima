@@ -1,0 +1,27 @@
+/* ChatPage.css */
+
+/* Стили для контейнера чатов */
+.chat-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Стили для чата */
+  .chat {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    border-radius: 5px;
+  }
+  
+  /* Стили для сообщений от пользователя */
+  .user-message {
+    background-color: #cce6ff; /* Цвет фона сообщения пользователя */
+  }
+  
+  /* Стили для сообщений от другого пользователя */
+  .response-message {
+    background-color: #e6f7ff; /* Цвет фона сообщения другого пользователя */
+  }
+  

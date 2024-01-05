@@ -1,0 +1,50 @@
+.auth-title{
+    font-size: 42px;
+    font-weight: 600;
+    color: #4A307F;
+}
+
+.contain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 1000px;
+
+  }
+  
+  .register {
+    margin-top: 50px;
+    text-align: center;
+    /* Другие стили для вашего элемента .register */
+  }
+  
+  
+.image-container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.log-button{
+    height: 83px;
+}
+
+.image-container {
+    border-radius: 50%;
+    width: 174px;
+    height: 174px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+}
+
+.imgauth{
+    color: #4A307F;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}

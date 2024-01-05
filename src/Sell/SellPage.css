@@ -1,0 +1,109 @@
+.hh{
+    font-size: 35px;
+    color: #4A307F;
+    font-weight: 600;
+}
+
+.cont8{
+    margin-top: 40px;
+    width: 1002px;
+}
+
+.greensel{
+    background-color: #F4FFF5;
+    height: 262px;
+    width: 100%;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: 1px solid #dbdbdb;
+
+}
+
+.redsel{
+    background-color: #FFF3F3;
+    height: 262px;
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid #dbdbdb;
+}
+
+.divsa{
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.p-sel{
+    color: #868686;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.sell-bbu{
+    width: 100%;
+    margin-top: 20px;
+    height: 63px;
+    background-color: #24BF33;
+    color: #fff;
+    border-radius: 20px;
+    font-weight: 622;
+    font-size: 22px;
+}
+
+.lgsell{
+    min-width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 5px;
+}
+
+.gsel{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.butpril{
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    height: 50px;
+    border: 1px solid #dbdbdb;
+    font-size: 16px;
+    background-color: #fff; 
+    color: #4A307F; 
+    transition: background-color 0.3s, color 0.3s; 
+    margin-top: 10px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    margin-left: 5px;
+  }
+  
+  .activeeew {
+    background-color: #F5F5F5;
+  }
+
+  .p-tit-sell{
+    text-align: center;
+    font-size: 13px;
+    align-items: center;
+    font-weight: 600;
+    color: #4A307F;
+  }
+
+  .pp-sel{
+    font-weight: 600;
+    font-size: 31px;
+    color: #4A307F;
+    margin-bottom: 20px;
+  }
+
+  .sell-input{
+    height: 50px;
+    background-color: #F5F5F5;
+    border: 1px solid #dbdbdb;
+    width: 500px;
+  }

@@ -1,0 +1,121 @@
+.game-title{
+    margin-top: 40px;
+    color: #4A307F;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.letter{
+    font-size: 30px;
+    font-weight: 600;
+    color: #4A307F;
+    margin-top: 30px;
+}
+
+.game-logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.game-card{
+    display: flex;
+    width: 320px;
+    height: 84px;
+}
+
+.game-title2{
+    font-weight: 600;
+    font-size: 22px;
+    color: #4A307F;
+    margin-left: 15px;
+}
+
+.game-list{
+    margin-top: 10px;
+}
+
+.firs{
+    display: flex;
+    align-items: center;
+}
+
+.line {
+    flex: 1;
+    border-top: 1px solid #4A307F;
+    margin-top: 30px;
+    margin-left: 10px;
+  }
+  
+.all-page{
+    width: 1030px;
+}
+
+@media screen and (max-width: 480px){
+    .all-page{
+        width: auto;
+        margin: 0;
+        padding: 0;
+    }
+    .game-title{
+        margin-top: 15px;
+        color: #4A307F;
+        font-size: 30px;
+        font-weight: 600;
+        margin-left: 20px;
+    }
+    .game-title2{
+        margin-top: 10px;
+        color: #4A307F;
+        font-size: 30px;
+        font-weight: 600;
+        margin-left: 20px;
+    }
+    
+    .letter{
+        font-size: 30px;
+        font-weight: 600;
+        color: #4A307F;
+        margin-top: 40px;
+    }
+    .game-logo{
+        width: 100px;
+        height: 100px;
+    }
+
+    .game-card{
+        display: flex;
+        width: auto;
+        height: auto;
+        padding: 20px;
+    }
+    .line {
+        flex: 1;
+        border-top: 1px solid #4A307F;
+        margin-top: 40px;
+        margin-left: 10px;
+      }
+      .firs{
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .input-tit{
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 20px;
+        background-color: #4A307F;
+        color: white;
+    }
+    ::placeholder {
+        color: white; /* Замените "red" на желаемый цвет */
+      }
+}
+
+@media (min-width: 480px) {
+    .input-tit{
+        display: none;
+    }
+}

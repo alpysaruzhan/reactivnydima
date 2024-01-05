@@ -1,0 +1,34 @@
+{
+    "profiles" :[
+    {
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Vasili_IV_of_Russia.PNG/250px-Vasili_IV_of_Russia.PNG",
+    "nickname":"Дмитрий говно",
+    "rating": 1.0,
+    "reviews": 1560,
+    "balance": 10000,
+    "sales": [
+      {
+        "buyer": "user3", 
+        "amount": 25.20,
+        "date": "2023-08-06"
+      }, 
+      {
+        "buyer": "user4",
+        "amount": 50.00,
+        "date": "2023-08-05"
+      }
+    ],
+    "purchases": [
+      {
+        "seller": "user5",
+        "amount": 75.00,
+        "date": "2023-08-04"
+      },
+      {
+        "seller": "user6",
+        "amount": 30.50,
+        "date": "2023-08-03"
+      }
+    ]}]
+  }
+

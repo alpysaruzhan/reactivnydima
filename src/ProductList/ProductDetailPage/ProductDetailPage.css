@@ -1,0 +1,25 @@
+.game-banner{
+    height: 185px;
+    object-fit: cover;
+    width: 1400px;
+}
+
+.logo-game{
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+}
+
+.game-ti{
+    color: #FFF;
+    text-align: center;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-shadow: 
+    -5px -2px 0 #4A307F,
+    5px -2px 0 #4A307F,
+    -5px 2px 0 #4A307F,
+    5px 2px 0 #4A307F;
+}

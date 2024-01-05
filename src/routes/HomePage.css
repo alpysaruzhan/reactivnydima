@@ -1,0 +1,56 @@
+@import "../App.css";
+
+.cont{
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    max-width: 1060px;
+    text-align: center;
+}
+
+.banner{
+    width: 100%;
+}
+
+@media screen and (min-width: 1060px){
+  
+}
+
+@media screen and (min-width: 480px){
+  .input_home{
+    display: none;
+  }
+  .home_mobile{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .cont{
+    justify-content:start;
+    align-items:start;
+    max-width: 100%;
+  }
+  .banner{
+    width: 100%;
+    justify-content: center;
+  }
+  /* .oo{
+    margin-left: 5px;
+    margin-right: 5px;
+  } */
+  .input_home{
+    background-color: #866CBB;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 45px;
+  }
+  .home_mobile{
+    align-items:start;
+  }
+  .img-home{
+    align-items: start;
+  }
+}
+
