@@ -1,39 +1,46 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import "./Login.css";
 import { useCookies } from 'react-cookie';
 import gmail from "../img/Ellipse50.png";
 import vk from "../img/Ellipse49.png";
-import { isAuthorized, setToken } from '../GateWay/base';
+import { Instance, isAuthorized, setToken } from '../GateWay/base';
+import { AuthApi } from 'market_place';
+import { TEMP_EMAIL_KEY } from '../GateWay/consts';
 
 
 const Login = (props) => {
 
-  const [cookiesList] = props;  
+  const {cookiesList} = props;  
 
   const [tempPassword, setTempPassword] = useState('');
   const [cookies, setCookie] = useCookies(['access_token']);
-  const email = localStorage.getItem('tempEmail');
+  const email = localStorage.getItem(TEMP_EMAIL_KEY);
   let apiInstance = new AuthApi(Instance);
 
   function handleLogin(event) {
       event.preventDefault();
-      apiInstance.authJwtLoginApiV1AuthJwtLoginPost(tempPassword, email, (error, data, response) => {
-        if (error) {
-            if (response.statusCode) {
-                // сказать то что код неправильный по красивому
-                console.error(error);   
-            } else { 
-                console.error("Упс, произошла внутренная ошибка")
+      if (email !== null) { 
+        apiInstance.authJwtLoginApiV1AuthJwtLoginPost("", email, tempPassword, "", "", "", (error, data, response) => {
+            if (error) {
+                if (response.statusCode) {
+                    // сказать то что код неправильный по красивому
+                    console.error(error);   
+                } else { 
+                    console.error("Упс, произошла внутренная ошибка")
+                }
+            } else {
+                // Как то перенаправить на афтер регистрацию!!
+                setToken(data.access_token, setCookie)
+                if (isAuthorized(cookiesList)) {  
+                    return <Navigate to="/after-register/" />
+                } 
             }
-        } else {
-            // Как то перенаправить на афтер регистрацию!!
-            setToken(data.access_token, setCookie)
-            if (isAuthorized(cookiesList)) { 
-                return <Navigate to="/after-register/" />
-            } 
-        }
-      });
+            
+        });
+    } else { 
+        console.error("Сказать что вы не должны быть тут, или перенаправить на главную")
+    }
   }
 
   return (

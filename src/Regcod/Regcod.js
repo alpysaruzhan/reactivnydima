@@ -6,6 +6,7 @@ import gmail from "../img/Ellipse50.png";
 import vk from "../img/Ellipse49.png";
 import { Instance } from "../GateWay/base";
 import "./Regcod.css";
+import { TEMP_EMAIL_KEY } from '../GateWay/consts';
 
 const Regcod = () => {
     const [email, setEmail] = useState('');
@@ -20,10 +21,9 @@ const Regcod = () => {
                 console.log('API called that Arhuzhan tupaia:', data);
                 
                 // Save email in local storage
-                localStorage.setItem('tempEmail', email);
+                localStorage.setItem(TEMP_EMAIL_KEY, email);
 
                 // Redirect to the page for entering the 6-digit code
-                history.push('/enter-code');
             }
         });
     }
@@ -45,9 +45,9 @@ const Regcod = () => {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
-                            <Link to="/login">
+                            {/* <Link to="/login"> TODO: Как то сделать так что бы переходила только при сабмите */}
                             <button className='log-button' type="submit">Получить код</button>
-                            </Link>
+                            {/* </Link> */}
                         </form>
                         <div className='soc'>
                             <Link to="/">
