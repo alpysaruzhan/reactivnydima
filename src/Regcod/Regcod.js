@@ -17,10 +17,13 @@ const Regcod = () => {
             if (error) {
                 console.error(error);
             } else {
-                apiInstance.authJwtLoginApiV1AuthJwtLoginPost(
-                    "password", email, 
-                )
-                console.log('API called that Galymzhan chmo:', data);
+                console.log('API called that Arhuzhan tupaia:', data);
+                
+                // Save email in local storage
+                localStorage.setItem('tempEmail', email);
+
+                // Redirect to the page for entering the 6-digit code
+                history.push('/enter-code');
             }
         });
     }

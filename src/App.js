@@ -25,6 +25,7 @@ import SellAllPage from './Sell/SellAllPage';
 import SellCategoriesPage from './Sell/SellCategories';
 import AppDetailPage from './Sell/AppDetailPage';
 import GameDetailPage from './Sell/GameDetailPage';
+import { CookiesProvider } from 'react-cookie';
 
 const App = () => {
   return (
@@ -47,7 +48,12 @@ const App = () => {
             <Route path="/chat" element={<ChatPage />} />
             <Route path="/guarantee" element={<GuaranteePage />} />
             <Route path='/register' element={<Register />} />
-            <Route path='/login' element={<Login />} />
+            
+            <Route path='/login' element={
+              <CookiesProvider>
+                <Login />
+              </CookiesProvider>
+            } />
             <Route path='/login/code' element={<Regcod />} />
             <Route path='/login/auth' element={<Auth />} />
             <Route path="/product/:id" element={<ProductCardPage />} />

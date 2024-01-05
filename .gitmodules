@@ -1,0 +1,3 @@
+[submodule "FrontEndApiGateway"]
+	path = FrontEndApiGateway
+	url = https://github.com/Gamehuborg/FrontEndApiGateway

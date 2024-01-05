@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Custom installation 
+
+In the project directory, you can use use: 
+
+### `npm install`
+### `npm install ./FrontEndApiGateway --save`
+
 ## Available Scripts
 
 In the project directory, you can run:

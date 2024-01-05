@@ -1,26 +1,38 @@
-import React, { useStates } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./Login.css";
+import { useCookies } from 'react-cookie';
 import gmail from "../img/Ellipse50.png";
 import vk from "../img/Ellipse49.png";
+import { isAuthorized, setToken } from '../GateWay/base';
 
 
-const Login = () => {
+const Login = (props) => {
+
+  const [cookiesList] = props;  
+
   const [tempPassword, setTempPassword] = useState('');
   const [cookies, setCookie] = useCookies(['access_token']);
-  const history = useHistory();
-  const email = localStorage.getItem('registeredEmail');
+  const email = localStorage.getItem('tempEmail');
   let apiInstance = new AuthApi(Instance);
 
   function handleLogin(event) {
       event.preventDefault();
       apiInstance.authJwtLoginApiV1AuthJwtLoginPost(tempPassword, email, (error, data, response) => {
-          if (error) {
-              console.error(error);
-          } else {
-              setCookie('access_token', data.access_token); // Устанавливаем cookie с access_token
-              history.push('/update-profile'); // Перенаправляем на страницу обновления профиля
-          }
+        if (error) {
+            if (response.statusCode) {
+                // сказать то что код неправильный по красивому
+                console.error(error);   
+            } else { 
+                console.error("Упс, произошла внутренная ошибка")
+            }
+        } else {
+            // Как то перенаправить на афтер регистрацию!!
+            setToken(data.access_token, setCookie)
+            if (isAuthorized(cookiesList)) { 
+                return <Navigate to="/after-register/" />
+            } 
+        }
       });
   }
 
@@ -34,9 +46,9 @@ const Login = () => {
                     </div>
                     <div className='log-form'>
                     <form>
-                         <input className='log-input' type="email" placeholder="Введите адрес электронной почты" />
+                         <input className='log-input' type="email" placeholder="Введите 6 значный код" onInput={setTempPassword}/>
                          <Link to="/login/code">
-                         <button className='log-button' type="submit">Проверить код</button>
+                         <button onClick={handleLogin} className='log-button' type="submit">Проверить код</button>
                          </Link>
                          <div className='soc'>
                          <Link to="/">
