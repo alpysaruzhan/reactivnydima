@@ -6,6 +6,8 @@
     align-items: center;
     max-width: 1060px;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .banner{
@@ -16,7 +18,8 @@
   
 }
 
-@media screen and (min-width: 480px){
+@media screen and (min-width: 600px){
+  /* 480 --->  600 */
   .input_home{
     display: none;
   }
@@ -25,20 +28,29 @@
   }
 }
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 600px){
+    /* 480 --->  600 */
+
+    /* *{
+      overflow-x: hidden;
+    } */
+
   .cont{
     justify-content:start;
     align-items:start;
-    max-width: 100%;
+
   }
   .banner{
     width: 100%;
     justify-content: center;
   }
-  /* .oo{
-    margin-left: 5px;
-    margin-right: 5px;
-  } */
+  .oo{
+    /* background-color: red; */
+
+    width: 100vw;
+
+
+  }
   .input_home{
     background-color: #866CBB;
     width: 100%;
