@@ -22,7 +22,7 @@ const Sidebar = () => {
           <li className="active">
             <NavLink to="/" activeClassName="active">
               <img className="svg" src={home} alt="" />
-              <p>Главная</p>
+              <p>Главапвапппапвная</p>
             </NavLink>
           </li>
           <li>
