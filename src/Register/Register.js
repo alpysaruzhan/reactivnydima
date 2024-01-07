@@ -2,11 +2,14 @@ import React, { useState, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import defaultImage from "../img/default.png";
 import "./Register.css";
+import { UsersApi } from 'market_place';
+import { Instance } from '../GateWay/base';
 
 const Register = () => {
   const [selectedImage, setSelectedImage] = useState(defaultImage);
   const fileInputRef = useRef(null);
   const navigate = useNavigate();
+  const apiInstance = new UsersApi(Instance)
 
   const handleButtonClick = () => {
     fileInputRef.current.click();

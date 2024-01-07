@@ -6,7 +6,7 @@ import gmail from "../img/Ellipse50.png";
 import vk from "../img/Ellipse49.png";
 import { Instance, setToken } from '../GateWay/base';
 import { AuthApi } from 'market_place';
-import { TEMP_EMAIL_KEY } from '../GateWay/consts';
+import { AUTH_KEY, TEMP_EMAIL_KEY } from '../GateWay/consts';
 
 
 const Login = (props) => {
@@ -14,7 +14,7 @@ const Login = (props) => {
   const {cookiesList} = props;  
 
   const [tempPassword, setTempPassword] = useState('');
-  const [cookies, setCookie] = useCookies(['access_token']);
+  const [cookies, setCookie] = useCookies([AUTH_KEY]);
   const navigate = useNavigate(); 
   const email = localStorage.getItem(TEMP_EMAIL_KEY);
   let apiInstance = new AuthApi(Instance);
@@ -27,9 +27,9 @@ const Login = (props) => {
                 console.error(error);   
             } else {
                 // Как то перенаправить на афтер регистрацию!!
-                console.log(data)
-                setToken(data.access_token, setCookie)
-                navigate('/register')
+                setToken(data.accessToken, setCookie)
+                
+                setTimeout(() => navigate('/register'), 500)
             }
             
         });
