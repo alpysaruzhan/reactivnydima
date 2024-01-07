@@ -8,14 +8,16 @@ WORKDIR /src
  
 # Copy the package.json file.
 COPY package*.json ./
+COPY FrontEndApiGateway ./
  
 # Install application dependencies.
 RUN npm install
-RUN npm install ./FrontEndApiGateway
  
 # Copy the rest of the application files.
 COPY . .
- 
+
+RUN npm install ./FrontEndApiGateway
+
 # Expose the port.
 EXPOSE 3000
  
