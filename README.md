@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## To install
+```shell 
+$ git clone --recurse-submodules -j8 https://github.com/alpysaruzhan/reactivnydima.git
+```
+
 ## Custom installation 
 
 In the project directory, you can use use: 

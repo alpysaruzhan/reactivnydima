@@ -2,7 +2,11 @@ import {ApiClient} from "market_place"
 import { AUTH_KEY } from "./consts";
 
 export const Instance = new ApiClient()
-Instance.basePath = "http://localhost:8000"
+if (process.env.HOST === null || process.env.HOST === undefined) {
+    Instance.basePath = "http://localhost:8000"
+} else { 
+    Instance.basePath = process.env.HOST
+}
 let OAuth2PasswordBearer = Instance.authentications['OAuth2PasswordBearer'];
 
 export function setToken(token, setCookie) { 

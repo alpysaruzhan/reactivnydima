@@ -24,14 +24,10 @@ const Login = (props) => {
       if (email !== null) { 
         apiInstance.authJwtLoginApiV1AuthJwtLoginPost("", email, tempPassword, "", "", "", (error, data, response) => {
             if (error) {
-                if (response.statusCode) {
-                    // сказать то что код неправильный по красивому
-                    console.error(error);   
-                } else { 
-                    console.error("Упс, произошла внутренная ошибка")
-                }
+                console.error(error);   
             } else {
                 // Как то перенаправить на афтер регистрацию!!
+                console.log(data)
                 setToken(data.access_token, setCookie)
                 navigate('/register')
             }

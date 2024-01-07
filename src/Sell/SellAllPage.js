@@ -1,8 +1,6 @@
-import React, { useState, useParams } from 'react';
+import React, { useState } from 'react';
 import "./SellPage.css";
 import { Link } from 'react-router-dom';
-import GameDetailPage from './GameDetailPage';
-import AppDetailPage from './AppDetailPage';
 import data from '../ProductList/db.json';
 
 const SellAllPage = () => {
