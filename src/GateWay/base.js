@@ -2,8 +2,9 @@ import {ApiClient} from "market_place"
 import { AUTH_KEY } from "./consts";
 
 export const Instance = new ApiClient()
+export const basePath = "http://localhost:8000"
 if (process.env.HOST === null || process.env.HOST === undefined) {
-    Instance.basePath = "http://localhost:8000"
+    Instance.basePath = basePath
 } else { 
     Instance.basePath = process.env.HOST
 }

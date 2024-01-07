@@ -11,6 +11,7 @@ COPY package*.json ./
  
 # Install application dependencies.
 RUN npm install
+RUN npm install ./FrontEndApiGateway
  
 # Copy the rest of the application files.
 COPY . .

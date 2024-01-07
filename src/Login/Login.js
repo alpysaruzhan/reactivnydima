@@ -11,8 +11,6 @@ import { AUTH_KEY, TEMP_EMAIL_KEY } from '../GateWay/consts';
 
 const Login = (props) => {
 
-  const {cookiesList} = props;  
-
   const [tempPassword, setTempPassword] = useState('');
   const [cookies, setCookie] = useCookies([AUTH_KEY]);
   const navigate = useNavigate(); 
