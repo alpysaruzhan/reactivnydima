@@ -1,4 +1,4 @@
-.auth-title{
+.auth-title {
     font-size: 42px;
     font-weight: 600;
     color: #4A307F;
@@ -11,22 +11,22 @@
     justify-content: center;
     width: 1000px;
 
-  }
-  
-  .register {
+}
+
+.register {
     margin-top: 50px;
     text-align: center;
     /* Другие стили для вашего элемента .register */
-  }
-  
-  
-.image-container{
+}
+
+
+.image-container {
     margin-top: 20px;
     margin-bottom: 20px;
 
 }
 
-.log-button{
+.log-button {
     height: 83px;
 }
 
@@ -38,10 +38,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
-.imgauth{
+.imgauth {
     color: #4A307F;
     font-weight: 600;
     font-size: 20px;

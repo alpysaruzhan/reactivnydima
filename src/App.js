@@ -55,36 +55,36 @@ class App extends Component {
           <div className="content">
             <Header />
             <div className='com'>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/all" element={<AllPage />} />
-              <Route path='/app' element={<AllApps />} />
-              <Route path="/profile" element={<ProfilePage />} />
-              <Route path="/sell" element={<SellPage />} />
-              <Route path="/sellall" element={<SellAllPage />} />
-              <Route path="/category/game/:id" element={<GameDetailPage />} />
-              <Route path="/character/game/:id" element={<GameCategoryPag />} />
-              <Route path="/category/app/:id" element={<AppDetailPage />} />
-              <Route path="/chat" element={<ChatPage />} />
-              <Route path="/chat/:chatId" element={<Chat />} />
-              <Route path="/guarantee" element={<GuaranteePage />} />
-              <Route path='/register' element={<Register />} />
-              
-              <Route path='/login' element={
-                <CookiesProvider>
-                  <Login />
-                </CookiesProvider>
-              } />
-              <Route path='/login/code' element={<Regcod />} />
-              <Route path='/login/auth' element={<Auth />} />
-              <Route path="/product/:id" element={<ProductCardPage />} />
-              <Route path="/" element={<ProductList />} />
-              <Route path="/game/:id" element={<ProductDetailPage />} />
-              <Route path='/cookie' element={<CookiePage />} /> 
-              <Route path='/policy' element={<PolicyPage />} /> 
-              <Route path='/balance' element={<BalancePage />} /> 
-              
-            </Routes>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/all" element={<AllPage />} />
+                <Route path='/app' element={<AllApps />} />
+                <Route path="/profile" element={<ProfilePage />} />
+                <Route path="/sell" element={<SellPage />} />
+                <Route path="/sellall" element={<SellAllPage />} />
+                <Route path="/category/game/:id" element={<GameDetailPage />} />
+                <Route path="/character/game/:id" element={<GameCategoryPag />} />
+                <Route path="/category/app/:id" element={<AppDetailPage />} />
+                <Route path="/chat" element={<ChatPage />} />
+                <Route path="/chat/:chatId" element={<Chat />} />
+                <Route path="/guarantee" element={<GuaranteePage />} />
+                <Route path='/register' element={<Register />} />
+
+                <Route path='/login' element={
+                  <CookiesProvider>
+                    <Login />
+                  </CookiesProvider>
+                } />
+                <Route path='/login/code' element={<Regcod />} />
+                <Route path='/login/auth' element={<Auth />} />
+                <Route path="/product/:id" element={<ProductCardPage />} />
+                <Route path="/" element={<ProductList />} />
+                <Route path="/game/:id" element={<ProductDetailPage />} />
+                <Route path='/cookie' element={<CookiePage />} /> 
+                <Route path='/policy' element={<PolicyPage />} /> 
+                <Route path='/balance' element={<BalancePage />} /> 
+
+              </Routes>
             </div>
           </div>
         </div>

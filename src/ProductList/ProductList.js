@@ -17,7 +17,7 @@ const ProductList = () => {
 
   return (
     <div className='co'>
-      <div>
+      <div >
         <div className='block'>
           <h1 className='tit'>Популярные игры</h1>
           <NavLink to={"/all"}><button className='game-button'>Все игры &#707;</button></NavLink>

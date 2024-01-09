@@ -1,5 +1,5 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
 import logo from "./img/logowhit.png";
 import home from "./img/home.svg";
 import vector from "./img/Vector.svg";
@@ -12,49 +12,67 @@ import "./Sidebar.css";
 const Sidebar = () => {
   return (
     <>
-    <div className="sidebar">
-      <div className="logo">
-        <img className="logo-img" src={logo} alt="" />
-        <img className="logo-img2" src={logowithout} alt="" />
-      </div>
-      <div className="navbar-menu">
-        <ul className="navbar-menu-list">
-          <li className="active">
-            <NavLink to="/" activeClassName="active">
-              <img className="svg" src={home} alt="" />
-              <p>Главная</p>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/profile" activeClassName="active">
-              <img className="svg" src={vector} alt="" />
-              <p>Профиль</p>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/sell" activeClassName="active">
-              <img className="svg" src={pro} alt="" />
-              <p>Продать</p>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/chat" activeClassName="active">
-              <img className="svg" src={chat} alt="" />
-              <p>Чаты</p>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/guarantee" activeClassName="active">
-              <img className="svg" src={garant} alt="" />
-              <p>Гарантия</p>
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-    </div>
+      <div className="sidebar">
+        <div className="logo">
+        <NavLink to="/" activeClassName="active">
 
+          <img className="logo-img" src={logo} alt="" />
+          <img className="logo-img2" src={logowithout} alt="" />
+          </NavLink>
 
-    <div className='mobile-sidebar'>
+        </div>
+        <div className="navbar-menu">
+          <ul className="navbar-menu-list">
+            <li className="active">
+              <NavLink to="/" activeClassName="active">
+                <div className="svg-div">
+                  <img className="svg" src={home} alt="" />
+                </div>
+
+                <p>123</p>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/profile" activeClassName="active">
+                <div className="svg-div">
+                  <img className="svg" src={vector} alt="" />
+                </div>
+
+                <p>Профиль</p>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/sell" activeClassName="active">
+                <div className="svg-div">
+                  <img className="svg" src={pro} alt="" />
+                </div>
+
+                <p>Продать</p>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/chat" activeClassName="active">
+                <div className="svg-div">
+                  <img className="svg" src={chat} alt="" />
+                </div>
+
+                <p>Чаты</p>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/guarantee" activeClassName="active">
+                <div className="svg-div">
+                  <img className="svg" src={garant} alt="" />
+                </div>
+
+                <p>Гарантия</p>
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="mobile-sidebar">
         <ul className="mobile-navbar-menu-list">
           <li className="active">
             <NavLink className="blo" to="/" activeClassName="active">
@@ -90,6 +108,6 @@ const Sidebar = () => {
       </div>
     </>
   );
-}
+};
 
 export default Sidebar;
