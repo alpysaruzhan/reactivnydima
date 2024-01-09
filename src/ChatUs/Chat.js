@@ -9,6 +9,7 @@ const Chat = (props) => {
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState(""); 
     const { chatId } = useParams();
+    const [chatObj, setChatObj] = useState([]); 
     const [ user, setUser ] = useState([])
     const Chat = new ChatApi(Instance);
     const Message = new MessageApi(Instance);
@@ -30,13 +31,17 @@ const Chat = (props) => {
                 console.log("Fetched messages:", data);
             }
         });
-
         Chat.chatGetChatsApiV1ChatGet((error, data, response) => {
             if (error) {
                 console.error(error);
             } else {
                 console.log("Fetched chats:", data);
-                setChats(data.objects);
+                setChats(data.objects); 
+                data.objects.forEach((v) => { 
+                    if (v.id === chatId) { 
+                        setChatObj(v)
+                    }
+                })
             }
         });
     }, []);
@@ -51,8 +56,6 @@ const Chat = (props) => {
             }
         });
     };
-
-
 
     return (
         <div>
@@ -72,6 +75,7 @@ const Chat = (props) => {
                         </div>
                     </div>
                 ))}
+                {chatObj.type !== "NOTIFICATION" ? 
                 <div className='input-mes'>
                     <input
                         type="text"
@@ -80,8 +84,11 @@ const Chat = (props) => {
                         onChange={(e) => setNewMessage(e.target.value)}
                     />
                     <button onClick={sendMessage}>Отправить</button>
+                </div> : 
+                <div>
+                    <p>Этот чат только для нотификации, в него нельзя писать</p>
+                </div>}
                 </div>
-            </div>
         </div>
     );
 };

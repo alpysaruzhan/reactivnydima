@@ -9,10 +9,11 @@ const Register = () => {
   const [selectedImage, setSelectedImage] = useState(defaultImage);
   const fileInputRef = useRef(null);
   const navigate = useNavigate();
+  const [username, setUsername] = useState(''); 
   const apiInstance = new UsersApi(Instance)
 
   const handleButtonClick = () => {
-    fileInputRef.current.click();
+    fileInputRef.current.click(); 
   };
 
   const handleImageChange = (event) => {
@@ -28,7 +29,23 @@ const Register = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    navigate("/");
+    apiInstance.usersPatchCurrentUserApiV1UsersMePatch(
+      { 
+        full_name: username, 
+        // photo: { 
+        //   file: selectedImage, 
+        // }
+      }, 
+      (error, data, response) => { 
+        if (error) { 
+          console.error(error)
+        } else { 
+          console.log(data)
+          
+          setTimeout(() => {navigate("/")}, 500);
+        }
+      }
+    )
   };
 
   return (
@@ -47,7 +64,7 @@ const Register = () => {
               <button className='imgauth' onClick={handleButtonClick}>Загрузить фотографию</button>
             </div>
             <form onSubmit={handleFormSubmit}>
-              <input className='log-input' type="email" placeholder="Придумайте себе никнейм" />
+              <input className='log-input' type="text" placeholder="Придумайте себе никнейм" onChange={(e) => setUsername(e.target.value)}/>
               <button type="submit" className='log-button'>Сохранить</button>
             </form>
           </div>

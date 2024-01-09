@@ -13,11 +13,7 @@ const ChatPage = (props) => {
   useEffect(() => {
     Chat.chatGetChatsApiV1ChatGet((error, data, response) => {
       if (error) {
-        if (response.statusCode) {
           console.error(error);
-        } else { 
-          console.error("Упс, произошла внутренняя ошибка");
-        }
       } else {
         console.log("Fetched data:", data);
         setChats(data.objects);
