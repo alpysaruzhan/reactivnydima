@@ -25,10 +25,10 @@ const GameCategoryPag = () => {
             {options.map((option) => {
                 { 
                     option.type === "SELECTOR" ? <div className="das">
-                        
+                                  
                     </div> : 
                     <div>
-
+                        
                     </div>
                 }
             })}
