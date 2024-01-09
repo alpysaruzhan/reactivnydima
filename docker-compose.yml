@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+    # Service name is react-app
+    react-app:
+        container_name: react-app
+        # build from Dockerfile
+        build: 
+          context: . 
+          dockerfile: ./Dockerfile  
+        # expose 3000 as hosting port & 3000 in container port
+        expose: 
+          - "3000"
+        ports: 
+          - "3000:3000"
+        env_file: .env

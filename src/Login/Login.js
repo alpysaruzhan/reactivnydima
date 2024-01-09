@@ -4,49 +4,33 @@ import "./Login.css";
 import { useCookies } from "react-cookie";
 import gmail from "../img/Ellipse50.png";
 import vk from "../img/Ellipse49.png";
-import { Instance, setToken } from "../GateWay/base";
-import { AuthApi } from "market_place";
-import { TEMP_EMAIL_KEY } from "../GateWay/consts";
+import { Instance, setToken } from '../GateWay/base';
+import { AuthApi } from 'market_place';
+import { AUTH_KEY, TEMP_EMAIL_KEY } from '../GateWay/consts';
 
 const Login = (props) => {
   const { cookiesList } = props;
 
-  const [tempPassword, setTempPassword] = useState("");
-  const [cookies, setCookie] = useCookies(["access_token"]);
-  const navigate = useNavigate();
+  const [tempPassword, setTempPassword] = useState('');
+  const [cookies, setCookie] = useCookies([AUTH_KEY]);
+  const navigate = useNavigate(); 
   const email = localStorage.getItem(TEMP_EMAIL_KEY);
   let apiInstance = new AuthApi(Instance);
 
   function handleLogin(event) {
     event.preventDefault();
-    if (email !== null) {
-      apiInstance.authJwtLoginApiV1AuthJwtLoginPost(
-        "",
-        email,
-        tempPassword,
-        "",
-        "",
-        "",
-        (error, data, response) => {
-          if (error) {
-            if (response.statusCode) {
-              // сказать то что код неправильный по красивому
-              console.error(error);
+      if (email !== null) { 
+        apiInstance.authJwtLoginApiV1AuthJwtLoginPost("", email, tempPassword, "", "", "", (error, data, response) => {
+            if (error) {
+                console.error(error);   
             } else {
-              console.error("Упс, произошла внутренная ошибка");
+                // Как то перенаправить на афтер регистрацию!!
+                setToken(data.accessToken, setCookie)
+                
+                setTimeout(() => navigate('/register'), 500)
             }
-          } else {
-            // Как то перенаправить на афтер регистрацию!!
-            setToken(data.access_token, setCookie);
-            navigate("/register");
-          }
         }
-      );
-    } else {
-      console.error(
-        "Сказать что вы не должны быть тут, или перенаправить на главную"
-      );
-    }
+      )
   }
 
   return (
