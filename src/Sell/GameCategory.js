@@ -23,11 +23,11 @@ const GameCategoryPag = () => {
     return (
         <div className='cont8'>
             {options.map((option) => {
-                { 
+                return (
                     <div>
                        <h1>{option.label}</h1>  
                     </div>
-                }
+                )
             })}
         </div>
     );

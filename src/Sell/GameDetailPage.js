@@ -23,10 +23,10 @@ const GameDetailPage = () => {
   return (
     <div className='cont8'>
      <div className='category-page'>
-              {categories.map((game) => (
-                <div key={game.id}>
-                    <Link to={`/character/game/${game.name}`}>
-                    <p className='p-tit-sell'>{game.name}</p>
+              {categories.map((category) => (
+                <div key={category.id}>
+                    <Link to={`/character/game/${category.id}`}>
+                    <p className='p-tit-sell'>{category.name}</p>
                     </Link>
                 </div>
               ))}
