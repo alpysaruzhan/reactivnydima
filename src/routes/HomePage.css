@@ -1,68 +1,71 @@
 @import "../App.css";
 
-.cont{
-    margin-top: 30px;
-    justify-content: center;
-    align-items: center;
-    max-width: 1060px;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+.cont {
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+  max-width: 1060px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
-.banner{
-    width: 100%;
+.banner {
+  width: 100%;
 }
 
-@media screen and (min-width: 1060px){
-  
-}
+@media screen and (min-width: 1060px) {}
 
-@media screen and (min-width: 600px){
+@media screen and (min-width: 600px) {
+
   /* 480 --->  600 */
-  .input_home{
+  .input_home {
     display: none;
   }
-  .home_mobile{
+
+  .home_mobile {
     display: none;
   }
 }
 
-@media screen and (max-width: 600px){
-    /* 480 --->  600 */
+@media screen and (max-width: 600px) {
+  /* 480 --->  600 */
 
-    /* *{
+  /* *{
       overflow-x: hidden;
     } */
 
-  .cont{
-    justify-content:start;
-    align-items:start;
+  .cont {
+    justify-content: start;
+    align-items: start;
 
   }
-  .banner{
+
+  .banner {
     width: 100%;
     justify-content: center;
   }
-  .oo{
+
+  .oo {
     /* background-color: red; */
 
-    width: 100vw;
-
+    width: 100%;
 
   }
-  .input_home{
+
+  .input_home {
     background-color: #866CBB;
     width: 100%;
     align-items: center;
     margin-bottom: 20px;
     height: 45px;
   }
-  .home_mobile{
-    align-items:start;
+
+  .home_mobile {
+    align-items: start;
   }
-  .img-home{
+
+  .img-home {
     align-items: start;
   }
 }
-

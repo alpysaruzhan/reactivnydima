@@ -11,6 +11,7 @@
 .alll {
     margin-top: 45px;
     width: 1030px;
+    
 }
 
 .card-list2 {
@@ -21,9 +22,9 @@
 
 .product-card2 {
     height: 275px;
-    margin-left: 15px;
+    /* margin-left: 15px; */
     margin-bottom: 15px;
-    /* border: 3px solid rgb(4, 4, 120); */
+    /* border: 3px solid rgb(150, 203, 158); */
 }
 
 .product-logo1 {
@@ -37,8 +38,13 @@
 
 .firstline-card {
     display: flex;
-}
+        /* border: 1px solid rgb(4, 4, 120); */
 
+}
+.product-card-link{
+    /* border: 1px solid rgb(120, 4, 99); */
+
+}
 .card-logo {
     border-radius: 5px;
     width: 39px;
@@ -83,16 +89,22 @@
 
 @media screen and (max-width: 600px) {
     .alll {
-        /* border: 1px solid green; */
         width: 100%;
+        /* border: 1px solid orange; */
 
     }
+    .block{
+        width: 100%;
+        /* border: 1px solid red; */
 
+    }
     .game-button3 {
         display: none;
     }
 
     .card-list2 {
+        /* border: 3px solid blue; */
+
         width: 100%;
     }
 
@@ -104,7 +116,7 @@
     }
 
     .product-logo1 {
-        /* border: 1px solid rgb(113, 36, 36); */
+        /* border: 3px solid rgb(113, 36, 36); */
 
         padding: 0;
         margin: 0;

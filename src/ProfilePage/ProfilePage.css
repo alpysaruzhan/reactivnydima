@@ -4,7 +4,6 @@
     align-items: center;
     width: 1020px;
     text-align: center;
-    margin-top: 40px;
     height: 100vh;
 }
 
@@ -125,7 +124,7 @@
     margin-top: 15px;
     width: 33%;
     height: 40px;
-    margin-right: 10px;
+    /* margin-right: 10px; */
     border: 1px solid #dbdbdb;
     font-size: 20px;
     background-color: #fff;
@@ -140,6 +139,8 @@
 .tabs {
     display: flex;
     width: 100%;
+    /* border: 1px solid red; */
+    gap: 10px;
 }
 
 .bal-prof {
@@ -150,19 +151,25 @@
 
 @media (max-width: 600px) {
     .cont2 {
+        margin: 0;
+        /* border: 1px solid red; */
         margin: 20px;
-        width: 95vw;
+        width: auto;
     }
 
     .first {
         text-align: left;
+        /* border: 1px solid green; */
+    }
+
+    .flpo {
+
+        /* border: 1px solid green; */
     }
 
     .rwe {
         width: auto;
     }
-
-
 
     .balance {
         width: 100%;
@@ -174,7 +181,8 @@
 
     .popol {
         width: 100%;
-        margin-right: 15px;
+        margin-right: 5px;
+        /* border: 1px solid black; */
 
     }
 

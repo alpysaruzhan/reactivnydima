@@ -16,9 +16,9 @@ const HomePage = () => {
         <div>
           <ProductList />
         </div>
-        {<div>
+        <div>
           <ProductCard />
-        </div>}
+        </div>
       </div>
     </div>
   );
