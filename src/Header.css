@@ -1,4 +1,5 @@
 .header {
+  
   background-color: #4A307F;
   height: 80px;
   width: 100%;
@@ -57,9 +58,9 @@ input {
   font-weight: 600;
 }
 
-.mobile{
-  display: none;
-}
+
+
+
 
 .header-background {
   position: absolute;
@@ -97,6 +98,9 @@ input {
     max-width: 300px;
     margin-left: 10px;
   }
+  .header-buttons{
+    display: none;
+  }
 
 
   .header-buttons .mobile-button {
@@ -113,10 +117,6 @@ input {
 
 
 @media (max-width: 480px) {
-  .mobile{
-    display: none;
-
-  }
   .header-input{
     display: none;
   }

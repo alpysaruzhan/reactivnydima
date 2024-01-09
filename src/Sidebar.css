@@ -4,7 +4,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: width 0.2s ease;
+  /* transition: width 0.2s ease;
+  z-index: 999; 
+  position: fixed; */
 
 }
 
@@ -161,6 +163,12 @@
 
 
 @media (max-width: 600px) {
+  .mobile-sidebar {
+    /* display: none;
+    background-color: aquamarine; */
+  }
+
+
   .sidebar {
     display: none;
     background-color: aquamarine;
@@ -170,9 +178,9 @@
   .svg {
     height: 26px;
     width: 26px;
-    filter: brightness(0) invert(1);
+    /* filter: brightness(0) invert(1); */
   }
-               
+
   .mobile-navbar-menu-list li a {
     text-decoration: none;
     display: flex;

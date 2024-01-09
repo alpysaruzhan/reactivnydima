@@ -54,7 +54,6 @@ const App = () => {
                 <Route path="/chat" element={<ChatPage />} />
                 <Route path="/guarantee" element={<GuaranteePage />} />
                 <Route path="/register" element={<Register />} />
-
                 <Route
                   path="/login"
                   element={
@@ -75,6 +74,7 @@ const App = () => {
             </div>
           </div>
         </div>
+
         <Footer />
       </div>
     </Router>
