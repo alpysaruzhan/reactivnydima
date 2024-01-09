@@ -27,7 +27,8 @@ import Chat from './ChatUs/Chat';
 import GameDetailPage from './Sell/GameDetailPage';
 import { Cookies, CookiesProvider, withCookies } from 'react-cookie';
 import { isAuthorized } from './GateWay/base';
-import { instanceOf } from 'prop-types';
+import { instanceOf } from 'prop-types'; 
+import GameCategoryPag from './Sell/GameCategory';
 
 class App extends Component { 
   static propTypes = { 
@@ -61,8 +62,9 @@ class App extends Component {
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/sell" element={<SellPage />} />
               <Route path="/sellall" element={<SellAllPage />} />
-              <Route path="/category/game/:title" element={<GameDetailPage />} />
-              <Route path="/category/app/:title" element={<AppDetailPage />} />
+              <Route path="/category/game/:id" element={<GameDetailPage />} />
+              <Route path="/character/game/:id" element={<GameCategoryPag />} />
+              <Route path="/category/app/:id" element={<AppDetailPage />} />
               <Route path="/chat" element={<ChatPage />} />
               <Route path="/chat/:chatId" element={<Chat />} />
               <Route path="/guarantee" element={<GuaranteePage />} />
@@ -81,6 +83,7 @@ class App extends Component {
               <Route path='/cookie' element={<CookiePage />} /> 
               <Route path='/policy' element={<PolicyPage />} /> 
               <Route path='/balance' element={<BalancePage />} /> 
+              
             </Routes>
             </div>
           </div>

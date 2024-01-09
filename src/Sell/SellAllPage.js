@@ -39,7 +39,7 @@ const SellAllPage = () => {
           <div className='gsel'>
               {games.map((game) => (
                 <div key={game.id}>
-                    <Link to={`/category/game/${game.name}`}>
+                    <Link to={`/category/game/${game.id}`}>
                     <img className='lgsell' src={basePath + game.logo.fileUrl}></img>
                     <p className='p-tit-sell'>{game.name}</p>
                     </Link>
