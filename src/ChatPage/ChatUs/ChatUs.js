@@ -18,15 +18,25 @@ const ChatUs = (props) => {
     const [ file, setFile ] = useState(defaultImage)
 
     const handleImageChange = (event) => {
-        const file = event.target.files[0];
-        const reader = new FileReader();
-    
-        reader.onload = (e) => {
-            setFile(e.target.result);
-        };
-    
-        reader.readAsDataURL(file);
+        const files = event.target.files;
+        if (files.length === 0) {
+            console.error('Файл не выбран');
+            return;
+        }
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            if (!(file instanceof Blob)) {
+                console.error('Выбранный файл не является Blob');
+                continue;
+            }
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                setFile(e.target.result);
+            };
+            reader.readAsDataURL(file);
+        }
     };
+    
 
     useEffect(() => {
         Users.usersCurrentUserApiV1UsersMeGet((error, data, reponse) => {
@@ -105,7 +115,7 @@ const ChatUs = (props) => {
                         onChange={(e) => setNewMessage(e.target.value)}
                     />
                     <button onClick={sendMessage}>Отправить</button>
-                    <input type="file" onClick={handleImageChange}>Сделать тут красивую отправку файлов</input>
+                    <input type="file" onClick={handleImageChange}  />
                 </div> : 
                 <div>
                     <p>Этот чат только для нотификации, в него нельзя писать</p>

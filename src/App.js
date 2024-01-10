@@ -22,7 +22,7 @@ import PolicyPage from './Policy/Policy';
 import BalancePage from './Balance/Balance';
 import SellAllPage from './Sell/SellAllPage';
 import AppDetailPage from './Sell/AppDetailPage';
-
+import PhotoPage from './Sell/PhotoPage';
 import Chat from './ChatPage/ChatUs/ChatUs';
 import AllChat from './ChatPage/AllChat/AllChat';
 
@@ -86,8 +86,7 @@ class App extends Component {
                 <Route path="/game/:id" element={<ProductDetailPage />} />
                 <Route path='/cookie' element={<CookiePage />} /> 
                 <Route path='/policy' element={<PolicyPage />} /> 
-                <Route path='/balance' element={<BalancePage />} /> 
-
+                <Route path='/balance' element={<BalancePage />} />   
               </Routes>
             </div>
           </div>
