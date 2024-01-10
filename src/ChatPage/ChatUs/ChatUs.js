@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { AuthApi, ChatApi, MessageApi, UsersApi } from 'market_place';
-import { Instance } from '../GateWay/base';
+import { Instance } from '../../GateWay/base';
 import "./ChatUs.css";
+import defaultImage from "../../img/default.png";
 
 const ChatUs = (props) => {
     const [chats, setChats] = useState([]);
@@ -14,6 +15,18 @@ const ChatUs = (props) => {
     const Chat = new ChatApi(Instance);
     const Message = new MessageApi(Instance);
     const Users = new UsersApi(Instance); 
+    const [ file, setFile ] = useState(defaultImage)
+
+    const handleImageChange = (event) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+    
+        reader.onload = (e) => {
+            setFile(e.target.result);
+        };
+    
+        reader.readAsDataURL(file);
+    };
 
     useEffect(() => {
         Users.usersCurrentUserApiV1UsersMeGet((error, data, reponse) => {
@@ -92,6 +105,7 @@ const ChatUs = (props) => {
                         onChange={(e) => setNewMessage(e.target.value)}
                     />
                     <button onClick={sendMessage}>Отправить</button>
+                    <input type="file" onClick={handleImageChange}>Сделать тут красивую отправку файлов</input>
                 </div> : 
                 <div>
                     <p>Этот чат только для нотификации, в него нельзя писать</p>
