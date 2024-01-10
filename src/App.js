@@ -6,7 +6,6 @@ import Header from './Header';
 import HomePage from './routes/HomePage';
 import ProfilePage from './ProfilePage/ProfilePage';
 import SellPage from './Sell/SellPage';
-import ChatPage from './Chat/ChatPage';
 import GuaranteePage from './routes/GuaranteePage';
 import Register from './Register/Register';
 import Regcod from './Regcod/Regcod';
@@ -23,7 +22,10 @@ import PolicyPage from './Policy/Policy';
 import BalancePage from './Balance/Balance';
 import SellAllPage from './Sell/SellAllPage';
 import AppDetailPage from './Sell/AppDetailPage';
-import Chat from './ChatUs/Chat';
+
+import Chat from './ChatPage/ChatUs/ChatUs';
+import AllChat from './ChatPage/AllChat/AllChat';
+
 import GameDetailPage from './Sell/GameDetailPage';
 import { Cookies, CookiesProvider, withCookies } from 'react-cookie';
 import { isAuthorized } from './GateWay/base';
@@ -65,8 +67,10 @@ class App extends Component {
                 <Route path="/category/game/:id" element={<GameDetailPage />} />
                 <Route path="/character/game/:id" element={<GameCategoryPag />} />
                 <Route path="/category/app/:id" element={<AppDetailPage />} />
-                <Route path="/chat" element={<ChatPage />} />
+
+                <Route path="/chat" element={<AllChat />} />
                 <Route path="/chat/:chatId" element={<Chat />} />
+
                 <Route path="/guarantee" element={<GuaranteePage />} />
                 <Route path='/register' element={<Register />} />
 
