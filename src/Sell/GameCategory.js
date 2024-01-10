@@ -23,11 +23,12 @@ const GameCategoryPag = () => {
     return (
         <div className='cont8'>
             {options.map((option) => {
-                return (
-                    <div>
-                       <h1>{option.label}</h1>  
-                    </div>
-                )
+                switch (option.type) {
+                    case "SELECTOR":   return "#FF0000";
+                    case "SWITCH": return "#00FF00";
+                    case "RANGE":  return "#0000FF";
+                    default:      return (<div></div>);
+                }
             })}
         </div>
     );
