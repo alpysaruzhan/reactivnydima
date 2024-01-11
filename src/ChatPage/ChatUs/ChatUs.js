@@ -20,6 +20,7 @@ const ChatUs = (props) => {
     const handleImageChange = (event) => {
         const files = event.target.files;
         if (files.length === 0) {
+            setFile(null)
             console.error('Файл не выбран');
             return;
         }
@@ -72,9 +73,9 @@ const ChatUs = (props) => {
     const sendMessage = () => {
         let data = {}
         if (file !== null || file !== undefined && (newMessage === null || newMessage === undefined)) {  // ненавижу js  
-            data = { file: file }
+            data = { file: { file: file } }
         } else if (file !== null || file !== undefined) { 
-            data = { text: newMessage, file: file }
+            data = { text: newMessage, file: { file: file } }
         } else { 
             data = { text: newMessage }
         }
