@@ -1,42 +1,57 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import './AllChat.css';
-import { ChatApi } from 'market_place';
-import { Instance } from '../../GateWay/base';
+
+
+import youtube from "../../img/footer/YouTubelogo.png";
 
 const AllChat = (props) => {
   const { Cookies } = props;
   const [chats, setChats] = useState([]);
   const { chatId } = useParams();
-  const Chat = new ChatApi(Instance);
 
-  useEffect(() => {
-    Chat.chatGetChatsApiV1ChatGet((error, data, response) => {
-      if (error) {
-        console.error(error);
-      } else {
-        console.log("Fetched data:", data);
-        setChats(data.objects);
-      }
-    });
-  }, []);
+  
+
+
+  const handleClick = (chat) => {
+    console.log("handleClick");
+    props.setCurrChat(chat);
+  }
 
   return (
     <div>
+
       <div className="chat-container">
-        {Array.isArray(chats) && chats.map((chat) => (
-          <div key={chat.id} className={`chat ${chatId === String(chat.id) ? 'active-chat' : ''}`}>
-            <div className='mess'>
-              <Link to={`/chat/${chat.id}`}>
-                <h3>Чаффт {chat.id}</h3>
-                <div className="message-container">
-                  <div className='mess1'>
-                    {chat.lastMessage}
-                  </div>
-                </div>
-              </Link>
-            </div>
+        <div className="chat chat-pined" onClick={() => handleClick("chat")}>
+          <div className="chat-img-div">
+            <img src={youtube} className="chat-img" />
           </div>
+          <div className="chat-mid">
+            <span className="chat-name">Game Hub</span >
+            <span className="chat-last">Здравствуйте, я...</span >
+          </div>
+          <span className="chat-time">11:00</span >
+        </div>
+
+
+      
+
+        {Array.isArray(props.chats) && props.chats.map((chat) => (
+
+          <div key={chat.id} className={`chat ${chatId === String(chat.id) ? 'active-chat' : ''}`} onClick={() => handleClick(chat)}>
+
+            <div className="chat-div">
+              <img src={youtube} className="chat-img" />
+            </div>
+            <div className="chat-mid">
+              <span className="chat-name">Чат{chat.name}</span >
+              <span className="chat-last">last Message</span >
+            </div>
+            <span className="chat-time"> вчера</span >
+
+
+          </div>
+
         ))}
       </div>
     </div>

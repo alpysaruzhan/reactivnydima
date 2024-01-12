@@ -2,26 +2,128 @@
 
 /* Стили для контейнера чатов */
 .chat-container {
-    display: flex;
-    justify-content: space-between;
-  }
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-message {
+  background-color: #cce6ff;
+}
+
+.response-message {
+  background-color: #e6f7ff;
+}
+
+
+.chat {
   
-  /* Стили для чата */
-  .chat {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin: 5px;
-    border-radius: 5px;
-  }
-  
-  /* Стили для сообщений от пользователя */
-  .user-message {
-    background-color: #cce6ff; /* Цвет фона сообщения пользователя */
-  }
-  
-  /* Стили для сообщений от другого пользователя */
-  .response-message {
-    background-color: #e6f7ff; /* Цвет фона сообщения другого пользователя */
-  }
-  
+  display: flex;
+  padding: 14px;
+  border-top: 1px solid #4a307f4a;
+  height: 90px;
+}
+
+.chat-pined {
+  /* border: 1px solid blue; */
+  border-top: none;
+
+  /* border: 1px solid red; */
+
+}
+
+.chat-img-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* height: 60px; */
+  width: 60px;
+
+  /* border: 1px solid red; */
+
+}
+
+.chat-img {
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+}
+
+.chat-mid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  max-width: 50%;
+
+  padding-top: 7px;
+  padding-left: 7px;
+  /* border: 1px solid red; */
+
+}
+
+.chat-name {
+  color: #4A307F;
+  font-size: 24px;
+  font-weight: 800;
+  height: 60%;
+  /* border: 1px solid red; */
+
+
+  /* margin-bottom: 7px; */
+}
+
+.chat-last {
+  color: #4A307F;
+  font-size: 18px;
+  height: 40%;
+  /* border: 1px solid red; */
+
+
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid red; */
+}
+
+
+.chat-time {
+  /* border: 1px solid red; */
+
+  color: #4A307F;
+  font-size: 18px;
+  display: grid;
+  place-items: end;
+  flex-grow: 1;
+
+  margin-right: 18px;
+}
+
+
+
+/* .chat-name {
+  border: 1px solid yellow;
+}
+
+.chat-last {
+  border: 1px solid pink;
+}
+
+.chat {
+  border: 1px solid blue;
+}
+
+.chat-div {
+  border: 1px solid blue;
+}
+
+.chat-mid {
+  border: 1px solid green;
+}
+
+.chat-time {
+  border: 1px solid brown;
+} */

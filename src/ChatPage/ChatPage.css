@@ -1,27 +1,33 @@
 /* ChatPage.css */
 
 /* Стили для контейнера чатов */
-.chat-container {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  /* Стили для чата */
-  .chat {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin: 5px;
-    border-radius: 5px;
-  }
-  
-  /* Стили для сообщений от пользователя */
-  .user-message {
-    background-color: #cce6ff; /* Цвет фона сообщения пользователя */
-  }
-  
-  /* Стили для сообщений от другого пользователя */
-  .response-message {
-    background-color: #e6f7ff; /* Цвет фона сообщения другого пользователя */
-  }
-  
+
+
+
+.ChatPage {
+  display: flex;
+  height: 90vh;
+  /* border: 3px solid rgb(69, 69, 66); */
+  width: 80vw;
+  margin-top: 65px;
+}
+
+.AllChat {
+  flex: 0 0 35%;
+ 
+
+  border-right: 1px solid #4a307f4a;
+
+    /* border: 3px solid rgb(69, 69, 66); */
+
+  /* 30% ширины */
+  /* background-color: #ebebeb; */
+  /* Цвет фона для примера */
+}
+
+.ChatUs {
+  flex: 0 0 65%;
+  /* 70% ширины */
+  /* background-color: #e9f5e9; */
+  /* Цвет фона для примера */
+}

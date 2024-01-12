@@ -1,47 +1,134 @@
 /* Chat.css */
 
 .container {
-    padding: 20px;
-  }
-  
-  .chat-container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .chat {
+  padding: 20px;
+}
+
+
+/* .chat {
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
   }
-  
-  .message {
-    background-color: #f0f0f0;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  .input-container {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .input {
-    flex: 1;
-    padding: 8px;
-    margin-right: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .button {
-    padding: 8px 15px;
-    border-radius: 5px;
-    background: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
+   */
+.message {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.input-container {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  flex: 1;
+  padding: 8px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.button {
+  padding: 8px 15px;
+  border-radius: 5px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.chat-footer {
+  display: flex;
+  /* border: 1px solid red; */
+  height: 50px;
+}
+
+.upload>input {
+  visibility: hidden;
+  width: 0;
+  height: 0
+}
+
+.upload-img {
+  height: 100%;
+  padding: 5px;
+  background-color: #fbfbfb;
+  border: 2px solid rgba(128, 128, 128, 0.200);
+  border-radius: 12px;
+}
+
+
+.chat-input {
+  height: 100%;
+  background-color: #FBFBFB;
+
+  border: 2px solid rgba(128, 128, 128, 0.200);
+  border-radius: 12px;
+}
+
+
+.send-img {
+  height: 100%;
+}
+
+.chat-header {
+  /* border: 1px solid red; */
+  height: 90px;
+  margin-top: 1px;
+  display: flex;
+  padding: 14px;
+  border-bottom: 1px solid #4a307f4a;
+
+}
+
+.chat-undername {
+  color: #4a307f4a;
+  font-size: 16px;
+  /* height: 40%; */
+}
+
+.chat-main {
+  /* border: 1px solid red; */
+  height: 70%;
+
+}
+
+.right-chat{
+  /* border: 1px solid blueviolet; */
+  height: 90vh;
+}
+.message-your {
+  border: 1px solid green;
+
+}
+
+.message-my {
+  background-color: #4A307F;
+  margin: 18px;
+  border-radius: 18px;
+  padding-top: 14px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  font-size: 16px;
+  color: white;
+  width: 30%;
+}
+
+.message-last{
+  font-size: 14px;
+
+  display: grid;
+  place-items: end;
+}
+
+.message{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
