@@ -22,6 +22,7 @@ const ChatUs = (props) => {
     const handleImageChange = (event) => {
         const files = event.target.files;
         if (files.length === 0) {
+            setFile(null)
             console.error('Файл не выбран');
             return;
         }
@@ -45,25 +46,26 @@ const ChatUs = (props) => {
 
     }, []);
 
-    // const sendMessage = () => {
-    //     let data = {}
-    //     if (file !== null || file !== undefined && (newMessage === null || newMessage === undefined)) {  // ненавижу js  
-    //         data = { file: file }
-    //     } else if (file !== null || file !== undefined) {
-    //         data = { text: newMessage, file: file }
-    //     } else {
-    //         data = { text: newMessage }
-    //     }
-    //     Message.messageSendMessageApiV1MessageChatIdSendMessagePost(data, chatId, (error, data, response) => {
-    //         if (error) {
-    //             console.error("Error sending message:", error);
-    //         } else {
-    //             setMessages([...messages, data]);
-    //             setNewMessage("");
-    //         }
-    //     });
-    // };
-    // console.log("popa abaia", props.message[0].fromUser.id, "popa vlada", props.currChat.participants[0].id)//props.currChat.participants.id === props.message[0].fromUser.id ? 'message-my' : 'gavno');
+
+    const sendMessage = () => {
+        let data = {}
+        if (file !== null || file !== undefined && (newMessage === null || newMessage === undefined)) {  // ненавижу js  
+            data = { file: { file: file } }
+        } else if (file !== null || file !== undefined) { 
+            data = { text: newMessage, file: { file: file } }
+        } else { 
+            data = { text: newMessage }
+        }
+        Message.messageSendMessageApiV1MessageChatIdSendMessagePost(data, chatId, (error, data, response) => {
+            if (error) {
+                console.error("Error sending message:", error);
+            } else {
+                setMessages([...messages, data]); 
+                setNewMessage(""); 
+            }
+        });
+    };
+
     return (
         <div className='right-chat'>
 
