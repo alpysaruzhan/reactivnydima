@@ -47,24 +47,24 @@ const ChatUs = (props) => {
     }, []);
 
 
-    const sendMessage = () => {
-        let data = {}
-        if (file !== null || file !== undefined && (newMessage === null || newMessage === undefined)) {  // ненавижу js  
-            data = { file: { file: file } }
-        } else if (file !== null || file !== undefined) { 
-            data = { text: newMessage, file: { file: file } }
-        } else { 
-            data = { text: newMessage }
-        }
-        Message.messageSendMessageApiV1MessageChatIdSendMessagePost(data, chatId, (error, data, response) => {
-            if (error) {
-                console.error("Error sending message:", error);
-            } else {
-                setMessages([...messages, data]); 
-                setNewMessage(""); 
-            }
-        });
-    };
+    // const sendMessage = () => {
+    //     let data = {}
+    //     if (file !== null || file !== undefined && (newMessage === null || newMessage === undefined)) {  // ненавижу js  
+    //         data = { file: { file: file } }
+    //     } else if (file !== null || file !== undefined) { 
+    //         data = { text: newMessage, file: { file: file } }
+    //     } else { 
+    //         data = { text: newMessage }
+    //     }
+    //     Message.messageSendMessageApiV1MessageChatIdSendMessagePost(data, chatId, (error, data, response) => {
+    //         if (error) {
+    //             console.error("Error sending message:", error);
+    //         } else {
+    //             setMessages([...messages, data]); 
+    //             setNewMessage(""); 
+    //         }
+    //     });
+    // };
 
     return (
         <div className='right-chat'>
@@ -84,10 +84,11 @@ const ChatUs = (props) => {
             </div>
             <div className='chat-main'>
                 {Array.isArray(props.messages) && props.messages.map((message) => (
-                    // <div key={message.id} className={`ne-chat ${chatId === String(message.id) ? 'active-chat' : ''}`}>
-                    <div key={message.id} className={`message   ${message.fromUser.id === props.currChat.participants[0].id ? 'message-my' : 'message-your'}`}>
-                        {message.text}
-                        <span className="message-last">{message.updatedAt.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' })}</span >
+                    <div key={message.id} className="chat-row">
+                        <div className={`message   ${message.fromUser.id === props.currChat.participants[0].id ? 'message-my' : 'message-your'}`}>
+                            {message.text}
+                            <span className="message-last">{message.updatedAt.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' })}</span >
+                        </div>
 
                     </div>
                 ))}

@@ -101,24 +101,8 @@
   /* border: 1px solid blueviolet; */
   height: 90vh;
 }
-.message-your {
-  border: 1px solid green;
 
-}
 
-.message-my {
-  background-color: #4A307F;
-  margin: 18px;
-  border-radius: 18px;
-  padding-top: 14px;
-  padding-bottom: 10px;
-  padding-right: 20px;
-  padding-left: 20px;
-
-  font-size: 16px;
-  color: white;
-  width: 30%;
-}
 
 .message-last{
   font-size: 14px;
@@ -131,4 +115,32 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  margin: 18px;
+  border-radius: 18px;
+  padding-top: 14px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  font-size: 16px;
+  color: white;
+  width: 30%;
+
+
+}
+
+.message-your {
+  background-color: #4A307F;
+
+}
+.message-my{
+  background-color: #5d39a4c7;
+
+  /* border: 1px solid red; */
+}
+
+
+.chat-row{
+  border: 1px solid red;
 }
