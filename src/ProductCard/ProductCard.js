@@ -16,7 +16,6 @@ const ProductCard = () => {
       </div>
       <div className="card-list2">
         {cardsToShow.map((card) => (
-
           <div className="product-card2">
             <NavLink
               key={card.id}
