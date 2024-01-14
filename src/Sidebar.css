@@ -1,15 +1,14 @@
 .sidebar {
-  width: 180px;
+  width: 225px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* transition: width 0.2s ease;
+  transition: width 0.2s ease;
+  /*
   z-index: 999; 
   position: fixed; */
-
 }
-
 
 .logo {
   background-color: #4A307F;
@@ -17,6 +16,7 @@
   text-align: center;
   justify-content: center;
   width: 100%;
+
 }
 
 .logo-img,
@@ -26,16 +26,30 @@
   height: 40px;
 }
 
+.navbar-menu {
+  width: 100%;
+}
+
 .navbar-menu-list {
   list-style-type: none;
-  margin-top: 30px;
 }
 
 .navbar-menu-list li {
-  /* border: 1px solid ; */
-  padding: 10px;
-  font-size: 18px;
+  border-bottom: 2px solid #4d4d4d09;
+  padding: 15px;
+  font-size: 20px;
   font-weight: 600;
+  display: flex;
+  justify-content: center;
+  height:60px;
+}
+
+.NavLink {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  opacity: 0.5;
+
 }
 
 .navbar-menu-list li a {
@@ -49,6 +63,12 @@
   height: 26px;
   margin-right: 10px;
 }
+
+.active {
+  /* border: 1px solid red; */
+  opacity:1;
+}
+
 
 @media screen and (max-width: 1220px) {
   .mobile-sidebar {
@@ -66,7 +86,7 @@
 
   .sidebar {
     /* background-color: aquamarine; */
-    width: 90px;
+    width: 100px;
     height: 100vh;
     display: block;
     flex-direction: column;
@@ -95,17 +115,16 @@
   }
 
   .svg-div {
-
     padding: 15px;
     border-radius: 100%;
     margin-bottom: -10px;
     transition: background-color 0.3s ease;
   }
 
-  .svg-div:hover {
+  /* .svg-div:hover {
     border-radius: 100%;
     background-color: #e9e9e9;
-  }
+  } */
 
   .blo {
     display: block;
@@ -119,7 +138,6 @@
 }
 
 .mobile-sidebar li {
-  /* border: 2px solid green; */
   width: 20%;
   padding-top: 15px;
   padding-bottom: 10px;
@@ -127,11 +145,6 @@
 
 .mobile-sidebar {
   display: block;
-  /* 
-  margin: 0;
-  padding: 0; */
-
-
   overflow: hidden;
   position: fixed;
   bottom: 0;
@@ -142,33 +155,19 @@
 }
 
 .mobile-navbar-menu-list {
-  /* border: 2px solid yellow; */
-
-
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
-  /* margin-top: 20px; */
 }
 
 .blo {
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
-  /* justify-content: center;  */
 }
 
 
-
-
 @media (max-width: 600px) {
-  .mobile-sidebar {
-    /* display: none;
-    background-color: aquamarine; */
-  }
-
-
   .sidebar {
     display: none;
     background-color: aquamarine;
@@ -178,7 +177,6 @@
   .svg {
     height: 26px;
     width: 26px;
-    /* filter: brightness(0) invert(1); */
   }
 
   .mobile-navbar-menu-list li a {

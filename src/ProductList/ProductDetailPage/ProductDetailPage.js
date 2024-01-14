@@ -10,9 +10,9 @@ const ProductDetailPage = () => {
   return (
     <div className="game-detail">
       <img src={gam.bannerURL} alt={gam.title} className="game-banner" />
-      <div>
-        <img src={gam.logoURL} alt={gam.title} className=''/>
-        <h2>{gam.title}</h2>
+      <div className='overlay'>
+        <img src={gam.logoURL} alt={gam.title} className='overlay-img'/>
+        <h2  className='overlay-text'> {gam.title}</h2>
       </div>
     </div>
   );

@@ -10,7 +10,8 @@ const ChatUs = (props) => {
     const [newMessage, setNewMessage] = useState("");
     console.log("propchat ebani", props);
     const chatId = props.currChat.id //  props.chat.chatId //useParams();
-    const [user, setUser] = useState([])
+    const [user, setUser] = useState([]);
+    const [messages, setMessages] = useState([]);
 
 
     const Chat = new ChatApi(Instance);
@@ -42,29 +43,26 @@ const ChatUs = (props) => {
     };
 
 
-    useEffect(() => {
 
-    }, []);
-
-
-    // const sendMessage = () => {
-    //     let data = {}
-    //     if (file !== null || file !== undefined && (newMessage === null || newMessage === undefined)) {  // ненавижу js  
-    //         data = { file: { file: file } }
-    //     } else if (file !== null || file !== undefined) { 
-    //         data = { text: newMessage, file: { file: file } }
-    //     } else { 
-    //         data = { text: newMessage }
-    //     }
-    //     Message.messageSendMessageApiV1MessageChatIdSendMessagePost(data, chatId, (error, data, response) => {
-    //         if (error) {
-    //             console.error("Error sending message:", error);
-    //         } else {
-    //             setMessages([...messages, data]); 
-    //             setNewMessage(""); 
-    //         }
-    //     });
-    // };
+    const sendMessage = () => {
+        let data = {}
+        // if (file !== null || file !== undefined && (newMessage === null || newMessage === undefined)) {  // ненавижу js  
+        //     // data = { file: { file: file } }
+        // } else if (file !== null || file !== undefined) { 
+        //     data = { text: newMessage,  } //file: { file: file }
+        // } else { 
+        //     data = { text: newMessage }
+        // }
+        data = { text: newMessage }
+        Message.messageSendMessageApiV1MessageChatIdSendMessagePost(data, chatId, (error, data, response) => {
+            if (error) {
+                console.error("Error sending message:", error);
+            } else {
+                setMessages([...messages, data]);
+                setNewMessage("");
+            }
+        });
+    };
 
     return (
         <div className='right-chat'>
@@ -92,7 +90,7 @@ const ChatUs = (props) => {
 
                     </div>
                 ))}
-
+    
             </div>
             {/* {chatObj.type !== "NOTIFICATION" ? */}
             <div className='chat-footer'>
@@ -107,13 +105,13 @@ const ChatUs = (props) => {
                 <input
                     className="chat-input"
                     type="text"
-                    placeholder="Введите ваше сообщение"
+                    placeholder="Cообщение"
                     value={newMessage}
-                // onChange={(e) => setNewMessage(e.target.value)}
+                    onChange={(e) => setNewMessage(e.target.value)}
                 />
 
-                <button>
-                    {/* onClick={sendMessage}> */}
+                <button onClick={sendMessage}>
+
                     <img className="send-img" src="https://w7.pngwing.com/pngs/368/96/png-transparent-fly-messager-send-communication-email-message-glyphs-icon.png" />
                 </button>
             </div>

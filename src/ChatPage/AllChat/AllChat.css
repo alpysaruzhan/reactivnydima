@@ -1,10 +1,7 @@
 /* AllChat.css */
 
 /* Стили для контейнера чатов */
-.chat-container {
-  display: flex;
-  justify-content: space-between;
-}
+
 
 .user-message {
   background-color: #cce6ff;
@@ -16,7 +13,7 @@
 
 
 .chat {
-  
+
   display: flex;
   padding: 14px;
   border-top: 1px solid #4a307f4a;
@@ -84,9 +81,20 @@
 }
 
 .chat-container {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  /* border: 1px solid red; */
+  border: 1px solid red; */
+  height: 80vh; /* Задайте высоту по вашему усмотрению */
+  overflow: auto;
+  scrollbar-width: thin; /* для Firefox */
+  scrollbar-color: transparent transparent; /* для Firefox */
+  /* Webkit (Chrome, Safari) */
+  &::-webkit-scrollbar {
+    width: 6px; /* Ширина скрытого скроллбара */
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Цвет ползунка */
+  }
 }
 
 

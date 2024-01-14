@@ -10,26 +10,56 @@
 
 .alll {
     margin-top: 45px;
-    width: 1030px;
-    
+    /* width: 1030px; */
+
 }
 
 .card-list2 {
-    max-width: 1030px;
+    /* max-width: 1030px; */
+
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .product-card2 {
-    height: 275px;
-    /* margin-left: 15px; */
+    /* height: 275px; */
     margin-bottom: 15px;
-    /* border: 3px solid rgb(150, 203, 158); */
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+
+
+}
+
+
+@media (min-width: 1600px) {
+    .product-card2 {
+        width: 22%;
+    }
+}
+
+@media (max-width: 1600px) {
+    .product-card2 {
+        width: 30%;
+    }
+}
+
+@media (max-width: 1060px) {
+    .product-card2 {
+        width: 47%;
+    }
+}
+
+@media (max-width: 800px) {
+    .product-card2 {
+        width: 100%;
+    }
 }
 
 .product-logo1 {
-    width: 240px;
-    height: 142px;
+    width: 100%;
+    height: auto;
     contain: inline-size;
     align-items: center;
     text-align: center;
@@ -38,13 +68,10 @@
 
 .firstline-card {
     display: flex;
-        /* border: 1px solid rgb(4, 4, 120); */
-
 }
-.product-card-link{
-    /* border: 1px solid rgb(120, 4, 99); */
 
-}
+
+
 .card-logo {
     border-radius: 5px;
     width: 39px;
@@ -90,14 +117,15 @@
 @media screen and (max-width: 600px) {
     .alll {
         width: 100%;
-        /* border: 1px solid orange; */
 
     }
-    .block{
+
+    .block {
         width: 100%;
         /* border: 1px solid red; */
 
     }
+
     .game-button3 {
         display: none;
     }

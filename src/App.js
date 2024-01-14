@@ -60,6 +60,7 @@ class App extends Component {
               <div className='com'>
                 <Routes>
                   <Route path="/" element={<HomePage />} />
+                  <Route path="/home" element={<HomePage />} />
                   <Route path="/all" element={<AllPage />} />
                   <Route path='/app' element={<AllApps />} />
                   <Route path="/profile" element={<ProfilePage />} />
@@ -69,9 +70,9 @@ class App extends Component {
                   <Route path="/character/game/:id" element={<GameCategoryPag />} />
                   <Route path="/category/app/:id" element={<AppDetailPage />} />
 
-                  <Route path="/chat/alpha" element={<ChatPage />} />
+                  <Route path="/chat" element={<ChatPage />} />
 
-                  <Route path="/chat" element={<AllChat />} />
+                  {/* <Route path="/chat" element={<AllChat />} /> */}
                   {/* <Route path="/chat/:chatId" element={<Chat />} /> */}
 
                   <Route path="/guarantee" element={<GuaranteePage />} />

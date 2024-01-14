@@ -8,18 +8,25 @@
   text-align: center;
   margin: 0;
   padding: 0;
-  
+
 }
 
 .banner {
   width: 100%;
 }
 
-@media screen and (min-width: 1060px) {}
+@media screen and (min-width: 1060px) {
+  .cont {
+    max-width: none;
+  }
+
+  .oo {
+    margin: 0 40px;
+    /* border: 1px solid red; */
+  }
+}
 
 @media screen and (min-width: 600px) {
-
-  /* 480 --->  600 */
   .input_home {
     display: none;
   }
@@ -30,16 +37,10 @@
 }
 
 @media screen and (max-width: 600px) {
-  /* 480 --->  600 */
-
-  /* *{
-      overflow-x: hidden;
-    } */
 
   .cont {
     justify-content: start;
     align-items: start;
-
   }
 
   .banner {
@@ -48,10 +49,7 @@
   }
 
   .oo {
-    /* background-color: red; */
-
     width: 100%;
-
   }
 
   .input_home {

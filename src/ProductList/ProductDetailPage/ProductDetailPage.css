@@ -1,25 +1,39 @@
-.game-banner{
+.game-detail {
+    position: relative;
+}
+
+.game-banner {
     height: 185px;
     object-fit: cover;
     width: 1400px;
 }
 
-.logo-game{
-    width: 56px;
+.overlay {
+    position: absolute;
+    bottom: 30px;
+    left: 70px;
+    display: flex;
     height: 56px;
-    border-radius: 10px;
 }
 
-.game-ti{
+.overlay-img {
+    height: 100%;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.overlay-text {
     color: #FFF;
-    text-align: center;
     font-size: 42px;
     font-style: normal;
     font-weight: 900;
     line-height: normal;
-    text-shadow: 
-    -5px -2px 0 #4A307F,
-    5px -2px 0 #4A307F,
-    -5px 2px 0 #4A307F,
-    5px 2px 0 #4A307F;
+    color: white;
+    
+    text-shadow:
+        -2px -2px 0 #4A307F,
+        -2px 2px 0 #4A307F,
+        2px -2px 0 #4A307F,
+        2px 2px 0 #4A307F;
+
 }

@@ -30,6 +30,7 @@
   margin-right: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
+
 }
 
 .button {
@@ -45,6 +46,8 @@
   display: flex;
   /* border: 1px solid red; */
   height: 50px;
+  justify-content: center;
+  /* margin-left: 10%; */
 }
 
 .upload>input {
@@ -65,14 +68,23 @@
 .chat-input {
   height: 100%;
   background-color: #FBFBFB;
-
+  width: 70%;
   border: 2px solid rgba(128, 128, 128, 0.200);
   border-radius: 12px;
+  color: #4A307F;
+  padding-left: 4%;
+}
+
+.chat-input::placeholder {
+  /* font-weight:600; */
+  color: #4A307F;
+  font-size: 16px;
 }
 
 
 .send-img {
   height: 100%;
+
 }
 
 .chat-header {
@@ -93,25 +105,25 @@
 
 .chat-main {
   /* border: 1px solid red; */
-  height: 70%;
-
+  height: 80%;
+  overflow-x: auto;
 }
 
-.right-chat{
+.right-chat {
   /* border: 1px solid blueviolet; */
-  height: 90vh;
+  height: 80vh;
 }
 
 
 
-.message-last{
+.message-last {
   font-size: 14px;
 
   display: grid;
   place-items: end;
 }
 
-.message{
+.message {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -134,13 +146,18 @@
   background-color: #4A307F;
 
 }
-.message-my{
-  background-color: #5d39a4c7;
 
+.message-my {
+  background-color: #5d39a4c7;
   /* border: 1px solid red; */
+  display: block;
+  margin-left: auto;
+
 }
 
 
-.chat-row{
-  border: 1px solid red;
+.chat-row {
+  /* border: 1px solid red; */
+  display: flex;
+
 }

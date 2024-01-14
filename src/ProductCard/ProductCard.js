@@ -16,15 +16,15 @@ const ProductCard = () => {
       </div>
       <div className="card-list2">
         {cardsToShow.map((card) => (
-          <NavLink
-            key={card.id}
-            to={`/product/${card.id}`}
-            className="product-card-link"
-          >
-            <div className="product-card2">
+
+          <div className="product-card2">
+            <NavLink
+              key={card.id}
+              to={`/product/${card.id}`}
+              className="product-card-link"
+            >
               <div className="firstline-card">
                 <img src={card.logo} alt={card.title} className="card-logo" />
-
                 <div className="text-card">
                   <p className="product-name2">{card.title}</p>
                   <p className="card-category2">{card.category}</p>
@@ -41,8 +41,9 @@ const ProductCard = () => {
                 <p className="descrip-prod">{card.description} </p>
                 <p className="product-name3">{card.rating}</p>
               </div>
-            </div>
-          </NavLink>
+            </NavLink>
+          </div>
+
         ))}
       </div>
     </div>
