@@ -13,8 +13,12 @@
 
 .banner {
   width: 100%;
-}
+  /* border: 1px solid red; */
 
+}
+.img-banner{
+  width: 85%;
+}
 @media screen and (min-width: 1060px) {
   .cont {
     max-width: none;

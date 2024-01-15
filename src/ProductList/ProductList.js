@@ -42,7 +42,7 @@ const ProductList = () => {
   let itemsPerRow2;
   if (windowWidth >= 1600) {
     itemsPerRow2 = 4;
-  } else if (windowWidth >= 1400) {
+  } else  if (windowWidth >= 1400) {
     itemsPerRow2 = 3;
   } else {
     itemsPerRow2 = 2;
@@ -83,7 +83,6 @@ const ProductList = () => {
 
 
         <div className="under-block">
-
           <div className="product-list">
             {appsToShow.map((app) => (
               <Link key={app.id} to={`/app/${app.id}`} className="product-card-app">

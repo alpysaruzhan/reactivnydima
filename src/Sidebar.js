@@ -14,17 +14,15 @@ const Sidebar = () => {
     <>
       <div className="sidebar">
         <div className="logo">
-          <NavLink to="/" >
+          <NavLink to="/">
             <img className="logo-img" src={logo} alt="" />
             <img className="logo-img2" src={logowithout} alt="" />
           </NavLink>
         </div>
         <div className="navbar-menu">
           <ul className="navbar-menu-list">
-            <li>
-
-            </li>
-            <li>
+            <li></li>
+            <li className="li">
               <NavLink to="/home" className="NavLink">
                 <div className="svg-div">
                   <img className="svg" src={home} alt="" />
@@ -32,7 +30,7 @@ const Sidebar = () => {
                 <p>Главная</p>
               </NavLink>
             </li>
-            <li>
+            <li className="li1">
               <NavLink to="/profile" className="NavLink">
                 <div className="svg-div">
                   <img className="svg" src={vector} alt="" />
@@ -40,7 +38,7 @@ const Sidebar = () => {
                 <p>Профиль</p>
               </NavLink>
             </li>
-            <li>
+            <li className="li">
               <NavLink to="/sell" className="NavLink">
                 <div className="svg-div">
                   <img className="svg" src={pro} alt="" />
@@ -48,7 +46,7 @@ const Sidebar = () => {
                 <p>Продать</p>
               </NavLink>
             </li>
-            <li>
+            <li className="li">
               <NavLink to="/chat" className="NavLink">
                 <div className="svg-div">
                   <img className="svg" src={chat} alt="" />
@@ -56,7 +54,7 @@ const Sidebar = () => {
                 <p>Чаты</p>
               </NavLink>
             </li>
-            <li>
+            <li className="li">
               <NavLink to="/guarantee" className="NavLink">
                 <div className="svg-div">
                   <img className="svg" src={garant} alt="" />
@@ -77,7 +75,11 @@ const Sidebar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="blo" to="/profile" activeClassName="active-mobile">
+            <NavLink
+              className="blo"
+              to="/profile"
+              activeClassName="active-mobile"
+            >
               <img className="svg" src={vector} alt="" />
               <p>Профиль</p>
             </NavLink>
@@ -95,7 +97,11 @@ const Sidebar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="blo" to="/guarantee" activeClassName="active-mobile">
+            <NavLink
+              className="blo"
+              to="/guarantee"
+              activeClassName="active-mobile"
+            >
               <img className="svg" src={garant} alt="" />
               <p>Гарантия</p>
             </NavLink>

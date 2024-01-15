@@ -1,5 +1,5 @@
 .header {
-  
+
   background-color: #4A307F;
   height: 80px;
   width: 100%;
@@ -98,7 +98,8 @@ input {
     max-width: 300px;
     margin-left: 10px;
   }
-  .header-buttons{
+
+  .header-buttons {
     display: none;
   }
 
@@ -115,11 +116,18 @@ input {
   }
 }
 
+@media (max-width: 1060px) {
 
-@media (max-width: 480px) {
-  .header-input{
+  .registracia {
     display: none;
   }
+}
+
+@media (max-width: 480px) {
+  .header-input {
+    display: none;
+  }
+
   .header {
     background-color: #4A307F;
     height: 60px;

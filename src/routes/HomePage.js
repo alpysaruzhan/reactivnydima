@@ -11,7 +11,7 @@ const HomePage = () => {
       <div className="oo">
         <div className="home_mobile"></div>
         <div className="banner">
-          <img src={bannerImage} alt="" />
+          <img className="img-banner" src={bannerImage} alt="" />
         </div>
         <div>
           <ProductList />

@@ -52,7 +52,10 @@
   color: #4A307F;
   text-align: left;
   margin-left: 10px;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
+
+  /* border: 1px solid green; */
+
 }
 
 .co {
@@ -76,22 +79,25 @@
   /* border: 1px solid green; */
   display: flex;
   flex-direction: column;
-  margin-left: 130px;
+  margin-left: 90px;
 }
 
 .block {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   height: 45px;
   /* border: 1px solid yellow; */
-
+  margin-bottom: 25px;
+  align-items: center;
 }
-.under-block{
+
+.under-block {
   /* border: 3px solid orange; */
   display: flex;
   align-items: center;
   height: 100%;
 }
+
 .game-button {
   height: 32px;
   background-color: #866CBB;
@@ -100,6 +106,8 @@
   width: 120px;
   border-radius: 10px;
   margin-left: 20px;
+
+
 }
 
 .game-button2 {
@@ -110,6 +118,8 @@
   width: 50px;
   border-radius: 10px;
   margin-left: 20px;
+  /* border: 2px solid orange; */
+
 }
 
 

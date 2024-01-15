@@ -3,6 +3,8 @@
     color: #4A307F;
     font-size: 30px;
     font-weight: 600;
+    margin-bottom: 20px;
+
 }
 
 .letter {
@@ -19,10 +21,22 @@
     object-fit: cover;
 }
 
+.game-list {
+    margin-top: 10px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 1px solid green; */
+
+}
+
 .game-card {
     display: flex;
     width: 320px;
     height: 84px;
+    align-items: center;
+    /* border: 1px solid green; */
+
 }
 
 .game-title2 {
@@ -32,55 +46,122 @@
     margin-left: 15px;
 }
 
-.game-list {
-    margin-top: 10px;
-}
+
 
 .firs {
     display: flex;
     align-items: center;
+    /* width: 100%; */
+    /* border: 1px solid green; */
+    margin-top: 20px;
+    /* padding-bottom: 35px; */
 }
+
+.letter-block {
+    width: 100%;
+    /* border: 1px solid green; */
+}
+
+.gsel {}
 
 .line {
     flex: 1;
     border-top: 1px solid #4A307F;
     margin-top: 30px;
     margin-left: 10px;
+    
 }
 
 .all-page {
-    width: 1030px;
+    width: 90%;
+    max-width: 80vw;
+
+    /* border: 1px solid green; */
+}
+
+.ultra-all-page {
+    display: flex;
+    justify-content: center;
+}
+
+.cs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+
+}
+
+.cs-button {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.butprill {
+    width: 48%;
+    margin: 2px;
+    border-radius: 10px;
+    height: 50px;
+    border: 1px solid #dbdbdb;
+    font-size: 16px;
+    background-color: #fff;
+    color: #4A307F;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.activeeew {
+    background-color: #F5F5F5;
+}
+
+.input-tit {
+    border: 1.5px solid #c5c5c5;
+    background-color: #ffffff;
+    color: #4A307F;
+    width: 100%;
+}
+
+.all-button {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: red; */
 }
 
 @media screen and (max-width: 600px) {
+    .ultra-all-page {
+        /* border: 3px solid green; */
+
+    }
+
     .all-page {
-        width: auto;
-        margin: 0;
+        width: 100%;
+        max-width: none;
+        margin: 30px;
         padding: 0;
+        /* border: 1px solid red; */
     }
 
     .game-title {
-        margin-top: 50px;
+        margin-top: 30px;
         color: #4A307F;
         font-size: 26px;
         font-weight: 600;
-        margin-left: 20px;
+        /* margin-left: 20px; */
     }
 
     .game-title2 {
-        margin-top: 10px;
+        /* margin-top: 10px; */
         color: #4A307F;
         font-size: 30px;
         font-weight: 600;
         margin-left: 20px;
     }
 
-    .letter {
-        font-size: 30px;
-        font-weight: 600;
-        color: #4A307F;
-        margin-top: 40px;
-    }
+  
 
     .game-logo {
         width: 50px;
@@ -92,14 +173,28 @@
         width: auto;
         height: auto;
         padding: 20px;
+
+
     }
 
     .all-button {
-        margin: 20px;
+        width: 100%;
+        /* border: 3px solid green; */
+        justify-content: center;
+    }
+
+    .cs {
+        /* border: 1px solid red; */
+        margin: auto;
+    }
+
+    .game-title {
+        /* border: 1px solid blue; */
+        /* text-align: center; */
     }
 
     .butprill {
-        width: 43.6%;
+        width: 49%;
         margin: 2px;
         border-radius: 10px;
         height: 50px;
@@ -118,17 +213,10 @@
 
     .line {
         flex: 1;
-        border-top: 1px solid #4A307F;
-        margin-top: 40px;
-        margin-left: 10px;
+        border: 1px solid #4A307F;
+        padding-left: 90%;
     }
-
-    .firs {
-        display: flex;
-        align-items: center;
-        margin-left: 20px;
-        margin-right: 20px;
-    }
+ 
 
     .input-tit {
         border: 1.5px solid #c5c5c5;
@@ -142,8 +230,4 @@
     }
 }
 
-@media (min-width:600px) {
-    .input-tit {
-        display: none;
-    }
-}
+@media (min-width:600px) {}
