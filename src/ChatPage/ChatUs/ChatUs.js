@@ -90,7 +90,7 @@ const ChatUs = (props) => {
 
                     </div>
                 ))}
-    
+
             </div>
             {/* {chatObj.type !== "NOTIFICATION" ? */}
             <div className='chat-footer'>

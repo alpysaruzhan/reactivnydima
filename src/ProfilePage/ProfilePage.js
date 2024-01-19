@@ -76,19 +76,19 @@ const ProfilePage = () => {
       <div>
         <div className="tabs">
           <button
-            className={activeTab === "tab1" ? "butt45 activeeee" : "butt45"}
+            className={`butt45 ${activeTab === "tab1" && 'activeeee' }`}
             onClick={() => handleTabClick("tab1")}
           >
             Мой товары
           </button>
           <button
-            className={activeTab === "tab1" ? "butt45 activeeee" : "butt45"}
+            className={`butt45 ${activeTab === "tab2" && 'activeeee' }`}
             onClick={() => handleTabClick("tab2")}
           >
             Покупки
           </button>
           <button
-            className={activeTab === "tab1" ? "butt45 activeeee" : "butt45"}
+            className={`butt45 ${activeTab === "tab3" && 'activeeee' }`}
             onClick={() => handleTabClick("tab3")}
           >
             Продажи

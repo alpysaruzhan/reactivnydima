@@ -115,9 +115,7 @@
     display: flex;
 }
 
-.activeeee {
-    background-color: #F5F5F5;
-}
+
 
 
 .butt45 {
@@ -131,7 +129,10 @@
     color: #000;
     transition: background-color 0.3s, color 0.3s;
 }
+.butt45:hover{
+    background-color: #F5F5F5;
 
+}
 .rwe {
     display: flex;
 }
@@ -147,7 +148,9 @@
     margin-left: 5px;
 }
 
-
+.activeeee {
+    background-color: #F5F5F5;
+}
 
 @media (max-width: 600px) {
     .cont2 {
