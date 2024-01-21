@@ -19,7 +19,7 @@
 .cont4 {
     margin-top: 20px;
     padding: 16px;
-    max-width: 1060px;
+    max-width: 1600px;
 }
 
 .carddd {
@@ -50,6 +50,104 @@
 .decr-prod {
     font-weight: 600;
     font-size: 17px;
+}
+
+
+.section-otzivi {
+    display: flex;
+    gap: 35px;
+    margin-bottom: 45px;
+    padding-bottom: 45px;
+    border-bottom: 1px solid rgb(220, 220, 220);
+
+}
+
+.otziv-top-right {
+    margin-left: 15px;
+    padding-top: 7px;
+        /* border: 1px solid #027200; */
+
+}
+.otziv-rating{
+    font-size: 50px;
+    color: #4A307F;
+    font-weight: 600;
+}
+.otziv-top {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    /* border: 1px solid #027200; */
+
+    display: flex;
+}
+
+.otziv {
+    width: 33%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: rgb(245, 245, 245);
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 10px;
+}
+
+
+
+@media (max-width: 1600px) {
+    .otziv {
+        width: 50%;
+    }
+}
+
+@media (max-width: 1060px) {
+    .otziv {
+        width: 100%;
+    }
+}
+
+
+
+.otziv-count{
+    font-weight: 600;
+    font-size: 18px;
+
+}
+.otziv-vse{
+    font-weight: 600;
+
+    margin-left: auto;
+    margin-top: auto;
+    color: #4A307F;
+
+}
+.otziv-header {
+    display: flex;
+    /* border: 1px solid red; */
+    margin-bottom: 15px;
+}
+
+.otziv-date {
+    margin-left: auto;
+    /* border: 1px solid red; */
+}
+
+.otziv-footer {
+    margin-top: 15px;
+
+    display: flex;
+}
+
+.otziv-img {
+    border-radius: 10px;
+    width: 90px;
+    margin-right: 15px;
+}
+
+.otziv-price {
+    font-size: 18px;
+    color: #4A307F;
+    font-weight: 600;
 }
 
 .button-prod {
@@ -113,9 +211,10 @@
 }
 
 @media (max-width: 600px) {
-    .categ-div{
+    .categ-div {
         display: flex;
     }
+
     .carddd {
         display: block;
         /* border: 1px solid; */
@@ -184,9 +283,9 @@
         font-size: 23px;
         font-weight: 600;
     }
-    
 
-  
+
+
     .tttt {
         margin-left: 6px;
         /* border: 1px solid green; */
@@ -196,7 +295,8 @@
     .character-name {
         margin-bottom: 10px;
     }
-    .character-quantity{
+
+    .character-quantity {
         color: rgb(62, 62, 62);
 
     }
@@ -205,11 +305,12 @@
         margin-top: 20px;
     }
 
-    .hei{
+    .hei {
         /* border: 1px solid green; */
         width: auto;
     }
 }
+
 .titlog {
     color: #4A307F;
     font-weight: bold;
@@ -227,7 +328,7 @@
     width: 41px;
     height: 41px;
     border-radius: 20%;
-    margin-left: 15px;
+    /* margin-left: 15px; */
     margin-right: 5px;
 
 }

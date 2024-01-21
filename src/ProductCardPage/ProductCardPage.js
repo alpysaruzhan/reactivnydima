@@ -2,11 +2,14 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import cardData from "../ProductCard/card.json";
 import "./ProductCardPage.css";
+import renderStars from "../functions.js";
+import { NavLink } from "react-router-dom";
 
 const ProductCardPage = () => {
   const { id } = useParams();
 
   const product = cardData.cards.find((card) => card.id === parseInt(id));
+  const cardsToShow = cardData.cards.slice(0, 10);
 
   if (!product) {
     return <div>Товар не найден</div>;
@@ -36,7 +39,15 @@ const ProductCardPage = () => {
           </div>
           <div className="second-desc-prod">
             <Link className="link-sec">🔒 Безопасность сделки</Link>
-            <p className="rating-prod">{product.rating} </p>
+
+            <div className="second-prof">
+              <div className="rwe">
+                <h2 className="rating-prof"> {product.rating}</h2>
+                <h2>{renderStars(product.rating)}</h2>
+              </div>
+              <p className="prof-rev"> {product.reviews} отзывов</p>
+            </div>
+
             <button className="button-prod">Купить</button>
           </div>
         </div>
@@ -48,24 +59,147 @@ const ProductCardPage = () => {
           <p className="prod-opi">{product.opisaniye}</p>
         </div>
         <div>
-          <div>
-            <p className="des-prod">Категории:</p>
-            <ul className="categ-div">
-              {product.characteristics.map((characteristic, index) => (
-                <div className="div-char">
-                  <div>
-                    <p className="character-name">{characteristic.name}:</p>
-                    <p className="character-quantity" key={index}>
-                      {characteristic.quantity}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </ul>
-          </div>
-          <div></div>
+          <p className="des-prod">Категории:</p>
+          <ul className="categ-div">
+            {product.characteristics.map((characteristic, index) => (
+              <div className="div-char">
+                <p className="character-name">{characteristic.name}:</p>
+                <p className="character-quantity" key={index}>
+                  {characteristic.quantity}
+                </p>
+              </div>
+
+            ))}
+          </ul>
         </div>
       </div>
+
+      <div className="otziv-top">
+        <h2 className="otziv-rating">{product.rating}</h2>
+        <div className="otziv-top-right">
+          <h2 className="otziv-count"> {product.reviews} отзывов</h2>
+          <h2>{renderStars(product.rating)}</h2>
+        </div>
+        <u className="otziv-vse">Все отзывы (1430) </u>
+
+
+      </div>
+
+      <div className="section-otzivi">
+        <div className="otziv">
+          <div className="otziv-header">
+            <img className="imggback" src={product.logo} alt={product.title} />
+            <div className="otziv-header-center">
+              <h2>{product.title}</h2>
+              <h2>{renderStars(product.rating)}</h2>
+            </div>
+            <h2 className="otziv-date">12.34.21[32:24]</h2>
+
+          </div>
+          <div className="otziv-main">
+            {product.opisaniye}
+          </div>
+          <div className="otziv-footer">
+            <img
+              className="otziv-img"
+              src={product.image}
+              alt={product.title}
+            />
+            <div className="otziv-footer-right">
+
+              <h2 className="otziv-price">{product.price}$</h2>
+              <h2>123213 на ваш аканут</h2>
+            </div>
+          </div>
+        </div>
+        <div className="otziv">
+          <div className="otziv-header">
+            <img className="imggback" src={product.logo} alt={product.title} />
+            <div className="otziv-header-center">
+              <h2>{product.title}</h2>
+              <h2>{renderStars(product.rating)}</h2>
+            </div>
+            <h2 className="otziv-date">12.34.21[32:24]</h2>
+
+          </div>
+          <div className="otziv-main">
+            {product.opisaniye}
+          </div>
+          <div className="otziv-footer">
+            <img
+              className="otziv-img"
+              src={product.image}
+              alt={product.title}
+            />
+            <div className="otziv-footer-right">
+
+              <h2 className="otziv-price">{product.price}$</h2>
+              <h2>123213 на ваш аканут</h2>
+            </div>
+          </div>
+        </div>
+        <div className="otziv">
+          <div className="otziv-header">
+            <img className="imggback" src={product.logo} alt={product.title} />
+            <div className="otziv-header-center">
+              <h2>{product.title}</h2>
+              <h2>{renderStars(product.rating)}</h2>
+            </div>
+            <h2 className="otziv-date">12.34.21[32:24]</h2>
+
+          </div>
+          <div className="otziv-main">
+            {product.opisaniye}
+          </div>
+          <div className="otziv-footer">
+            <img
+              className="otziv-img"
+              src={product.image}
+              alt={product.title}
+            />
+            <div className="otziv-footer-right">
+
+              <h2 className="otziv-price">{product.price}$</h2>
+              <h2>123213 на ваш аканут</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p className="des-prod">Товары из этой категории:</p>
+
+      <div className="card-list2">
+
+        {cardsToShow.map((card) => (
+          <div className="product-card2">
+            <NavLink
+              key={card.id}
+              to={`/product/${card.id}`}
+              className="product-card-link"
+            >
+              <div className="firstline-card">
+                <img src={card.logo} alt={card.title} className="card-logo" />
+                <div className="text-card">
+                  <p className="product-name2">{card.title}</p>
+                  <p className="card-category2">{card.category}</p>
+                </div>
+              </div>
+              <img
+                src={card.image}
+                alt={card.title}
+                className="product-logo1"
+              />
+
+              <div className="card-description">
+                <p className="product-name3">{card.price} ₽</p>
+                <p className="descrip-prod">{card.description} </p>
+                <p className="product-name3">{card.rating}</p>
+              </div>
+            </NavLink>
+          </div>
+
+        ))}
+      </div>
+
     </div>
   );
 };
