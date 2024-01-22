@@ -28,7 +28,7 @@ const PhotoPage = () => {
   return (
     <div className='sellall-con'>
       <h1 className='h-cat'>&lt; Фото:</h1>
-      <div>
+      <div className='n-sel'>
         <div>
           {image ? (
             <div>
@@ -38,7 +38,7 @@ const PhotoPage = () => {
             <div className='div-photo'>
             <div className='p-photo'>
             <label htmlFor="photoInput" className='svg-sell'>
-              <div dangerouslySetInnerHTML={{ __html: svgCode }} />
+              <div className='svg-sell' dangerouslySetInnerHTML={{ __html: svgCode }} />
               <p>Нажми или перетащи нужную фотографию</p>
               <input
                 type="file"

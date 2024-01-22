@@ -47,6 +47,10 @@
     justify-content: space-around;
 }
 
+.n-sel{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
 
 .img-sel {
     width: 800px;
@@ -91,7 +95,7 @@
 }
 
 .p-photo {
-    margin-top: 20%;
+    margin-top: 18%;
     font-size: 24px;
     font-weight: 500;
 }
@@ -275,6 +279,7 @@
     font-size: 22px;
 }
 
+
 .lgsell {
     min-width: 100px;
     height: 100px;
@@ -345,6 +350,8 @@
 
 .sel-h{
     height: 100vh;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .pp-sel {
@@ -362,10 +369,6 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .div-photo {
-        width: 96%; 
-        margin: 0 auto;
-    }
     .photo-but{
         width: 96%; 
         margin: 0 auto;
@@ -390,3 +393,42 @@
     
 }
 
+@media screen and (max-width: 600px) { 
+    .div-photo {
+        width: auto; 
+        margin: 0 auto;
+    }
+    .img-sel {
+        height: 276px;
+        font-size: 14px;
+    }
+    .svg-sell p{
+        font-size: 14px;
+    }
+    .svg-sell {
+        margin-left: 45%;
+        max-width: 50px;
+        max-height: 50px;
+      }
+      
+    .div-photo {
+        width: auto;
+        height: 275px;
+        margin: 0 auto;
+    }    
+    .photo-but{
+        width: 100%; 
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+    .div-photo {
+        width: 750px;
+        margin: 15px;
+        margin: 0 auto;
+    }
+    .svg-sell p{
+        font-size: 20px;
+    }
+}
