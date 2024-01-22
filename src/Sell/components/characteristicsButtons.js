@@ -1,90 +1,104 @@
+import React, { useState } from 'react';
+
 export const OptionTypes = { 
-    RANGE: 'range', 
-    SWITCH: 'switch', 
-    SELECTOR: 'selector'
+  RANGE: 'range', 
+  SWITCH: 'switch', 
+  SELECTOR: 'selector'
 }
 
 function getUniqueGroups(arr) {
-    let uniqueGroups = []
-    arr.forEach((option) => {
-        if (!uniqueGroups.includes(option.group)) { 
-            uniqueGroups.push(option.group)
-        }
-    })
-    return uniqueGroups
+  let uniqueGroups = [];
+  arr.forEach((option) => {
+    if (!uniqueGroups.includes(option.group)) { 
+      uniqueGroups.push(option.group);
+    }
+  });
+  return uniqueGroups;
 }
 
 function filterOptionsByType(options, type) { 
-    let result = []
+  let result = [];
 
-    options.forEach((option) => {
-        if (option.type === type.toUpperCase()) { 
-            result.push(option)
-        }
-    })
-    return result
+  options.forEach((option) => {
+    if (option.type === type.toUpperCase()) { 
+      result.push(option);
+    }
+  });
+  return result;
 }
 
-
 export const RangeCharactersitics = (props) => { 
-    // Предпологается что структуры данных правильны скпонованы изначально! 
-    const { options, addAttributes } = props; 
-    let rangeOptions = filterOptionsByType(options, OptionTypes.RANGE)
+  const { options } = props; 
+  let rangeOptions = filterOptionsByType(options, OptionTypes.RANGE);
 
-    return ( 
+  return ( 
+    <div className='n-div'>
+      {rangeOptions.map((option) => ( 
+        <div key={option.label}>
         <div>
-            {rangeOptions.map((option) => { 
-                return ( 
-                    <div>
-                        <input type="number" placeholder={option.valueRange.min + " До " + option.valueRange.max}>Введите значение</input>
-                    </div>
-                )
-            })}
+          <label className="label-charac">{option.label}</label>
         </div>
-    )
+          <input className='input-ran' type="number" />
+        </div>
+      ))}
+    </div>
+  );
 }
 
 
 export const SwitchCharactersitics = (props) => {
-    const { options, addAttributes } = props; 
-    let switchOptions = filterOptionsByType(options, OptionTypes.SWITCH)
+  const { options } = props;
+  let switchOptions = filterOptionsByType(options, OptionTypes.SWITCH);
 
-    return (
-        <div>
-            {switchOptions.map((option) => {
-                return ( 
-                    <div>
-                        <p>{option.label}</p>
-                        {/* Красивое переключение True False 
-                        и ставит значение через функцию addAttributes(option.field, и значение) */}
-                    </div>
-                )
-            })}
+  const [switchStates, setSwitchStates] = useState({});
+
+  const handleSwitchChange = (label) => {
+    setSwitchStates((prevState) => ({
+      ...prevState,
+      [label]: !prevState[label] 
+    }));
+  };
+
+  return (
+    <div>
+      {switchOptions.map((option) => (
+        <div className='v-siv' key={option.label}>
+          <label className='label-charac'>{option.label}</label>
+        <div className={`switch ${switchStates[option.label] ? 'on' : 'off'}`} onClick={() => handleSwitchChange(option.label)}>
+          <div className="slider"></div>
         </div>
-    )
-}
+        </div>
+      ))}
+    </div>
+  );
+};
+
 
 export const SelectorCharactersitics = (props) => { 
-    const { options, addAttributes } = props 
-    let uniqueGroups = getUniqueGroups(options)
-    let selectorOptions = filterOptionsByType(options, OptionTypes.SELECTOR)
+  const { options, activeLabel, onLabelClick } = props;
+  let uniqueGroups = getUniqueGroups(options);
+  let selectorOptions = filterOptionsByType(options, OptionTypes.SELECTOR);
 
-    return ( 
-        <div>
-            {uniqueGroups.map((group) => {
-                <h3>{ group }</h3>
-                {/* дается несколько характеристик типо 20 гемов, 40 гемов и т.д. на выбор и можно выбрать только один */}
-                return (selectorOptions.map((option) => {
-                    return ( 
-                        <div>
-                            <div>{option.label}</div>
-                            {/* Красивый выбор через кнопки только одного выбора, потом
-                            ставит значение через функцию addAttributes(option.field, и выбранное значение) */}
-                        </div>
-                    )
-                })) 
-                })
-            }
+  return ( 
+    <div>
+      {uniqueGroups.map((group) => (
+        <div key={group}>
+          <h3 className="label-charac">{group}</h3>
+          <div className="div-label">
+            {selectorOptions.map((option) => (
+              <div
+                className={`glab ${activeLabel === option.label ? 'active' : ''}`}
+                key={option.label}
+                onClick={() => onLabelClick(option.label)}
+              >
+                <div className="label-sel">
+                  <label>{option.label}</label>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-    )
+      ))}
+    </div>
+  );
 }

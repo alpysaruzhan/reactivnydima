@@ -1,9 +1,7 @@
 .login-cont {
-    margin-top: 100px;
     margin-left: 10%;
-
+    margin-bottom: 50px;
     /* border: 2px solid red; */
-
 }
 
 .log-title {
@@ -112,6 +110,6 @@ form {
     }
 
     .login {
-        padding: 20px;
+        margin: 20px;
     }
 }

@@ -26,11 +26,13 @@ import PhotoPage from './Sell/PhotoPage';
 import Chat from './ChatPage/ChatUs/ChatUs';
 import AllChat from './ChatPage/AllChat/AllChat';
 import ChatPage from './ChatPage/ChatPage';
-
+import NamePage from './Sell/Name';
+import OpisaniyePage from './Sell/Opisaniye';
 import GameDetailPage from './Sell/GameDetailPage';
 import { Cookies, CookiesProvider, withCookies } from 'react-cookie';
 import { isAuthorized } from './GateWay/base';
 import { instanceOf } from 'prop-types';
+import ProInfoPage from './Sell/ProInfo';
 import GameCategoryPag from './Sell/GameCategory';
 
 class App extends Component {
@@ -68,9 +70,12 @@ class App extends Component {
                   <Route path="/sellall" element={<SellAllPage />} />
                   <Route path="/category/game/:id" element={<GameDetailPage />} />
                   <Route path="/character/game/:id" element={<GameCategoryPag />} />
+                  <Route path="/photo" element={<PhotoPage />} />
                   <Route path="/category/app/:id" element={<AppDetailPage />} />
-
                   <Route path="/chat" element={<ChatPage />} />
+                  <Route path="/name" element={<NamePage />} />
+                  <Route path="/description" element={<OpisaniyePage />} />
+                  <Route path="/prod-info" element={<ProInfoPage />} />
 
                   {/* <Route path="/chat" element={<AllChat />} /> */}
                   {/* <Route path="/chat/:chatId" element={<Chat />} /> */}

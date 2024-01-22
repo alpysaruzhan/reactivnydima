@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import "./SellPage.css";
 
-const PhotoPage = () => {
+const NamePage = () => {
   const svgCode = `  
   <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M47.501 45H12.501C11.1203 45 10.001 46.1193 10.001 47.5C10.001 48.8807 11.1203 50 12.501 50H47.501C48.8817 50 50.001 48.8807 50.001 47.5C50.001 46.1193 48.8817 45 47.501 45Z" fill="#4A307F" fill-opacity="0.78"/>
@@ -28,23 +28,15 @@ const PhotoPage = () => {
 
   return (
     <div className='sellall-con'>
-      <h1 className='h-cat'>&lt; Фото:</h1>
-      <div className='div-photo'>
-        <div className='p-photo'>
-          {/* {image ? (
-            <img src={image} alt="Uploaded" />
-          ) : (
-            <div className='svg-sell' dangerouslySetInnerHTML={{ __html: svgCode }} />
-          )} */}
-          <div className='svg-sell' dangerouslySetInnerHTML={{ __html: svgCode }} />
-          <p>Нажми или перетащи нужную фотографию</p>
-        </div>
-      </div>
-      <Link to={"/name"}>
-        <button type="submit" className='photo-but'>Продолжить</button>
+    <div className='sel-h'>
+      <h1 className='h-cat'>&lt; Название товара:</h1>
+      <input className='input-name' placeholder='Здравствуйте!' />
+      <Link to={"/description"}>
+        <button type="submit" className='name-but'>Продолжить</button>
       </Link>
+    </div>
     </div>
   );
 }
 
-export default PhotoPage;
+export default NamePage;

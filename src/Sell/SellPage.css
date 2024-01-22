@@ -1,46 +1,44 @@
-.hh{
+.hh {
     font-size: 35px;
     color: #4A307F;
     font-weight: 600;
 }
 
-.cont8{
-    margin-top: 40px;
-    width: 1002px;
-}
 
-.greensel{
-    background-color: #F4FFF5;
-    height: 262px;
-    width: 100%;
-    margin-right: 10px;
-    border-radius: 20px;
-    border: 1px solid #dbdbdb;
-
-}
-
-.redsel{
-    background-color: #FFF3F3;
-    height: 262px;
-    width: 100%;
-    border-radius: 20px;
-    border: 1px solid #dbdbdb;
-}
 
 .divsa{
-    display: flex;
     width: 100%;
+    display: flex;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.p-sel{
+.greensel,
+.redsel {
+    height: 262px;
+    width: 390px;
+    border-radius: 20px;
+    border: 1px solid #dbdbdb;
+}
+
+.greensel {
+    background-color: #F4FFF5;
+    margin-right: 10px;
+}
+
+.redsel {
+    background-color: #FFF3F3;
+}
+
+
+.p-sel {
     color: #868686;
     margin-top: 10px;
     font-weight: 600;
     font-size: 15px;
 }
 
-.sell-bbu{
+.sell-bbu {
     width: 100%;
     margin-top: 20px;
     height: 63px;
@@ -51,59 +49,82 @@
     font-size: 22px;
 }
 
-.lgsell{
-    min-width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 15px;
-    margin: 5px;
-}
-
-.gsel{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    text-align: center;
-}
-
-.butpril{
-    width: 200px;
-    padding: 10px;
-    border-radius: 10px;
-    height: 50px;
-    border: 1px solid #dbdbdb;
-    font-size: 16px;
-    background-color: #fff; 
-    color: #4A307F; 
-    transition: background-color 0.3s, color 0.3s; 
+.glab {
     margin-top: 10px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    margin-left: 5px;
-  }
-  
-  .activeeew {
-    background-color: #F5F5F5;
-  }
-
-  .p-tit-sell{
-    text-align: center;
-    font-size: 13px;
-    align-items: center;
-    font-weight: 600;
-    color: #4A307F;
+    margin-bottom: 10px;
+    width: 18.2%;
+    transition: background-color 0.3s ease; 
+    
+    &:hover {
+      background-color: #d8d4d4;
+      color: black;
+    }
+    &:active {
+      background-color: #808080; 
+    }
   }
 
-  .pp-sel{
-    font-weight: 600;
-    font-size: 31px;
-    color: #4A307F;
+
+@media screen and (max-width: 600px) {
+    .divsa{
+        display: block;
+    }
+    .greensel,
+    .redsel{
+        width: 93%;
+    }
+    .sell-bbu{
+        width: 93%;
+    }
+    .sell-con{
+        width: 100%;
+    }
+}
+
+.sell-con{
+    width: 1060px;
+    margin: 0 auto;
     margin-bottom: 20px;
-  }
+}
 
-  .sell-input{
-    height: 50px;
-    background-color: #F5F5F5;
-    border: 1px solid #dbdbdb;
-    width: 500px;
-  }
+.sellall-con{
+    width: 1060px;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+
+}
+
+@media screen and (max-width: 1300px) {
+    .sell-con{
+        width: 100%;
+    }
+    .greensel,
+    .redsel{
+        width: 93%;
+    }
+    .sellall-con{
+        width: auto;
+    }
+    .div-label{
+        flex-wrap: wrap;
+        display: flex;
+        width: auto;
+    }
+    .input-name{
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin: 0 auto;
+    }
+    
+}
+
+@media screen and (max-width: 600px){
+    .glab {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 30%;
+    }
+}

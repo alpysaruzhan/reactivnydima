@@ -21,12 +21,14 @@ const GameDetailPage = () => {
   }, [id]); 
 
   return (
-    <div className='cont8'>
-     <div className='category-page'>
+    <div className='sellall-con'>
+     <div className='category-pag'>
+      <h1 className='h-cat'>&lt; Категории:</h1>
+
               {categories.map((category) => (
-                <div key={category.id}>
+                <div className='div-cat' key={category.id}>
                     <Link to={`/character/game/${category.id}`}>
-                    <p className='p-tit-sell'>{category.name}</p>
+                    <p className='p-cat'>· {category.name}</p>
                     </Link>
                 </div>
               ))}

@@ -24,9 +24,9 @@ const SellAllPage = () => {
   })}, []); 
 
   return (
-    <div className='cont8'>
+    <div className='sellall-con'>
       <div>
-        <p className='pp-sel'>Выберите игру/приложение</p>
+        <p className='pp-sel'>&lt; Выберите игру/приложение</p>
         <input className='sell-input' type="email" placeholder="Поиск игр и приложений" />
       </div>
       <div className="css">
