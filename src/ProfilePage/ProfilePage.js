@@ -12,8 +12,6 @@ const ProfilePage = () => {
     setActiveTab(tab);
   };
 
-
-
   return (
     <div className="cont2">
       <div className="first">
@@ -50,19 +48,19 @@ const ProfilePage = () => {
       <div>
         <div className="tabs">
           <button
-            className={`butt45 ${activeTab === "tab1" && 'activeeee' }`}
+            className={`butt45 ${activeTab === "tab1" && "activeeee"}`}
             onClick={() => handleTabClick("tab1")}
           >
             Мой товары
           </button>
           <button
-            className={`butt45 ${activeTab === "tab2" && 'activeeee' }`}
+            className={`butt45 ${activeTab === "tab2" && "activeeee"}`}
             onClick={() => handleTabClick("tab2")}
           >
             Покупки
           </button>
           <button
-            className={`butt45 ${activeTab === "tab3" && 'activeeee' }`}
+            className={`butt45 ${activeTab === "tab3" && "activeeee"}`}
             onClick={() => handleTabClick("tab3")}
           >
             Продажи

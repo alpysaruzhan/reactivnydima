@@ -11,10 +11,39 @@ const ProductCardPage = () => {
   const product = cardData.cards.find((card) => card.id === parseInt(id));
   const cardsToShow = cardData.cards.slice(0, 10);
 
+  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
+  React.useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Добавляем слушатель события изменения размера окна
+    window.addEventListener('resize', handleResize);
+
+    // Удаляем слушатель при размонтировании компонента
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  const products = [product, product, product, product, product];
   if (!product) {
     return <div>Товар не найден</div>;
   }
 
+  let itemsPerRow2 = 0;
+  // const [productsToShow, setProductsToShow] = React.useState(products.slice(0, itemsPerRow2));
+
+  if (windowWidth >= 1600) {
+    itemsPerRow2 = 3;
+    // setProductsToShow(products.slice(0, itemsPerRow2))
+
+  } else if (windowWidth >= 850) {
+    itemsPerRow2 = 2;
+  } else {
+    itemsPerRow2 = 1;
+  }
+
+  const productsToShow = products.slice(0, itemsPerRow2)
   return (
     <div className="cont4">
       <Link to={"/"} className="link-secc">
@@ -68,7 +97,6 @@ const ProductCardPage = () => {
                   {characteristic.quantity}
                 </p>
               </div>
-
             ))}
           </ul>
         </div>
@@ -81,94 +109,42 @@ const ProductCardPage = () => {
           <h2>{renderStars(product.rating)}</h2>
         </div>
         <u className="otziv-vse">Все отзывы (1430) </u>
-
-
       </div>
 
       <div className="section-otzivi">
-        <div className="otziv">
-          <div className="otziv-header">
-            <img className="imggback" src={product.logo} alt={product.title} />
-            <div className="otziv-header-center">
-              <h2>{product.title}</h2>
-              <h2>{renderStars(product.rating)}</h2>
+        {productsToShow.map((product) => (
+          <div className="otziv">
+            <div className="otziv-header">
+              <img
+                className="imggback"
+                src={product.logo}
+                alt={product.title}
+              />
+              <div className="otziv-header-center">
+                <h2>{product.title}</h2>
+                <h2>{renderStars(product.rating)}</h2>
+              </div>
+              <h2 className="otziv-date">12.34.21[32:24]</h2>
             </div>
-            <h2 className="otziv-date">12.34.21[32:24]</h2>
-
-          </div>
-          <div className="otziv-main">
-            {product.opisaniye}
-          </div>
-          <div className="otziv-footer">
-            <img
-              className="otziv-img"
-              src={product.image}
-              alt={product.title}
-            />
-            <div className="otziv-footer-right">
-
-              <h2 className="otziv-price">{product.price}$</h2>
-              <h2>123213 на ваш аканут</h2>
-            </div>
-          </div>
-        </div>
-        <div className="otziv">
-          <div className="otziv-header">
-            <img className="imggback" src={product.logo} alt={product.title} />
-            <div className="otziv-header-center">
-              <h2>{product.title}</h2>
-              <h2>{renderStars(product.rating)}</h2>
-            </div>
-            <h2 className="otziv-date">12.34.21[32:24]</h2>
-
-          </div>
-          <div className="otziv-main">
-            {product.opisaniye}
-          </div>
-          <div className="otziv-footer">
-            <img
-              className="otziv-img"
-              src={product.image}
-              alt={product.title}
-            />
-            <div className="otziv-footer-right">
-
-              <h2 className="otziv-price">{product.price}$</h2>
-              <h2>123213 на ваш аканут</h2>
+            <div className="otziv-main">{product.opisaniye}</div>
+            <div className="otziv-footer">
+              <img
+                className="otziv-img"
+                src={product.image}
+                alt={product.title}
+              />
+              <div className="otziv-footer-right">
+                <h2 className="otziv-price">{product.price}$</h2>
+                <h2>123213 на ваш аканут</h2>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="otziv">
-          <div className="otziv-header">
-            <img className="imggback" src={product.logo} alt={product.title} />
-            <div className="otziv-header-center">
-              <h2>{product.title}</h2>
-              <h2>{renderStars(product.rating)}</h2>
-            </div>
-            <h2 className="otziv-date">12.34.21[32:24]</h2>
-
-          </div>
-          <div className="otziv-main">
-            {product.opisaniye}
-          </div>
-          <div className="otziv-footer">
-            <img
-              className="otziv-img"
-              src={product.image}
-              alt={product.title}
-            />
-            <div className="otziv-footer-right">
-
-              <h2 className="otziv-price">{product.price}$</h2>
-              <h2>123213 на ваш аканут</h2>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
+
       <p className="des-prod">Товары из этой категории:</p>
 
       <div className="card-list2">
-
         {cardsToShow.map((card) => (
           <div className="product-card2">
             <NavLink
@@ -196,10 +172,8 @@ const ProductCardPage = () => {
               </div>
             </NavLink>
           </div>
-
         ))}
       </div>
-
     </div>
   );
 };

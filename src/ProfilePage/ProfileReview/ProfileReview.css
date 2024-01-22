@@ -1,0 +1,86 @@
+.nazad {
+    display: flex;
+    /* border: 1px solid green; */
+
+}
+
+.nazad-icon {
+    font-size: 32px;
+    /* border: 1px solid green; */
+    margin-right: 10px;
+}
+
+.otziv-top2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.otziv-text {
+    margin-top: 15px;
+
+    font-size: 18px;
+    /* font-weight: 600; */
+
+}
+
+.otziv-nn {
+    display: flex;
+    mask-type: alpha;
+}
+
+.nazad-name {
+    font-size: 32px;
+    color: black;
+    font-weight: 600;
+}
+
+.containeraman {
+    /* border: 1px solid green; */
+    margin: 45px;
+}
+.containergalmjan{
+    width: 100%;
+
+}
+.otzivamana {
+    /* max-width: 500px; */
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: rgb(245, 245, 245);
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 10px;
+    width: 500px;
+    margin-bottom: 30px;
+    /* border: 1px solid purple; */
+
+}
+
+.sectionotzivamana {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /*
+    gap: 35px;
+    flex-wrap: nowrap;
+    margin-bottom: 45px;
+    padding-bottom: 45px;
+    border: 1px solid red;
+
+    */
+}
+.otziv-spisoktop{
+    /* border: 1px solid red; */
+
+}
+.otziv-spisok {
+    /* border: 1px solid red; */
+        font-size: 22px;
+    /* font-weight: 600; */
+    margin-left: auto;
+    margin-top: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}

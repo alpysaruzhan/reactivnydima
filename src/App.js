@@ -5,6 +5,8 @@ import Sidebar from './Sidebar';
 import Header from './Header';
 import HomePage from './routes/HomePage';
 import ProfilePage from './ProfilePage/ProfilePage';
+import ProfileReview from './ProfilePage/ProfileReview/ProfileReview';
+
 import SellPage from './Sell/SellPage';
 import GuaranteePage from './routes/GuaranteePage';
 import Register from './Register/Register';
@@ -66,6 +68,8 @@ class App extends Component {
                   <Route path="/all" element={<AllPage />} />
                   <Route path='/app' element={<AllApps />} />
                   <Route path="/profile" element={<ProfilePage />} />
+                  <Route path="/profile/review" element={<ProfileReview />} />
+
                   <Route path="/sell" element={<SellPage />} />
                   <Route path="/sellall" element={<SellAllPage />} />
                   <Route path="/category/game/:id" element={<GameDetailPage />} />

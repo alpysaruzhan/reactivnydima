@@ -60,19 +60,25 @@
     padding-bottom: 45px;
     border-bottom: 1px solid rgb(220, 220, 220);
 
+    justify-content: center;
+
+    /* border: 1px solid #027200; */
+
 }
 
 .otziv-top-right {
     margin-left: 15px;
     padding-top: 7px;
-        /* border: 1px solid #027200; */
+    /* border: 1px solid red; */
 
 }
-.otziv-rating{
+
+.otziv-rating {
     font-size: 50px;
     color: #4A307F;
     font-weight: 600;
 }
+
 .otziv-top {
     margin-top: 60px;
     margin-bottom: 20px;
@@ -83,7 +89,7 @@
 
 .otziv {
     width: 33%;
-    max-width: 500px;
+    /* max-width: 500px; */
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -100,20 +106,22 @@
     }
 }
 
-@media (max-width: 1060px) {
+@media (max-width: 850px) {
     .otziv {
         width: 100%;
+        /* border: 1px solid red; */
     }
 }
 
 
 
-.otziv-count{
+.otziv-count {
     font-weight: 600;
     font-size: 18px;
 
 }
-.otziv-vse{
+
+.otziv-vse {
     font-weight: 600;
 
     margin-left: auto;
@@ -121,6 +129,7 @@
     color: #4A307F;
 
 }
+
 .otziv-header {
     display: flex;
     /* border: 1px solid red; */
