@@ -35,24 +35,23 @@ const ProductList = () => {
     itemsPerRow = 6;
   } else if (windowWidth >= 1400) {
     itemsPerRow = 5;
-  } else {
+  }else if (windowWidth <= 600) {
+    itemsPerRow = 5;
+
+  }else {
     itemsPerRow = 4;
   }
 
   let itemsPerRow2;
   if (windowWidth >= 1600) {
     itemsPerRow2 = 4;
-  } else  if (windowWidth >= 1400) {
+  } else if (windowWidth >= 1400) {
     itemsPerRow2 = 3;
-  } else {
+  } else if (windowWidth <= 600) {
+    itemsPerRow2 = 2.5;
+  }else {
     itemsPerRow2 = 2;
   }
-  // Ваш массив данных
-  const yourArray = []
-
-  // Отображаем только нужное количество элементов в зависимости от ширины экрана
-  const renderedItems = yourArray;
-
 
   const gamesToShow = productsData.games.slice(0, itemsPerRow * 2);
   const appsToShow = productsData.apps.slice(0, itemsPerRow2 * 2);
@@ -61,7 +60,7 @@ const ProductList = () => {
       <div className='gm'>
         <div className='block'>
           <h1 className='tit'>Популярные игры</h1>
-          <NavLink to={"/all"}><button className='game-button'>Все игры &#707;</button></NavLink>
+          <NavLink className='' to={"/all"}><button className='game-button'>Все игры &#707;</button></NavLink>
         </div>
         <div className="under-block">
           <div className="product-list">
@@ -73,15 +72,12 @@ const ProductList = () => {
             ))}
           </div>
         </div>
-
       </div>
       <div className='ap'>
         <div className='block'>
           <h1 className='tit'>Приложения</h1>
-          <NavLink to={"/app"}><button className='game-button2'>10 &#707;</button></NavLink>
+          <NavLink to={"/app"}><button className='game-button2'>Все приложения &#707;</button></NavLink>
         </div>
-
-
         <div className="under-block">
           <div className="product-list">
             {appsToShow.map((app) => (

@@ -103,7 +103,7 @@
   background-color: #866CBB;
   color: white;
   font-size: 15px;
-  width: 120px;
+  /* width: 120px; */
   border-radius: 10px;
   margin-left: 20px;
 }
@@ -113,7 +113,7 @@
   background-color: #866CBB;
   color: white;
   font-size: 15px;
-  width: 50px;
+  width: 160px;
   border-radius: 10px;
   margin-left: 20px;
   /* border: 2px solid orange; */
@@ -121,7 +121,8 @@
 }
 
 
-/* Медиа-запросы для различных ширин экрана */
+
+
 @media (min-width: 1600px) {
   .product-card {
     width: 16%;
@@ -155,25 +156,19 @@
 
 
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   .tit {
     font-size: 25px;
   }
-
-  .block {
-    justify-content: space-between;
-  }
-
+ 
   .product-logo {
     width: 75px;
     height: 75px;
   }
-
   .product-card {
     padding: 5px;
     width: 90px;
   }
-
   .co {
     margin-top: 40px;
     justify-content: space-between;
@@ -181,9 +176,20 @@
     display: block;
     width: 100%;
   }
+  .gm {
+    width: 100%;
+  }
 
   .ap {
+    width: 100%;
+
     margin-left: 0px;
+  }
+
+  .product-card-app {
+    width: 20%;
+    /* border: 1px solid green; */
+
   }
 
   .product-list {
