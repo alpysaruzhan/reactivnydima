@@ -58,15 +58,9 @@ const ProductList = () => {
   return (
     <div className='co'>
       <div className='gm'>
-<<<<<<< Updated upstream
         <div className='ProductList-block'>
           <h1 className='ProductList-tit'>Популярные игры</h1>
           <NavLink className='' to={"/all"}><button className='game-button'>Все игры &#707;</button></NavLink>
-=======
-        <div className='sel-ghh'>
-          <h1 className='tit'>Популярные игры</h1>
-          <NavLink className='game-button' to={"/all"}>Все игры &#707;</NavLink>
->>>>>>> Stashed changes
         </div>
         <div className="under-block">
           <div className="product-list">
@@ -80,15 +74,9 @@ const ProductList = () => {
         </div>
       </div>
       <div className='ap'>
-<<<<<<< Updated upstream
         <div className='ProductList-block'>
           <h1 className='ProductList-tit'>Приложения</h1>
           <NavLink to={"/app"}><button className='game-button'>Все приложения &#707;</button></NavLink>
-=======
-        <div className='sel-ghh'>
-          <h1 className='tit'>Приложения</h1>
-          <NavLink className='game-button' to={"/app"}>Все приложения &#707;</NavLink>
->>>>>>> Stashed changes
         </div>
         <div className="under-block">
           <div className="product-list">
