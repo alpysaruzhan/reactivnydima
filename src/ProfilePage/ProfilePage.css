@@ -2,9 +2,10 @@
     margin-top: 30px;
     justify-content: center;
     align-items: center;
-    width: 1020px;
     text-align: center;
-    height: 100vh;
+    width: 90%;
+
+    /* height: 100vh; */
 }
 
 .profile-img {

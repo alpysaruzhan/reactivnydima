@@ -58,8 +58,8 @@ const ProductList = () => {
   return (
     <div className='co'>
       <div className='gm'>
-        <div className='block'>
-          <h1 className='tit'>Популярные игры</h1>
+        <div className='ProductList-block'>
+          <h1 className='ProductList-tit'>Популярные игры</h1>
           <NavLink className='' to={"/all"}><button className='game-button'>Все игры &#707;</button></NavLink>
         </div>
         <div className="under-block">
@@ -74,9 +74,9 @@ const ProductList = () => {
         </div>
       </div>
       <div className='ap'>
-        <div className='block'>
-          <h1 className='tit'>Приложения</h1>
-          <NavLink to={"/app"}><button className='game-button2'>Все приложения &#707;</button></NavLink>
+        <div className='ProductList-block'>
+          <h1 className='ProductList-tit'>Приложения</h1>
+          <NavLink to={"/app"}><button className='game-button'>Все приложения &#707;</button></NavLink>
         </div>
         <div className="under-block">
           <div className="product-list">

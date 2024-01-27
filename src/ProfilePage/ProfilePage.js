@@ -4,6 +4,8 @@ import profileData from "./profile.json";
 import "./ProfilePage.css";
 import filt from "../img/filtr.png";
 import renderStars from "../functions.js";
+import ProductComponent from '../ProductComponent/ProductComponent';
+import cardData from "../card.json";
 
 const ProfilePage = () => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -11,6 +13,7 @@ const ProfilePage = () => {
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
+  const cardsToShow = cardData.cards.slice(0, 12);
 
   return (
     <div className="cont2">
@@ -69,8 +72,9 @@ const ProfilePage = () => {
         <div className="tab-content">
           {activeTab === "tab1" && (
             <div>
-              <h2>Содержимое вкладки 1</h2>
-            </div>
+              {cardsToShow.map((card) => (
+                <ProductComponent card={card} />
+              ))}            </div>
           )}
           {activeTab === "tab2" && (
             <div>

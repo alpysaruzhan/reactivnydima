@@ -46,16 +46,14 @@
   font-weight: 500;
 }
 
-.tit {
+.ProductList-tit {
   font-size: 28px;
   font-weight: 600;
   color: #4A307F;
   text-align: left;
   margin-left: 10px;
   /* margin-bottom: 30px; */
-
   /* border: 1px solid green; */
-
 }
 
 .co {
@@ -82,7 +80,7 @@
   margin-left: 90px;
 }
 
-.block {
+.ProductList-block {
   display: flex;
   /* justify-content: space-between; */
   height: 45px;
@@ -99,28 +97,15 @@
 }
 
 .game-button {
+  /* flex-grow: 1; */
   height: 32px;
   background-color: #866CBB;
   color: white;
   font-size: 15px;
-  /* width: 120px; */
+  width: 100%;
   border-radius: 10px;
   margin-left: 20px;
 }
-
-.game-button2 {
-  height: 32px;
-  background-color: #866CBB;
-  color: white;
-  font-size: 15px;
-  width: 160px;
-  border-radius: 10px;
-  margin-left: 20px;
-  /* border: 2px solid orange; */
-
-}
-
-
 
 
 @media (min-width: 1600px) {
@@ -156,7 +141,7 @@
 
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   .tit {
     font-size: 25px;
   }

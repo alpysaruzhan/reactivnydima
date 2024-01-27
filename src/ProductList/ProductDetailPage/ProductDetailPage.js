@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import productsData from "../db.json";
 import "./ProductDetailPage.css"
-import cardData from "../../ProductCard/card.json";
+import cardData from "../../card.json";
 import { NavLink } from "react-router-dom";
 
 const ProductDetailPage = () => {
