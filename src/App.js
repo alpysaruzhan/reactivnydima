@@ -60,7 +60,7 @@ class App extends Component {
           <div className="app">
             <Sidebar />
             <div className="content">
-              <Header />
+              <Header authorized={authorized} />
               <div className='com'>
                 <Routes>
                   <Route path="/" element={<HomePage />} />

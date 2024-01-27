@@ -18,13 +18,15 @@
   padding: 14px;
   border-top: 1px solid #4a307f4a;
   height: 90px;
+
+    /* border: 1px solid red; */
+    order: 1;
 }
 
 .chat-pined {
   /* border: 1px solid blue; */
   border-top: none;
-
-  /* border: 1px solid red; */
+  order: 0;
 
 }
 
@@ -81,9 +83,9 @@
 }
 
 .chat-container {
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  border: 1px solid red; */
+  /* border: 1px solid red; */
   height: 80vh; /* Задайте высоту по вашему усмотрению */
   overflow: auto;
   scrollbar-width: thin; /* для Firefox */
@@ -95,6 +97,8 @@
   &::-webkit-scrollbar-thumb {
     background-color: transparent; /* Цвет ползунка */
   }
+
+
 }
 
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route, Link, Outlet, useNavigate } from "react-router-dom";
 import profileData from "./profile.json";
 import "./ProfilePage.css";
@@ -6,6 +6,8 @@ import filt from "../img/filtr.png";
 import renderStars from "../functions.js";
 import ProductComponent from '../ProductComponent/ProductComponent';
 import cardData from "../card.json";
+import { AuthApi, ChatApi, WalletApi, UsersApi } from 'market_place';
+import { Instance } from '../GateWay/base';
 
 const ProfilePage = () => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -14,14 +16,43 @@ const ProfilePage = () => {
     setActiveTab(tab);
   };
   const cardsToShow = cardData.cards.slice(0, 12);
+  const Users = new UsersApi(Instance);
+  const Wallet = new WalletApi(Instance);
+
+  const [userData, setUserData] = useState([]);
+  const [usetWalet, setUsetWalet] = useState([]);
+
+  useEffect(() => {
+    
+    Users.usersCurrentUserApiV1UsersMeGet((error, data, response)=>{
+      if (error) {
+        console.error(error);
+      } else {
+        setUserData(data)
+        console.log("Fetched messages jopa:", data);
+      }
+    })
+
+    Wallet.getUserWalletApiV1WalletGet((error, data, response)=>{
+      if (error) {
+        console.error(error);
+      } else {
+        setUsetWalet(data)
+        console.log("Fetched messages popa:", data);
+      }
+    })  
+    
+  }, [])
+  
+   
 
   return (
     <div className="cont2">
       <div className="first">
-        <img className="profile-img" src={profile.photo} alt="Профиль" />
+        <img className="profile-img" src={userData.avatar} alt="Профиль" />
 
         <div className="left-prof">
-          <p className="nickname">{profile.nickname}</p>
+          <p className="nickname">{userData.username}</p>
           <div className="second-prof">
             <div className="rwe">
               <h2 className="rating-prof"> {profile.rating}</h2>
@@ -38,7 +69,7 @@ const ProfilePage = () => {
               <p className="balance-p">Баланс: </p>
             </div>
             <div>
-              <p className="bal-prof"> {profile.balance}₽</p>
+              <p className="bal-prof"> {usetWalet.available}₽</p>
             </div>
           </div>
         </div>
@@ -71,10 +102,11 @@ const ProfilePage = () => {
         </div>
         <div className="tab-content">
           {activeTab === "tab1" && (
-            <div>
-              {cardsToShow.map((card) => (
-                <ProductComponent card={card} />
-              ))}            </div>
+             <div className="card-list2">
+             {cardsToShow.map((card) => (
+               <ProductComponent card={card} />
+             ))}
+           </div>
           )}
           {activeTab === "tab2" && (
             <div>

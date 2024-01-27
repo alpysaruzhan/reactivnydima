@@ -50,7 +50,7 @@ const Login = (props) => {
               <input
                 className="log-input"
                 type="email"
-                placeholder="Введите 6 значный код"
+                placeholder="Введите пароль с почты (вкладка спам)"
                 onChange={(e) => setTempPassword(e.target.value)}
               />
               <Link to="/login/code">
