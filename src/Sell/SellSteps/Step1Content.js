@@ -24,12 +24,21 @@ const Step1ContentPage = ({ handleStepChange }) => {
     setActivec(c);
   };
 
+  const handleGameClick = (gameId) => {
+    localStorage.setItem('selectedGameId', gameId);
+    handleStepChange(1);
+  };
+
+  const handleAppClick = (appId) => {
+    localStorage.setItem('selectedAppId', appId);
+    handleStepChange(2);
+  };
 
   return (
     <div className='sellall-con'>
       <div>
         <div>
-        <p className='pp-sel'>&lt; Выберите игру/приложение</p>
+          <p className='pp-sel'>&lt; Выберите игру/приложение</p>
         </div>
         <input className='sell-input' type="email" placeholder="Поиск игр и приложений" />
       </div>
@@ -43,7 +52,7 @@ const Step1ContentPage = ({ handleStepChange }) => {
           <div className='gsel'>
             {games.map((game) => (
               <div key={game.id}>
-                <div onClick={() => handleStepChange(1)}>
+                <div onClick={() => handleGameClick(game.id)}>
                   <img className='lgsell' src={basePath + game.logo.fileUrl} alt={game.name} />
                   <p className='p-tit-sell'>{game.name}</p>
                 </div>
@@ -56,7 +65,7 @@ const Step1ContentPage = ({ handleStepChange }) => {
             {games.map((app) => (
               app.type === "APPLICATION" && (
                 <div key={app.id}>
-                  <div onClick={() => handleStepChange(2)}>
+                  <div onClick={() => handleAppClick(app.id)}>
                     <img className='lgsell' src={app.logoURL} alt={app.title} />
                     <p className='p-tit-sell'>{app.title}</p>
                   </div>
