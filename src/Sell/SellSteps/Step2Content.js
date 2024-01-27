@@ -7,8 +7,10 @@ import { Instance, basePath } from '../../GateWay/base';
 const Step2ContentPage = ({ handleStepChange, gameId }) => {
   const marketAPI = new MarketApi(Instance);
   const [categories, setCategories] = useState([]);
-  
+
   useEffect(() => {
+    localStorage.setItem('selectedGameId', gameId);
+
     marketAPI.getGameApiV1GameGameIdGet(gameId, (error, data, response) => {
       if (error) {
         console.error(error);
@@ -19,15 +21,14 @@ const Step2ContentPage = ({ handleStepChange, gameId }) => {
     });
   }, [gameId]);
 
-
   return (
     <div className='sellall-con'>
       <div className='category-pag'>
-        <h1  onClick={() => handleStepChange(2)}  className='h-cat'>&lt; Категории:</h1>
+        <h1 onClick={() => handleStepChange(2)} className='h-cat'>&lt; Категории:</h1>
 
         {categories.map((category) => (
           <div onClick={() => handleStepChange(3)} className='div-cat' key={category.id}>
-              <p className='p-cat'>· {category.name}</p>
+            <p className='p-cat'>· {category.name}</p>
           </div>
         ))}
       </div>

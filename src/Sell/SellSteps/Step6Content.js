@@ -7,6 +7,7 @@ const Step6ContentPage = () => {
 
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value);
+    localStorage.setItem("productDescription", e.target.value);
   };
 
   const handleSubmit = (e) => {

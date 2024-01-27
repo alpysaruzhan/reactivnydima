@@ -12,29 +12,51 @@ const Step5ContentPage = () => {
   <path d="M29.999 32.5C29.336 32.5 28.7001 32.2366 28.2313 31.7678C27.7624 31.2989 27.499 30.663 27.499 30V10C27.499 9.33696 27.7624 8.70107 28.2313 8.23223C28.7001 7.76339 29.336 7.5 29.999 7.5C30.6621 7.5 31.298 7.76339 31.7668 8.23223C32.2356 8.70107 32.499 9.33696 32.499 10V30C32.499 30.663 32.2356 31.2989 31.7668 31.7678C31.298 32.2366 30.6621 32.5 29.999 32.5Z" fill="#4A307F" fill-opacity="0.78"/>
   </svg>
 `;
-  // const [image, setImage] = useState(null);
+  const [image, setImage] = useState(null);
 
-  // const handleFileChange = (e) => {
-  //   const file = e.target.files[0];
-  //   if (file) {
-  //     const reader = new FileReader();
-  //     reader.onloadend = () => {
-  //       setImage(reader.result);
-  //     };
-  //     reader.readAsDataURL(file);
-  //   }
-  // };
-
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImage(reader.result);
+        localStorage.setItem("uploadedImage", reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   return (
     <div className='sellall-con'>
-    <div className='sel-h'>
-      <h1 className='h-cat'>&lt; Название товара:</h1>
-      <input className='input-name' placeholder='Здравствуйте!' />
-      <Link to={"/description"}>
-        <button type="submit" className='name-but'>Продолжить</button>
-      </Link>
-    </div>
+      <h1 className='h-cat'>&lt; Фото:</h1>
+      <div className='n-sel'>
+        <div>
+          {image ? (
+            <div>
+              <img className='img-sel' src={image} alt="Uploaded" />
+            </div>
+          ) : (
+            <div className='div-photo'>
+              <div className='p-photo'>
+                <label htmlFor="photoInput" className='svg-sell'>
+                  <div className='svg-sell' dangerouslySetInnerHTML={{ __html: svgCode }} />
+                  <p>Нажми или перетащи нужную фотографию</p>
+                  <input
+                    type="file"
+                    id="photoInput"
+                    accept="image/*"
+                    onChange={handleFileChange}
+                    style={{ display: 'none' }}
+                  />
+                </label>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+      <button type="submit" className='photo-but'>
+        <Link to={"/confirmation"}>Продолжить</Link>
+      </button>
     </div>
   );
 }

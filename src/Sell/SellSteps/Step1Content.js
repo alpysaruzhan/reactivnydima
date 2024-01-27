@@ -52,10 +52,10 @@ const Step1ContentPage = ({ handleStepChange }) => {
           <div className='gsel'>
             {games.map((game) => (
               <div key={game.id}>
-                <div onClick={() => handleGameClick(game.id)}>
+                <button onClick={() => handleGameClick(game.id)}>
                   <img className='lgsell' src={basePath + game.logo.fileUrl} alt={game.name} />
                   <p className='p-tit-sell'>{game.name}</p>
-                </div>
+                </button>
               </div>
             ))}
           </div>

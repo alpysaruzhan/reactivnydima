@@ -10,9 +10,8 @@ const Step3ContentPage = ({ handleStepChange }) => {
     const marketAPI = new MarketApi(Instance);
     const [options, setOptions] = useState([]);
     const [attributes, setAttributes] = useState([]);
-    const navigate = useNavigate(); // Use useNavigate instead of useHistory
+    const navigate = useNavigate();
     const [category, setCategory] = useState([]);
-
 
     const addAttributes = (label, value) => {
         setAttributes([...attributes, { label: value }]);
@@ -20,7 +19,6 @@ const Step3ContentPage = ({ handleStepChange }) => {
 
     const HandleSelectedCharcs = () => {
         localStorage.setItem("productAttributes", JSON.stringify(attributes));
-        setTimeout(() => navigate("/photo"), 500);
     }
 
     useEffect(() => {
