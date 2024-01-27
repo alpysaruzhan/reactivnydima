@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   transition: width 0.2s ease;
+  
   /*
   z-index: 999; 
   position: fixed; */

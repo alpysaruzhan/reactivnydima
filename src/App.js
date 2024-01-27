@@ -7,7 +7,6 @@ import HomePage from './routes/HomePage';
 import ProfilePage from './ProfilePage/ProfilePage';
 import ProfileReview from './ProfilePage/ProfileReview/ProfileReview';
 
-import SellPage from './Sell/SellPage';
 import GuaranteePage from './routes/GuaranteePage';
 import Register from './Register/Register';
 import Regcod from './Regcod/Regcod';
@@ -22,20 +21,11 @@ import AllApps from './AllApps/AllApps';
 import CookiePage from './Cookie/Cookie';
 import PolicyPage from './Policy/Policy';
 import BalancePage from './Balance/Balance';
-import SellAllPage from './Sell/SellAllPage';
-import AppDetailPage from './Sell/AppDetailPage';
-import PhotoPage from './Sell/PhotoPage';
-import Chat from './ChatPage/ChatUs/ChatUs';
-import AllChat from './ChatPage/AllChat/AllChat';
 import ChatPage from './ChatPage/ChatPage';
-import NamePage from './Sell/Name';
-import OpisaniyePage from './Sell/Opisaniye';
-import GameDetailPage from './Sell/GameDetailPage';
 import { Cookies, CookiesProvider, withCookies } from 'react-cookie';
 import { isAuthorized } from './GateWay/base';
 import { instanceOf } from 'prop-types';
-import ProInfoPage from './Sell/ProInfo';
-import GameCategoryPag from './Sell/GameCategory';
+import SellPage from './Sell/SellPage';
 
 class App extends Component {
   static propTypes = {
@@ -70,22 +60,14 @@ class App extends Component {
                   <Route path="/profile" element={<ProfilePage />} />
                   <Route path="/profile/review" element={<ProfileReview />} />
 
-                  <Route path="/sell" element={<SellPage />} />
-                  <Route path="/sellall" element={<SellAllPage />} />
-                  <Route path="/category/game/:id" element={<GameDetailPage />} />
-                  <Route path="/character/game/:id" element={<GameCategoryPag />} />
-                  <Route path="/photo" element={<PhotoPage />} />
-                  <Route path="/category/app/:id" element={<AppDetailPage />} />
                   <Route path="/chat" element={<ChatPage />} />
-                  <Route path="/name" element={<NamePage />} />
-                  <Route path="/description" element={<OpisaniyePage />} />
-                  <Route path="/prod-info" element={<ProInfoPage />} />
 
                   {/* <Route path="/chat" element={<AllChat />} /> */}
                   {/* <Route path="/chat/:chatId" element={<Chat />} /> */}
 
                   <Route path="/guarantee" element={<GuaranteePage />} />
                   <Route path='/register' element={<Register />} />
+                  <Route path='/sell' element={<SellPage />} />
 
                   <Route path='/login' element={
                     <CookiesProvider>
