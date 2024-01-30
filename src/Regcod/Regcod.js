@@ -15,7 +15,7 @@ const Regcod = () => {
 
   function Rest(event) {
     event.preventDefault();
-    apiInstance.registerWithTemporaryPasswordApiV1AuthRegisterEmailPost(
+    apiInstance.authRegisterWithTemporaryPasswordOptionsApiV1AuthRegisterEmailPost(
       email,
       email,
       (error, data, response) => {

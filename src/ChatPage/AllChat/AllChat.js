@@ -9,9 +9,8 @@ const AllChat = (props) => {
   const { Cookies } = props;
   const [chats, setChats] = useState([]);
   const { chatId } = useParams();
-  console.log(props)
 
-  
+
 
   const handleClick = (chat) => {
     console.log("handleClick");
@@ -22,7 +21,7 @@ const AllChat = (props) => {
 
 
     <div className="chat-container">
-{/* 
+      {/* 
       <div className="chat chat-pined" onClick={() => handleClick("chat")}>
         <div className="chat-img-div">
           <img src={youtube} className="chat-img" />
@@ -37,7 +36,7 @@ const AllChat = (props) => {
       {Array.isArray(props.chats) && props.chats.map((chat) => (
         <div key={chat.id} className={`chat ${"NOTIFICATIONS" === String(chat.type) ? 'chat-pined' : ''} ${chatId === String(chat.id) ? 'active-chat' : ''}`} onClick={() => handleClick(chat)}>
           <div className="chat-div">
-            <img src={youtube} className="chat-img" />  
+            <img src={youtube} className="chat-img" />
           </div>
           <div className="chat-mid">
             <span className="chat-name">Чат{chat.name}</span >
@@ -47,7 +46,7 @@ const AllChat = (props) => {
         </div>
       ))}
 
-      
+
     </div>
   );
 };

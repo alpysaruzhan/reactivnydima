@@ -8,7 +8,7 @@ import defaultImage from "../../img/default.png";
 const ChatUs = (props) => {
 
     const [newMessage, setNewMessage] = useState("");
-    console.log("propchat ebani", props.currChat.type);
+    // console.log("propchat ebani", props.currChat.type);
     const chatId = props.currChat.id //  props.chat.chatId //useParams();
     const [user, setUser] = useState([]);
     const [messages, setMessages] = useState([]);
@@ -19,7 +19,7 @@ const ChatUs = (props) => {
     const Users = new UsersApi(Instance);
     const [file, setFile] = useState(defaultImage)
 
-    console.log("props", props);
+    // console.log("props", props);
     const handleImageChange = (event) => {
         const files = event.target.files;
         if (files.length === 0) {
@@ -67,7 +67,8 @@ const ChatUs = (props) => {
     return (
         <div className='right-chat'>
             <div className='chat-header'>
-                <div className="chat-img-div">
+                <div className="chat-img-div" >
+                    <img  style={{ display: props.isDivVisible  ? 'none' : 'block' }}  onClick={props.toggleVisibility} src="https://www.kindpng.com/picc/m/233-2338375_go-back-icon-png-transparent-png.png" className="chat-img" />
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Breezeicons-actions-22-mail-attachment.svg/2048px-Breezeicons-actions-22-mail-attachment.svg.png" className="chat-img" />
                 </div>
                 <div className="chat-mid">

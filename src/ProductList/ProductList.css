@@ -7,7 +7,7 @@
   /* border: 1px solid red; */
 }
 
-.sel-ghh{
+.sel-ghh {
   display: flex;
   width: auto;
   margin: 8px;
@@ -106,27 +106,54 @@
   height: 32px;
   background-color: #866CBB;
   color: white;
-  font-size: 15px;
-  width: 100%;
+  font-size: 14px;
+  width: auto;
   border-radius: 10px;
   margin-left: 20px;
+  padding: 0px 15px;
+  display: block;
+
 }
 
+.ProductList-allbutt {
+  display: flex;
+  /* border: 3px solid orange; */
+  width: auto;
+}
+
+.game-button-mini {
+  display: none;
+}
+
+@media (max-width: 1400px) {
+
+  .game-button {
+    display: none;
+  }
+
+  .game-button-mini {
+    display: block;
+
+  }
+}
 
 @media (min-width: 1600px) {
   .product-card {
     width: 16%;
+    /* border: 4px solid red; */
+
   }
 
   .product-card-app {
     width: 25%;
-
   }
 }
 
 @media (min-width: 1400px) and (max-width: 1599px) {
   .product-card {
     width: 20%;
+    /* border: 4px solid blue; */
+
   }
 
   .product-card-app {
@@ -134,9 +161,11 @@
   }
 }
 
-@media (max-width: 1399px) {
+@media (min-width: 1000px) and (max-width: 1399px) {
   .product-card {
     width: 25%;
+    /* border: 4px solid gold; */
+
   }
 
   .product-card-app {
@@ -145,20 +174,43 @@
 }
 
 
+@media (min-width: 800px) and (max-width: 999px) {
+  .product-card-app {
+    width: 16%;
+    /* border: 4px solid rgb(102, 136, 54); */
+
+
+  }
+
+  .product-card {
+    /* padding: 5px; */
+    width: 16%;
+  }
+
+}
+
+@media (max-width: 800px) {
+  .product-card {
+    width: 20%;
+    /* border: 4px solid rgb(255, 0, 153); */
+
+  }
+
+  .product-card-app {
+    width: 20%;
+  }
+}
+
+
 
 @media screen and (max-width: 1000px) {
+
   .tit {
     font-size: 25px;
   }
- 
-  .product-logo {
-    width: 75px;
-    height: 75px;
-  }
-  .product-card {
-    padding: 5px;
-    width: 90px;
-  }
+
+  
+
   .co {
     margin-top: 40px;
     justify-content: space-between;
@@ -166,6 +218,7 @@
     display: block;
     width: 100%;
   }
+
   .gm {
     width: 100%;
   }
@@ -176,16 +229,13 @@
     margin-left: 0px;
   }
 
-  .product-card-app {
-    width: 20%;
-    /* border: 1px solid green; */
 
-  }
 
   .product-list {
     display: flex;
     gap: 0px;
     margin-left: 5px;
+    width: 100%;
   }
 
   .product-name {

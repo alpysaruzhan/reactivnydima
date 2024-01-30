@@ -117,7 +117,13 @@
 }
 
 .activeeee {
+    margin-top: 15px;
+    width: 33%;
+    height: 40px;
+    border: 1px solid #0000001A;
+    font-size: 15px;
     background-color: #F5F5F5;
+    color: #000;
 }
 
 .butt45 {
@@ -130,6 +136,12 @@
     background-color: #fff;
     color: #000;
     transition: background-color 0.3s, color 0.3s;
+}
+
+.butt45:hover {
+
+    border: 1px solid #0000001A;
+    background-color: #F5F5F5;
 }
 
 .rwe {

@@ -19,8 +19,8 @@
   border-top: 1px solid #4a307f4a;
   height: 90px;
 
-    /* border: 1px solid red; */
-    order: 1;
+  /* border: 1px solid red; */
+  order: 1;
 }
 
 .chat-pined {
@@ -86,16 +86,23 @@
   display: flex;
   flex-direction: column;
   /* border: 1px solid red; */
-  height: 80vh; /* Задайте высоту по вашему усмотрению */
+  height: 80vh;
+  /* Задайте высоту по вашему усмотрению */
   overflow: auto;
-  scrollbar-width: thin; /* для Firefox */
-  scrollbar-color: transparent transparent; /* для Firefox */
+  scrollbar-width: thin;
+  /* для Firefox */
+  scrollbar-color: transparent transparent;
+
+  /* для Firefox */
   /* Webkit (Chrome, Safari) */
   &::-webkit-scrollbar {
-    width: 6px; /* Ширина скрытого скроллбара */
+    width: 6px;
+    /* Ширина скрытого скроллбара */
   }
+
   &::-webkit-scrollbar-thumb {
-    background-color: transparent; /* Цвет ползунка */
+    background-color: transparent;
+    /* Цвет ползунка */
   }
 
 
@@ -139,3 +146,20 @@
 .chat-time {
   border: 1px solid brown;
 } */
+
+@media (max-width: 1000px) {
+
+  .chat {
+
+    border: none;
+
+    border-bottom: 1px solid #4a307f4a;
+
+
+  }
+
+  .chat-container {
+
+    border-top: 1px solid #4a307f4a;
+  }
+}
