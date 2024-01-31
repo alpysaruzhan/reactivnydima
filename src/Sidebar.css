@@ -1,14 +1,17 @@
 .sidebar {
-  width: 225px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: width 0.2s ease;
-  
-  /*
-  z-index: 999; 
-  position: fixed; */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 225px;
+  background-color: #fff;
+  z-index: 1000;
+  margin-left: 0;
 }
 
 .logo {
@@ -29,6 +32,7 @@
 
 .navbar-menu {
   width: 100%;
+  margin-top: 30%;
 }
 
 .navbar-menu-list {

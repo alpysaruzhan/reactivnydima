@@ -13,12 +13,6 @@ const Sidebar = () => {
   return (
     <>
       <div className="sidebar">
-        <div className="logo">
-          <NavLink to="/">
-            <img className="logo-img" src={logo} alt="" />
-            <img className="logo-img2" src={logowithout} alt="" />
-          </NavLink>
-        </div>
         <div className="navbar-menu">
           <ul className="navbar-menu-list">
             <li></li>

@@ -1,5 +1,9 @@
 .header {
-
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   background-color: #4A307F;
   height: 80px;
   width: 100%;
@@ -8,7 +12,6 @@
   align-items: center;
   margin: 0;
   padding: 0;
-  position: relative;
 }
 
 .header-input {

@@ -53,16 +53,20 @@
     margin-top: 10px;
     margin-bottom: 10px;
     width: 18.2%;
-    transition: background-color 0.3s ease; 
-    
+    transition: background-color 0.3s ease, color 0.3s ease; 
+  
     &:hover {
       background-color: #d8d4d4;
       color: black;
     }
-    &:active {
-      background-color: #808080; 
+  
+    &:active,
+    &.active { 
+      background-color: #808080;
+      color: white; 
     }
   }
+  
 
 
 @media screen and (max-width: 600px) {

@@ -2,17 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "../SellPage.css";
 
-const Step6ContentPage = () => {
+const Step6ContentPage = ({ handleStepChange }) => {
   const [description, setDescription] = useState('');
 
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value);
     localStorage.setItem("productDescription", e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    window.location.href = "/prod-info";
   };
 
   return (
@@ -27,7 +22,7 @@ const Step6ContentPage = () => {
             onChange={handleDescriptionChange}
           />
         </div>
-        <button type="submit" className='name-but' onClick={handleSubmit}>
+        <button type="submit" className='name-but' onClick={() => handleStepChange(6)}>
           Продолжить
         </button>
       </div>

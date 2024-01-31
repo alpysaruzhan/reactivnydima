@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "../SellPage.css";
 
-const Step7ContentPage = () => {
+const Step7ContentPage = ({ handleStepChange }) => {
     const [textareaValue, setTextareaValue] = useState('');
     const handleTextareaChange = (e) => {
         const value = e.target.value;
@@ -22,9 +22,7 @@ const Step7ContentPage = () => {
                         onChange={handleTextareaChange}
                     />
                 </div>
-                <Link to={"/prodat"}>
-                    <button type="submit" className='name-but'>Продолжить</button>
-                </Link>
+                <button onClick={() => handleStepChange(7)} type="submit" className='name-but'>Продолжить</button>
                 <div>
                     <Link className="link-sec">🔒 Безопасность сделки</Link>
                 </div>

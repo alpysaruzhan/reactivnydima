@@ -25,12 +25,14 @@ const Step1ContentPage = ({ handleStepChange }) => {
   };
 
   const handleGameClick = (gameId) => {
-    localStorage.setItem('selectedGameId', gameId);
-    handleStepChange(1);
+    localStorage.setItem('selectedType', 'game');
+    localStorage.setItem('selectedItemId', gameId);
+    handleStepChange(2);
   };
 
   const handleAppClick = (appId) => {
-    localStorage.setItem('selectedAppId', appId);
+    localStorage.setItem('selectedType', 'app');
+    localStorage.setItem('selectedItemId', appId);
     handleStepChange(2);
   };
 

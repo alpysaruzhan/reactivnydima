@@ -1,6 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Nunito:wght@600&family=Poppins:wght@400;600&display=swap');
 @import "./Reset.css";
 
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000; 
+  --accent-color: #4A307F; 
+}
+
+.light-theme {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #ff4500;
+}
+
+.dark-theme {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --accent-color: #4A90E2;
+}
+
 .app {
   display: flex;
   margin: 0;
@@ -8,15 +26,40 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  height: 5px; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9b9b9b;
+  border-radius: 4px; 
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f0f0f0; 
+}
+
+.content {
+  border-radius: 10px; 
+  overflow: hidden;
+}
+
+
 .content {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+  background-color: var(--background-color);
   margin: 0;
+  margin-top: 90px;
   padding: 0;
+  padding-left: 225px; 
+
 }
+
+
 
 .com {
   /* border: 1px solid red; */
@@ -40,5 +83,11 @@
     margin: 0;
     display: flex;
     align-items: center;
+  }
+}
+
+@media screen and (max-width: 1220px) and (min-width: 600px) {
+  .content {
+    padding-left: 100px; 
   }
 }

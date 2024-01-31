@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export const OptionTypes = { 
   RANGE: 'range', 
@@ -45,7 +45,6 @@ export const RangeCharactersitics = (props) => {
   );
 }
 
-
 export const SwitchCharactersitics = (props) => {
   const { options } = props;
   let switchOptions = filterOptionsByType(options, OptionTypes.SWITCH);
@@ -71,34 +70,41 @@ export const SwitchCharactersitics = (props) => {
       ))}
     </div>
   );
-};
+}
 
+export const SelectorCharactersitics = ({ options, onLabelClick }) => {
+  const uniqueGroups = getUniqueGroups(options);
+  const [activeLabel, setActiveLabel] = useState(null);
 
-export const SelectorCharactersitics = (props) => { 
-  const { options, activeLabel, onLabelClick } = props;
-  let uniqueGroups = getUniqueGroups(options);
-  let selectorOptions = filterOptionsByType(options, OptionTypes.SELECTOR);
+  const handleLabelClick = (label) => {
+    setActiveLabel(label);
+    onLabelClick && onLabelClick(label);
+  };
 
-  return ( 
+  return (
     <div>
-      {uniqueGroups.map((group) => (
-        <div key={group}>
-          <h3 className="label-charac">{group}</h3>
-          <div className="div-label">
-            {selectorOptions.map((option) => (
-              <div
-                className={`glab ${activeLabel === option.label ? 'active' : ''}`}
-                key={option.label}
-                onClick={() => onLabelClick(option.label)}
-              >
-                <div className="label-sel">
-                  <label>{option.label}</label>
+      {uniqueGroups.map((group) => {
+        const selectorOptions = filterOptionsByType(options, OptionTypes.SELECTOR).filter(option => option.group === group);
+
+        return (
+          <div key={group}>
+            <h3 className="label-charac">{group}</h3>
+            <div className="div-label">
+              {selectorOptions.map((option) => (
+                <div
+                  className={`glab ${activeLabel === option.label ? 'active' : ''}`}
+                  key={option.label}
+                  onClick={() => handleLabelClick(option.label)}
+                >
+                  <div className="label-sel">
+                    <label>{option.label}</label>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
-}
+};

@@ -21,10 +21,8 @@ const ProductList = () => {
       setWindowWidth(window.innerWidth);
     };
 
-    // Добавляем слушатель события изменения размера окна
     window.addEventListener('resize', handleResize);
 
-    // Удаляем слушатель при размонтировании компонента
     return () => {
       window.removeEventListener('resize', handleResize);
     };

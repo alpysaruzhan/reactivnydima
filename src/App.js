@@ -27,6 +27,7 @@ import { isAuthorized } from './GateWay/base';
 import { instanceOf } from 'prop-types';
 import SellPage from './Sell/SellPage';
 
+
 class App extends Component {
   static propTypes = {
     cookies: instanceOf(Cookies).isRequired
@@ -40,13 +41,14 @@ class App extends Component {
       'authorized': isAuthorized(cookies),
     }
   }
+  
 
   render() {
     const { authorized } = this.state;
 
     return (
       <Router>
-        <div>
+        <div > 
           <div className="app">
             <Sidebar />
             <div className="content">
@@ -87,6 +89,7 @@ class App extends Component {
               </div>
             </div>
           </div>
+          {/* <button onClick={toggleTheme}>Переключить тему</button> */}
           <Footer />
         </div>
       </Router>
