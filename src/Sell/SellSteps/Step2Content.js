@@ -22,7 +22,7 @@ const Step2ContentPage = ({ handleStepChange }) => {
     });
   }, [gameId]);
   const handleCategoryClick = (categoryId) => {
-    localStorage.setItem('selectedCategoryId', categoryId);
+    localStorage.setItem('selectedCategoryName', categoryId);
     handleStepChange(3);
   };
   
@@ -34,7 +34,7 @@ const Step2ContentPage = ({ handleStepChange }) => {
         <h1 onClick={() => handleStepChange(2)} className='h-cat'>&lt; Категории:</h1>
 
         {categories.map((category) => (
-          <div onClick={() => handleCategoryClick(category.id)} className='div-cat' key={category.id}>
+          <div onClick={() => handleCategoryClick(category.name)} className='div-cat' key={category.id}>
             <p className='p-cat'>· {category.name}</p>
           </div>
         ))}

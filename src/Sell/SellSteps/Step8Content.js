@@ -50,7 +50,7 @@ const Step8ContentPage = ({ handleStepChange }) => {
   const CreateDraftProduct = () => {
     const selectedType = localStorage.getItem('selectedType');
     const selectedItemId = localStorage.getItem('selectedItemId');
-    const selectedCategory = JSON.parse(localStorage.getItem('selectedCategory'));
+    const selectedCategoryName = localStorage.getItem('selectedCategoryName')
     const selectedLabel = localStorage.getItem('selectedLabel');
     const uploadedImage = localStorage.getItem('uploadedImage');
     const productDescription = localStorage.getItem('productDescription');
@@ -80,10 +80,10 @@ const Step8ContentPage = ({ handleStepChange }) => {
     }
 
     if (selectedType === 'game') {
-      marketAPI.productCreateProductApiV1ProductPost({
+      marketAPI.productCreateProductApiV1ProductPost(JSON.stringify({
         name: selectedGame.name,
         text: productDescription,
-        category_name: selectedCategory.name,
+        category_name: selectedCategoryName,
         short_description: storedShortDescription,
         price: {
           amount: price.amount,
@@ -91,12 +91,12 @@ const Step8ContentPage = ({ handleStepChange }) => {
         },
         characteristics: [{ label: selectedLabel, value: 'someValue' }],
         tags: [],
-      }, [uploadedImage], callback);
+      }), [uploadedImage], callback);
     } else if (selectedType === 'app') {
-      marketAPI.productCreateProductApiV1ProductPost({
+      marketAPI.productCreateProductApiV1ProductPost(JSON.stringify({
         name: selectedGame.name, // Use selectedGame instead of selectedApp
         text: productDescription,
-        category_name: selectedCategory.name,
+        category_name: selectedCategoryName,
         short_description: storedShortDescription,
         price: {
           amount: price.amount,
@@ -104,7 +104,7 @@ const Step8ContentPage = ({ handleStepChange }) => {
         },
         characteristics: [{ label: selectedLabel, value: 'someValue' }],
         tags: [],
-      }, [uploadedImage], callback);
+      }), [uploadedImage], callback);
     }
   };
 
