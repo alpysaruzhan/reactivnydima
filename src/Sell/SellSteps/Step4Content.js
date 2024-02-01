@@ -10,6 +10,9 @@ const Step4ContentPage = ({ handleStepChange }) => {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
+    const formData =  new FormData()
+    formData.append('file', e.target.files[0])
+    console.log(formData)
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {

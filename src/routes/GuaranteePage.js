@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './GuaranteePage.css';
-import guarantee1 from '/Users/kirill/Desktop/Новая папка/reactivnydima/src/img/chat.svg';
-import guarantee2 from '/Users/kirill/Desktop/Новая папка/reactivnydima/src/img/chat.svg';
-import guarantee3 from '/Users/kirill/Desktop/Новая папка/reactivnydima/src/img/chat.svg';
-import guarantee4 from '/Users/kirill/Desktop/Новая папка/reactivnydima/src/img/chat.svg';
-import banner from '/Users/kirill/Desktop/Новая папка/reactivnydima/src/img/banner.jpg';
+import guarantee1 from '../img/chat.svg';
+import guarantee2 from '../img/chat.svg';
+import guarantee3 from '../img/chat.svg';
+import guarantee4 from '../img/chat.svg';
+import banner from '../img/banner.jpg';
 const AboutSection = () => (
   <section id="о-нас">
     <h3>О нас</h3>

@@ -13,23 +13,23 @@ const Login = (props) => {
 
   const [tempPassword, setTempPassword] = useState('');
   const [cookies, setCookie] = useCookies([AUTH_KEY]);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const email = localStorage.getItem(TEMP_EMAIL_KEY);
   let apiInstance = new AuthApi(Instance);
 
   function handleLogin(event) {
     event.preventDefault();
-      if (email !== null) { 
-        apiInstance.authJwtLoginApiV1AuthJwtLoginPost("", email, tempPassword, "", "", "", (error, data, response) => {
-            if (error) {
-                console.error(error);   
-            } else {
-                // Как то перенаправить на афтер регистрацию!!
-                setToken(data.accessToken, setCookie)
-                
-                setTimeout(() => navigate('/register'), 500)
-            }
+    if (email !== null) {
+      apiInstance.authJwtLoginApiV1AuthJwtLoginPost("", email, tempPassword, "", "", "", (error, data, response) => {
+        if (error) {
+          console.error(error);
+        } else {
+          // Как то перенаправить на афтер регистрацию!!
+          setToken(data.accessToken, setCookie)
+
+          setTimeout(() => navigate('/register'), 500)
         }
+      }
       )
     }
   }
@@ -63,13 +63,13 @@ const Login = (props) => {
                 </button>
               </Link>
               <div className="soc">
-                <Link to="/"  className="log-but2">
+                <Link to="/" className="log-but2">
                   <button type="submit" className="log-but">
                     <img className="svg" src={vk} alt="" /> Войти через VK
                   </button>
                 </Link>
                 <Link to="/" className="log-but2">
-                  <button type="submit"  className="log-but" >
+                  <button type="submit" className="log-but" >
                     <img className="svg" src={gmail} alt="" />
                     Войти через Gmail
                   </button>

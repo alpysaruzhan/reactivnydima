@@ -8,6 +8,8 @@ import ProfilePage from './ProfilePage/ProfilePage';
 import ProfileReview from './ProfilePage/ProfileReview/ProfileReview';
 
 import GuaranteePage from './routes/GuaranteePage';
+import UserdocPage from './routes/UserdocPage';
+
 import Register from './Register/Register';
 import Regcod from './Regcod/Regcod';
 import Auth from './Auth/Auth';
@@ -20,6 +22,7 @@ import ProductList from './ProductList/ProductList';
 import AllApps from './AllApps/AllApps';
 import CookiePage from './Cookie/Cookie';
 import PolicyPage from './Policy/Policy';
+
 import BalancePage from './Balance/Balance';
 import ChatPage from './ChatPage/ChatPage';
 import { Cookies, CookiesProvider, withCookies } from 'react-cookie';
@@ -83,6 +86,7 @@ class App extends Component {
                   <Route path="/game/:id" element={<ProductDetailPage />} />
                   <Route path='/cookie' element={<CookiePage />} />
                   <Route path='/policy' element={<PolicyPage />} />
+                  <Route path='/privacy' element={<UserdocPage />} />
                   <Route path='/balance' element={<BalancePage />} />
 
                 </Routes>

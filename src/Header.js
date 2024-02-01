@@ -8,15 +8,15 @@ import "./Header.css";
 import { TEMP_EMAIL_KEY } from "./GateWay/consts";
 import { Cookies } from "react-cookie";
 
-  
-const Header = ({authorized}) => {
+
+const Header = ({ authorized }) => {
   console.log(authorized)
 
   return (
     <header className="header">
       <div className="mobile">
         <div><div className="logo">
-          
+
           {/* <NavLink to="/">
             <img className="logo-img" src={logo} alt="" />
             <img className="logo-img2" src={logowithout} alt="" />
@@ -30,18 +30,19 @@ const Header = ({authorized}) => {
         </p>
       </div> */}
       <div>
-        
-      
-        {!authorized ?  <div className="header-buttons">
-        <NavLink to="/login/code" className="vhod">
-          <button className="header-button1">Вход</button>
-        </NavLink>
-        <NavLink to="/login/code"className="registracia">
-          <button className="header-button2">Регистрация</button>
-        </NavLink>
-      </div> : null}
+
+
+        {!authorized ? <div className="header-buttons">
+          <NavLink to="/login/code" className="vhod">
+            <button className="header-button1">Вход</button>
+          </NavLink>
+          <NavLink to="/login/code" className="registracia">
+            <button className="header-button2">Регистрация</button>
+          </NavLink>
+        </div> : <button className="header-button2">Выйти</button>
+        }
       </div>
-     
+
     </header>
   );
 };

@@ -1,0 +1,31 @@
+.UserdocPage{
+  max-width: 1040px;
+  margin: 10px;
+
+}
+
+.UserdocPage body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.UserdocPage p {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: black;
+}
+
+.UserdocPage h2 {
+  margin-top: 18px;
+  margin-bottom: 18px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.UserdocPage h1 {
+  margin-top: 18px;
+  margin-bottom: 18px;
+  font-size: 24px;
+  font-weight: 600;
+
+}
