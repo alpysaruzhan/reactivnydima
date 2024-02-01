@@ -49,7 +49,7 @@ const Step8ContentPage = ({ handleStepChange }) => {
 
   const CreateDraftProduct = () => {
     const selectedType = localStorage.getItem('selectedType');
-    const selectedItemId = localStorage.getItem('selectedItemId');
+    const selectedGameId = localStorage.getItem('selectedGameId');
     const selectedCategoryName = localStorage.getItem('selectedCategoryName')
     const selectedLabel = localStorage.getItem('selectedLabel');
     const uploadedImage = localStorage.getItem('uploadedImage');
@@ -57,12 +57,12 @@ const Step8ContentPage = ({ handleStepChange }) => {
     const storedShortDescription = localStorage.getItem('shortDescription');
 
     // Add checks for undefined games or selectedItemId
-    if (!selectedItemId) {
+    if (!selectedGameId) {
       console.error('Games array or selectedItemId is undefined.');
       return;
     }
 
-    const selectedGame = games.find((game) => game.id === selectedItemId);
+    const selectedGame = games.find((game) => game.id === selectedGameId);
 
     if (!selectedGame) {
       console.error('Selected game not found in the games array.');
