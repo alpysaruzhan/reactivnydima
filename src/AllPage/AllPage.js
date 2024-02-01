@@ -28,7 +28,7 @@ const AllPage = () => {
   //apps----
   console.log(sortedGames);
   const handleInputChange = (e) => {
-    setFilterText(e.target.value);
+    setFilterText(e.target.value);``
     // const filteredData = sortedGames.filter(item =>
     //   item.name.toLowerCase().includes(e.target.value.toLowerCase())
     // );
