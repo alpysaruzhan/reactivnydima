@@ -36,3 +36,7 @@ export function isAuthorized(cookies) {
         return false;
     }
 }
+
+export function asFileUrl(fileUrl) { 
+    return basePath + fileUrl
+}

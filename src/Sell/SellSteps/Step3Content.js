@@ -10,7 +10,7 @@ const Step3ContentPage = ({ handleStepChange }) => {
     const [options, setOptions] = useState([]);
     const [attributes, setAttributes] = useState([]);
     const [selectedLabel, setSelectedLabel] = useState(null);
-    let categoryId = localStorage.getItem("selectedCategoryId");
+    let categoryName = localStorage.getItem("selectedCategoryName");
     const [category, setCategory] = useState([]);
 
     const addAttributes = (label, value) => {
@@ -20,7 +20,7 @@ const Step3ContentPage = ({ handleStepChange }) => {
     }
 
     useEffect(() => {
-        marketAPI.categoryGetCategoryByIdApiV1CategoryCategoryIdIdGet(categoryId, (error, data, response) => {
+        marketAPI.categoryGetCategoryByNameApiV1CategoryCategoryNameNameGet(categoryName, (error, data, response) => {
             if (error) {
                 console.error(error)
             } else {
@@ -30,7 +30,7 @@ const Step3ContentPage = ({ handleStepChange }) => {
                 console.log(data);
             }
         });
-    }, [categoryId]);
+    }, [categoryName]);
 
     const handleLabelClick = (label) => {
         setSelectedLabel(label);

@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./ProductComponent.css";
+import { asFileUrl } from "../GateWay/base";
 
 
 const ProductComponent = ({card}) => {
@@ -13,14 +14,14 @@ const ProductComponent = ({card}) => {
         className="ProductComponent-product-card-link"
       >
         <div className="ProductComponent-firstline-card">
-          <img src={card.logo} alt={card.title} className="ProductComponent-card-logo" />
+          <img src={asFileUrl(card.logo.fileUrl)} alt={card.title} className="ProductComponent-card-logo" />
           <div className="ProductComponent-text-card">
             <p className="ProductComponent-product-name2">{card.title}</p>
             <p className="ProductComponent-card-category2">{card.category}</p>
           </div>
         </div>
         <img
-          src={card.image}
+          src={asFileUrl(card.image.fileUrl)}
           alt={card.title}
           className="ProductComponent-product-logo1"
         />

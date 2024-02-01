@@ -26,13 +26,13 @@ const Step1ContentPage = ({ handleStepChange }) => {
 
   const handleGameClick = (gameId) => {
     localStorage.setItem('selectedType', 'game');
-    localStorage.setItem('selectedItemId', gameId);
+    localStorage.setItem('selectedGameId', gameId);
     handleStepChange(2);
   };
 
   const handleAppClick = (appId) => {
     localStorage.setItem('selectedType', 'app');
-    localStorage.setItem('selectedItemId', appId);
+    localStorage.setItem('selectedGameId', appId);
     handleStepChange(2);
   };
 
@@ -68,7 +68,7 @@ const Step1ContentPage = ({ handleStepChange }) => {
               app.type === "APPLICATION" && (
                 <div key={app.id}>
                   <div onClick={() => handleAppClick(app.id)}>
-                    <img className='lgsell' src={app.logoURL} alt={app.title} />
+                    <img className='lgsell' src={basePath + app.logoURL} alt={app.title} />
                     <p className='p-tit-sell'>{app.title}</p>
                   </div>
                 </div>

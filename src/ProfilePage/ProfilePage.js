@@ -8,6 +8,8 @@ import ProductComponent from '../ProductComponent/ProductComponent';
 import cardData from "../card.json";
 import { AuthApi, ChatApi, WalletApi, UsersApi } from 'market_place';
 import { Instance } from '../GateWay/base';
+import { MarketApi } from "market_place"
+
 
 const ProfilePage = () => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -15,7 +17,7 @@ const ProfilePage = () => {
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
-  const cardsToShow = cardData.cards.slice(0, 12);
+  //const cardsToShow = cardData.cards.slice(0, 12);
   const Users = new UsersApi(Instance);
   const Wallet = new WalletApi(Instance);
 
@@ -45,6 +47,26 @@ const ProfilePage = () => {
   }, [])
   
    
+  const [cardsToShow, setCardsToShow] = useState([]); 
+
+
+  useEffect(() => {
+    const market = new MarketApi(Instance)
+
+    market.getUserProductsApiV1ProductUserGet(
+      {
+
+        
+      }, (error, data, response) => { 
+      if (error) { 
+        console.error(error)
+      } else { 
+        console.log("data",data)
+        // setCardsToShow(data.objects)
+      }
+    })
+  }, [])
+
 
   return (
     <div className="cont2">
