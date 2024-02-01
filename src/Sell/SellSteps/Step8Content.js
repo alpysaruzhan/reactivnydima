@@ -84,27 +84,31 @@ const Step8ContentPage = ({ handleStepChange }) => {
         name: selectedGame.name,
         text: productDescription,
         category_name: selectedCategoryName,
-        short_description: storedShortDescription,
+        short_description: "storedShortDescription",
         price: {
           amount: price.amount,
           currency: 'RUB',
         },
-        characteristics: [{ label: selectedLabel, value: 'someValue' }],
+        // characteristics: [{ label: selectedLabel, value: 'someValue' }],
+        characteristics: [],
         tags: [],
-      }), [uploadedImage], callback);
+        photos: [{"file_id": JSON.parse(uploadedImage).file_id}]
+      }), callback);
     } else if (selectedType === 'app') {
       marketAPI.productCreateProductApiV1ProductPost(JSON.stringify({
         name: selectedGame.name, // Use selectedGame instead of selectedApp
         text: productDescription,
         category_name: selectedCategoryName,
-        short_description: storedShortDescription,
+        short_description: "storedShortDescription",
         price: {
           amount: price.amount,
           currency: 'RUB',
         },
-        characteristics: [{ label: selectedLabel, value: 'someValue' }],
+        // characteristics: [{ label: selectedLabel, value: 'someValue' }],
+        characteristics: [],
         tags: [],
-      }), [uploadedImage], callback);
+        photos: [{"file_id": JSON.parse(uploadedImage).file_id}]
+      }), callback);
     }
   };
 

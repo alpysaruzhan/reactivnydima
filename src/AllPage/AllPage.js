@@ -4,21 +4,56 @@ import productsData from "../ProductList/db.json";
 import "./AllPage.css";
 
 const AllPage = () => {
-  const sortedGames = productsData.games
-    .slice()
-    .sort((a, b) => a.title.localeCompare(b.title));
-  const groupedGames = sortedGames.reduce((groups, game) => {
-    const firstLetter = game.title[0].toUpperCase();
-    if (!groups[firstLetter]) {
-      groups[firstLetter] = [];
-    }
-    groups[firstLetter].push(game);
-    return groups;
-  }, {});
 
+  const [filterText, setFilterText] = useState('');
+
+  
+ 
+  // const handleInputChange = (e) => {
+  //   setFilterText(e.target.value);
+  //   const filteredData = groupedGamesSorted.filter(item =>
+  //     item.name.toLowerCase().includes(e.target.value.toLowerCase())
+  //   );
+  //   setgroupedGamesSorted(filteredData);
+  // };
+
+
+  const [groupedGames, setgroupedGames] = useState('');
+   //apps
+  const [sortedGames, setsortedGames] = useState(productsData.games
+    .slice()
+    .sort((a, b) => a.title.localeCompare(b.title)));
+
+
+  //apps----
+  console.log(sortedGames);
+  const handleInputChange = (e) => {
+    setFilterText(e.target.value);
+    // const filteredData = sortedGames.filter(item =>
+    //   item.name.toLowerCase().includes(e.target.value.toLowerCase())
+    // );
+    // setsortedGames(filteredData);
+
+    setgroupedGames(sortedGames.reduce((groups, game) => {
+      const firstLetter = game.title[0].toUpperCase();
+      if (!groups[firstLetter]) {
+        groups[firstLetter] = [];
+      }
+      groups[firstLetter].push(game);
+      return groups;
+    }, {}))
+  };
+  //
+
+
+
+  //
+
+  //apps
   const sortedApps = productsData.apps
     .slice()
     .sort((a, b) => a.title.localeCompare(b.title));
+
   const groupedApps = sortedApps.reduce((groups, app) => {
     const firstLetter = app.title[0].toUpperCase();
     if (!groups[firstLetter]) {
@@ -27,7 +62,10 @@ const AllPage = () => {
     groups[firstLetter].push(app);
     return groups;
   }, {});
+  //-----
 
+
+  
   const [activec, setActivec] = useState("c1");
   const handlecClick = (c) => {
     setActivec(c);
@@ -41,8 +79,12 @@ const AllPage = () => {
           <div className="cs">
             <input
               className="input-tit"
-              placeholder="Введите название игры ..."
-            ></input>
+             
+              type="text"
+              placeholder="Filter by name"
+              value={filterText}
+              onChange={handleInputChange}
+            />
             <div className="cs-button">
               <button
                 className={activec === "c1" ? "butprill activeeew" : "butprill"}
