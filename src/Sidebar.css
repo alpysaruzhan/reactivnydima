@@ -183,7 +183,6 @@
 @media (max-width: 600px) {
   .sidebar {
     display: none;
-    background-color: aquamarine;
 
   }
 
@@ -195,6 +194,8 @@
   .mobile-navbar-menu-list li a {
     text-decoration: none;
     display: flex;
+
+    
   }
 }
 

@@ -416,6 +416,22 @@
         width: 100%; 
         margin: 0 auto;
     }
+    
+    .css {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .butpril {
+        width: 49%;
+        margin: 0;
+    }
+
+
+    .sell-input {
+       
+        width: 100%;
+    }
 }
 
 @media screen and (min-width: 600px) and (max-width: 1200px) {
