@@ -39,9 +39,8 @@ const Step3ContentPage = ({ handleStepChange }) => {
 
     return (
         <div className='sellall-con'>
-            <div onClick={() => handleStepChange(2)}>
-                <h1 className='h-cat'>&lt; Характеристики:</h1>
-            </div>
+            <h1 className='h-cat'  onClick={() => handleStepChange(2)} >&lt;Характеристики: </h1>
+
             <h2 className='h2-cat'>{category.name}</h2>
             <SelectorCharactersitics options={options} onLabelClick={handleLabelClick} />
             <RangeCharactersitics options={options} addAttributes={addAttributes} />

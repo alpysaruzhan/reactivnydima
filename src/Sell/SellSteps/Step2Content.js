@@ -31,7 +31,7 @@ const Step2ContentPage = ({ handleStepChange }) => {
   return (
     <div className='sellall-con'>
       <div className='category-pag'>
-        <h1 onClick={() => handleStepChange(2)} className='h-cat'>&lt; Категории:</h1>
+        <h1 onClick={() => handleStepChange(1)} className='h-cat'>&lt; Категории:</h1>
 
         {categories.map((category) => (
           <div onClick={() => handleCategoryClick(category.name)} className='div-cat' key={category.id}>

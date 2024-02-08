@@ -13,7 +13,8 @@ const Step7ContentPage = ({ handleStepChange }) => {
     return (
         <div className='sellall-con'>
             <div className='sel-hh'>
-                <h1 className='h-cat'>&lt; Данные товара:</h1>
+            <h1 className='h-cat'  onClick={() => handleStepChange(6)} >&lt; Данные товара:</h1>
+
                 <div className='inpu-name'>
                     <textarea
                         className='inpu-r'

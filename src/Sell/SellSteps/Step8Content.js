@@ -115,7 +115,8 @@ const Step8ContentPage = ({ handleStepChange }) => {
   return (
     <div className='sellall-con'>
       <div className='sel-h'>
-        <h1 className='h-cat'>&lt; Сумма товара:</h1>
+      <h1 className='h-cat'  onClick={() => handleStepChange(7)} >&lt; Сумма товара:</h1>
+
         <input className='input-name' type='number' value={inputValue} onChange={handleInputChange} />
         <input type='text' value={price.currency} onChange={(e) => setPrice({ ...price, currency: e.target.value })} />
         <input type='number' value={price.amount} onChange={(e) => setPrice({ ...price, amount: e.target.value })} />
