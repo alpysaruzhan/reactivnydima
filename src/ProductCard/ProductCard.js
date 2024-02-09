@@ -30,8 +30,13 @@ const ProductCard = () => {
 
   return (
     <div className="alll">
+<<<<<<< HEAD
+      <div className="block">
+        <h1 className="tit">Все товары</h1>
+=======
       <div className="ProductList-block">
         <h1 className="ProductList-tit">Товары</h1>
+>>>>>>> 9ad6ff3a0b8b3996584013af7740bdfbb3b9a253
         <NavLink to={"/all"}>
           <button className="game-button3">Выставить свой товар &#707;</button>
         </NavLink>

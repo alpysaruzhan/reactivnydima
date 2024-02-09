@@ -23,7 +23,7 @@ const FaqSection = ({ faqQuestions }) => {
 
   return (
     <section id="ответы-на-вопросы">
-      <h3>Ответы на вопросы</h3>
+      {/* <h3>Ответы на вопросы</h3>
       <div className="faq-content">
         {faqQuestions.map((faqQuestion) => (
           <div key={faqQuestion.id} className="faq-question">
@@ -39,7 +39,7 @@ const FaqSection = ({ faqQuestions }) => {
             )}
           </div>
         ))}
-      </div>
+      </div> */}
     </section>
   );
 };
@@ -98,7 +98,7 @@ const GuaranteePage = () => {
   return (
     <div className="guarantee-page">
       <div className='banner'>
-        <img src={banner} className='banner-img' />
+        {/* <img src={banner} className='banner-img' /> */}
       </div>
       <div className='ponpon'>
         <div className="about-section">

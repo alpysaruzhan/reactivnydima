@@ -1,194 +1,165 @@
 {
-    "games": [
-      {
-        "id": 1,
-        "title": "Brawl Stars",
-        "bannerURL": "https://abrakadabra.fun/uploads/posts/2022-03/1647281616_4-abrakadabra-fun-p-oboi-bravl-stars-bazz-4.jpg",
-        "logoURL": "https://image.winudf.com/v2/image1/MjA3NzM5NTRfMTY4ODA5NTU4OF8wNDc/screen-0.png?fakeurl=1&type=png&w=292",
-        "categories": "Гемы, Аккаунты, Буст, Донат, Услуги, Другое"
-      },
-      {
-        "id": 2,
-        "title": "Standoff 2",
-        "bannerURL": "https://play-lh.googleusercontent.com/0mJuxwS-XI21njoPFuBk2MIkhQF0dFH2sKQcSPOxJJMB72Je9hNnyhGgHhDcouRoihI",
-        "logoURL": "https://play-lh.googleusercontent.com/lhZ2XosDcwqV4qrQGunbwHsR_69VeyRlXabCT5uwqQFmVjCbnQgQ3Rrltv0Sr3NJl5Ll",
-        "categories": "Голда, Gold Pass, Аккаунты, Скины, Наборы, Дизайн, Буст, Кланы, Услуги, Другое"
-      },
-      {
-        "id": 3,
-        "title": "Genshin Impact",
-        "bannerURL": "https://webstatic.hoyoverse.com/upload/op-public/2023/05/13/7c2ebfcf6249a27936ae313009398fe1_4426313663649855657.jpg",
-        "logoURL": "https://vectorseek.com/wp-content/uploads/2023/04/Genshin-Impact-Logo-Vector.jpg",
-        "categories": "Примогемы, Аккаунты, Донат, Дизайн, Услуги, Другое"
-      },
-      {
-        "id": 4,
-        "title": "CS:GO",
-        "bannerURL": "https://hd2.tudocdn.net/1087711?w=824&h=494",
-        "logoURL": "https://steamuserimages-a.akamaihd.net/ugc/1792972203098784106/235C4D7323985B03C88A0260576915454F9BD508/?imw=512&imh=512&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
-        "categories": "Prime статус, Скины, Аккаунты, Допуск CS2, Буст, Дизайн, Аккаунты FACEIT, Услуги, Другое"
-      },
-      {
-        "id": 5,
-        "title": "DOTA 2",
-        "bannerURL": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota2_social.jpg",
-        "logoURL": "https://seeklogo.com/images/D/dota-2-logo-A8CAC9B4C9-seeklogo.com.png",
-        "categories": "Аккаунты, Скины, Буст, Услуги, Боевой пропуск, Дизайн, Другое"
-      },
-      {
-        "id": 6,
-        "title": "PUBG Mobile",
-        "bannerURL": "https://img.prosports.kz/news/content//202103/204598_955a47c2fe4295d3686ccdf925a12623.jpg",
-        "logoURL": "https://upload.wikimedia.org/wikipedia/ru/7/7e/PlayerUnknown%27s_Battlegrounds_Mobile.jpg",
-        "categories": "Аккаунты, UC, Metro Royale, Популярность, Буст, Дизайн, Кланы, Услуги, Другое"
-      },
-      {
-        "id": 7,
-        "title": "FIFA Mobile",
-        "bannerURL": "https://media.contentapi.ea.com/content/dam/ea/fifa/fifa-mobile/season-5/global_assets/images/2023/03/fifa-mobile-grid-tile-season-5-16x9-1.jpg.adapt.crop191x100.1200w.jpg",
-        "logoURL": "https://play-lh.googleusercontent.com/MUc561H_AeA4lUfUzyo0-6ZgikC6xrblMMPcbOTNC61iXb9hbfV9guj5IKiXAMfpumJw",
-        "categories": "Наборы, Аккаунты, Поинты, Монеты, Абонемент, Буст, Дизайн, Услуги, Прочее"
-      },
-      {
-        "id": 8,
-        "title": "Free Fire",
-        "bannerURL": "https://images.hindustantimes.com/tech/img/2023/07/26/1600x900/pop02_1652576476202_1690333929717.jpg",
-        "logoURL": "https://play-lh.googleusercontent.com/9zACfwWC3nLgQls-vt4lpz8N0Vv4zWMUXtcFth3oBT5789vmsTktH_fCNXHsGdmtOw4",
-        "categories": "Алмазы, Аккаунты, Донат, Гильдии, Буст, Дизайн, Услуги, Прочее"
-      },
-      {
-        "id": 9,
-        "title": "Fortnite",
-        "bannerURL": "https://fortnitefun.ru/wp-content/uploads/2023/02/2-sezon-4-glavy-fortnajt.jpg",
-        "logoURL": "https://cm1.narvii.com/7427/9dc0f7960adb0fcecdd2a8b31d10a1bbaa270a16_00.jpg",
-        "categories": "B-баксы, Аккаунты, наборы, Донат, Услуги, Дизайн, Другое"
-      },
-      {
-        "id": 10,
-        "title": "GTA 5 Online",
-        "bannerURL": "https://www.ixbt.com/img/n1/news/2021/2/2/81695054_large.jpg",
-        "logoURL": "https://img2.freepng.ru/20180330/luq/kisspng-grand-theft-auto-v-grand-theft-auto-san-andreas-g-gta-5abe76af47e7d8.8433946015224316632945.jpg",
-        "categories": "Аккаунты, Предметы, Деньги, Услуги, Дизайн, Другое"
-      },
-      {
-        "id": 11,
-        "title": "Rust",
-        "bannerURL": "https://cdn1.epicgames.com/offer/2c42520d342a46d7a6e0cfa77b4715de/EGS_DyingLightRustWeaponPack_Techland_DLC_S1_2560x1440-cbb311f0d5c6501f7c65f89d2c724bc9",
-        "logoURL": "https://play-lh.googleusercontent.com/L4fcXW7pwchDqEkqg4KY2x4eziqjkCbbWy8cz1PEewZiPUZ5dy2szrt2THeTmCrgLiE",
-        "categories": "Аккаунты, Скины, Ключи, Буст, Дизайн, Услуги, Другое"
-      },
-      {
-        "id": 12,
-        "title": "Minecraft",
-        "bannerURL": "https://assets.xboxservices.com/assets/48/94/48944ec6-2137-4981-b7f8-4ba055c52f8e.jpg?n=Minecraft_Sneaky-Slider-1084_Trails-and-Tails_1600x675.jpg",
-        "logoURL": "https://fanapk.ru/uploads/posts/2021-06/1623264694_icons.webp",
-        "categories": "Лицензия, Аккаунты, Minecoins, Хайпиксель, Дизайн, Услуги, Другое"
-      },
-      {
-        "id": 13,
-        "title": "Clash Royale",
-        "bannerURL": "https://suzzy.ru/wp-content/uploads/2020/03/997be2fad31f909e4e-732x403.jpg",
-        "logoURL": "https://play-lh.googleusercontent.com/D_KblLmWmgxRo07tVpTVj1ysGhJuJ3n5Rv_FC6xO5h3E9Pwmv6v7x6kYWztqX9VsAklR",
-        "categories": "Донат, Аккаунты, Гемы, Услуги, Дизайн, Другое"
-      },
-      {
-        "id": 14,
-        "title": "Clash of Clans",
-        "bannerURL": "https://staticg.sportskeeda.com/wp-content/uploads/2015/03/10386746_983938531630470_6622837490873195662_n-1427769479.png",
-        "logoURL": "https://play-lh.googleusercontent.com/LByrur1mTmPeNr0ljI-uAUcct1rzmTve5Esau1SwoAzjBXQUby6uHIfHbF9TAT51mgHm",
-        "categories": "Донат, Аккаунты, Гемы, Буст, Золото столицы, Кланы, Дизайн, Услуги, Другое"
-      },
-      {
-        "id": 15,
-        "title": "Roblox",
-        "bannerURL": "https://youvteme.online/wp-content/uploads/2020/02/Roblox.jpg",
-        "logoURL": "https://play-lh.googleusercontent.com/WNWZaxi9RdJKe2GQM3vqXIAkk69mnIl4Cc8EyZcir2SKlVOxeUv9tZGfNTmNaLC717Ht",
-        "categories": "Робуксы, Adopt me, MM2, Pet simulator X, Roblox studio, BloxFruits, Услуги, Лимитки, Аккаунты, Позинг, Другое"
-      }
-    ],
-    "apps": [
-            {
-              "id": 1,
-              "title": "YouTube",
-              "logoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/YouTube_play_button_square_%282013-2017%29.svg/1200px-YouTube_play_button_square_%282013-2017%29.svg.png",
-              "categories": "Просмотр видео, Подписки, Лайки, Комментарии, Уведомления, Другое"
-            },
-            {
-              "id": 2,
-              "title": "Telegram",
-              "logoURL": "https://cdn3.iconfinder.com/data/icons/social-media-chamfered-corner/154/telegram-512.png",
-              "categories": "Обмен сообщениями, Каналы, Группы, Стикеры, Чат-боты, Другое"
-            },
-            {
-              "id": 3,
-              "title": "Steam",
-              "logoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/2048px-Steam_icon_logo.svg.png",
-              "categories": "Игры, Чат, Достижения, Видео, Другое"
-            },
-            {
-              "id": 4,
-              "title": "Likee",
-              "logoURL": "https://play-lh.googleusercontent.com/KYSgJIN4swFSv49qnXpXcCsTkZlmaa7ur8tvIOvwKby_xfkdQ91fXJp5cZbDenNMeA=w240-h480-rw",
-              "categories": "Просмотр видео, Лайки, Подписки, Чат, Стикеры, Другое"
-            },
-            {
-              "id": 5,
-              "title": "TikTok",
-              "logoURL": "https://icones.pro/wp-content/uploads/2021/03/logo-icone-tiktok-simbolo.png",
-              "categories": "Просмотр видео, Лайки, Подписки, Чат, Стикеры, Другое"
-            },
-            {
-              "id": 6,
-              "title": "VK",
-              "logoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/VK_Compact_Logo_%282021-present%29.svg/2048px-VK_Compact_Logo_%282021-present%29.svg.png",
-              "categories": "Обмен сообщениями, Группы, Аудио, Видео, Новости, Другое"
-            },{
-              "id": 7,
-              "title": "VK",
-              "logoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/VK_Compact_Logo_%282021-present%29.svg/2048px-VK_Compact_Logo_%282021-present%29.svg.png",
-              "categories": "Обмен сообщениями, Группы, Аудио, Видео, Новости, Другое"
-            },{
-              "id": 8,
-              "title": "VK",
-              "logoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/VK_Compact_Logo_%282021-present%29.svg/2048px-VK_Compact_Logo_%282021-present%29.svg.png",
-              "categories": "Обмен сообщениями, Группы, Аудио, Видео, Новости, Другое"
-            },{
-              "id": 9,
-              "title": "VK",
-              "logoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/VK_Compact_Logo_%282021-present%29.svg/2048px-VK_Compact_Logo_%282021-present%29.svg.png",
-              "categories": "Обмен сообщениями, Группы, Аудио, Видео, Новости, Другое"
-            },{
-              "id": 10,
-              "title": "VK",
-              "logoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/VK_Compact_Logo_%282021-present%29.svg/2048px-VK_Compact_Logo_%282021-present%29.svg.png",
-              "categories": "Обмен сообщениями, Группы, Аудио, Видео, Новости, Другое"
-            },{
-              "id": 11,
-              "title": "VK",
-              "logoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/VK_Compact_Logo_%282021-present%29.svg/2048px-VK_Compact_Logo_%282021-present%29.svg.png",
-              "categories": "Обмен сообщениями, Группы, Аудио, Видео, Новости, Другое"
-            },{
-              "id": 12,
-              "title": "VK",
-              "logoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/VK_Compact_Logo_%282021-present%29.svg/2048px-VK_Compact_Logo_%282021-present%29.svg.png",
-              "categories": "Обмен сообщениями, Группы, Аудио, Видео, Новости, Другое"
-            },{
-              "id": 13,
-              "title": "VK",
-              "logoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/VK_Compact_Logo_%282021-present%29.svg/2048px-VK_Compact_Logo_%282021-present%29.svg.png",
-              "categories": "Обмен сообщениями, Группы, Аудио, Видео, Новости, Другое"
-            },{
-              "id": 14,
-              "title": "VK",
-              "logoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/VK_Compact_Logo_%282021-present%29.svg/2048px-VK_Compact_Logo_%282021-present%29.svg.png",
-              "categories": "Обмен сообщениями, Группы, Аудио, Видео, Новости, Другое"
-            },{
-              "id": 15,
-              "title": "VK",
-              "logoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/VK_Compact_Logo_%282021-present%29.svg/2048px-VK_Compact_Logo_%282021-present%29.svg.png",
-              "categories": "Обмен сообщениями, Группы, Аудио, Видео, Новости, Другое"
-            }
-          ]
-        
+  "games": [
+    {
+      "id": 1,
+      "title": "Brawl Stars",
+      "bannerURL": "https://abrakadabra.fun/uploads/posts/2022-03/1647281616_4-abrakadabra-fun-p-oboi-bravl-stars-bazz-4.jpg",
+      "logoURL": "https://playerok.com/file-storage/images/1ede34f4-7aaa-6280-14db-eb992d935b07.png?timestamp=1702657090",
+      "categories": "Гемы, Аккаунты, Буст, Донат, Услуги, Другое"
+    },
+    {
+      "id": 2,
+      "title": "Standoff 2",
+      "bannerURL": "https://playerok.com/file-storage/images/1ee9c2e4-0a41-6d70-cf5b-94582ac9724e.png?timestamp=1702743296",
+      "logoURL": "https://playerok.com/file-storage/images/1ee9c2e4-0a41-6d70-cf5b-94582ac9724e.png?timestamp=1702743296",
+      "categories": "Голда, Gold Pass, Аккаунты, Скины, Наборы, Дизайн, Буст, Кланы, Услуги, Другое"
+    },
+    {
+      "id": 3,
+      "title": "Genshin Impact",
+      "bannerURL": "https://webstatic.hoyoverse.com/upload/op-public/2023/05/13/7c2ebfcf6249a27936ae313009398fe1_4426313663649855657.jpg",
+      "logoURL": "https://playerok.com/file-storage/images/1ee7db89-fcd4-6b30-68ad-12157638fe20.png?timestamp=1699394240",
+      "categories": "Примогемы, Аккаунты, Донат, Дизайн, Услуги, Другое"
+    },
+    {
+      "id": 4,
+      "title": "CS:GO",
+      "bannerURL": "https://hd2.tudocdn.net/1087711?w=824&h=494",
+      "logoURL": "https://playerok.com/file-storage/images/1ed5a0a6-c2c2-6a80-198d-b52af90d4726.png?timestamp=1695850820",
+      "categories": "Prime статус, Скины, Аккаунты, Допуск CS2, Буст, Дизайн, Аккаунты FACEIT, Услуги, Другое"
+    },
+    {
+      "id": 5,
+      "title": "DOTA 2",
+      "bannerURL": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota2_social.jpg",
+      "logoURL": "https://playerok.com/file-storage/images/1ed59fc7-563a-6a50-c620-2640a434b675.jpg",
+      "categories": "Аккаунты, Скины, Буст, Услуги, Боевой пропуск, Дизайн, Другое"
+    },
+    {
+      "id": 6,
+      "title": "PUBG Mobile",
+      "bannerURL": "https://img.prosports.kz/news/content//202103/204598_955a47c2fe4295d3686ccdf925a12623.jpg",
+      "logoURL": "https://playerok.com/file-storage/images/1ee23fd6-a019-6250-d9d3-d2c3a19bf3af.jpg?timestamp=1694080460",
+      "categories": "Аккаунты, UC, Metro Royale, Популярность, Буст, Дизайн, Кланы, Услуги, Другое"
+    },
+    {
+      "id": 7,
+      "title": "FIFA Mobile",
+      "bannerURL": "https://media.contentapi.ea.com/content/dam/ea/fifa/fifa-mobile/season-5/global_assets/images/2023/03/fifa-mobile-grid-tile-season-5-16x9-1.jpg.adapt.crop191x100.1200w.jpg",
+      "logoURL": "https://play-lh.googleusercontent.com/MUc561H_AeA4lUfUzyo0-6ZgikC6xrblMMPcbOTNC61iXb9hbfV9guj5IKiXAMfpumJw",
+      "categories": "Наборы, Аккаунты, Поинты, Монеты, Абонемент, Буст, Дизайн, Услуги, Прочее"
+    },
+    {
+      "id": 8,
+      "title": "Black Russia",
+      "bannerURL": "https://images.hindustantimes.com/tech/img/2023/07/26/1600x900/pop02_1652576476202_1690333929717.jpg",
+      "logoURL": "https://playerok.com/file-storage/images/1ede2ba8-8a8c-6630-2ea0-f81a604159dc.jpg",
+      "categories": "Алмазы, Аккаунты, Донат, Гильдии, Буст, Дизайн, Услуги, Прочее"
+    },
+    {
+      "id": 9,
+      "title": "Fortnite",
+      "bannerURL": "https://fortnitefun.ru/wp-content/uploads/2023/02/2-sezon-4-glavy-fortnajt.jpg",
+      "logoURL": "https://playerok.com/file-storage/images/1edd3674-a35d-6e90-4998-c4a698f79326.jpg?timestamp=1701608869",
+      "categories": "B-баксы, Аккаунты, наборы, Донат, Услуги, Дизайн, Другое"
+    },
+    {
+      "id": 10,
+      "title": "GTA 5 Online",
+      "bannerURL": "https://www.ixbt.com/img/n1/news/2021/2/2/81695054_large.jpg",
+      "logoURL": "https://playerok.com/file-storage/images/1ede47bd-55d8-6660-4bf1-c93107fd3677.jpg?timestamp=1682545603",
+      "categories": "Аккаунты, Предметы, Деньги, Услуги, Дизайн, Другое"
+    },
+    {
+      "id": 11,
+      "title": "Rust",
+      "bannerURL": "https://cdn1.epicgames.com/offer/2c42520d342a46d7a6e0cfa77b4715de/EGS_DyingLightRustWeaponPack_Techland_DLC_S1_2560x1440-cbb311f0d5c6501f7c65f89d2c724bc9",
+      "logoURL": "https://playerok.com/file-storage/images/1ed5c758-403e-6450-ff20-d7d62b3f2c62.png",
+      "categories": "Аккаунты, Скины, Ключи, Буст, Дизайн, Услуги, Другое"
+    },
+    {
+      "id": 12,
+      "title": "Minecraft",
+      "bannerURL": "https://assets.xboxservices.com/assets/48/94/48944ec6-2137-4981-b7f8-4ba055c52f8e.jpg?n=Minecraft_Sneaky-Slider-1084_Trails-and-Tails_1600x675.jpg",
+      "logoURL": "https://fanapk.ru/uploads/posts/2021-06/1623264694_icons.webp",
+      "categories": "Лицензия, Аккаунты, Minecoins, Хайпиксель, Дизайн, Услуги, Другое"
+    },
+    {
+      "id": 13,
+      "title": "Clash Royale",
+      "bannerURL": "https://suzzy.ru/wp-content/uploads/2020/03/997be2fad31f909e4e-732x403.jpg",
+      "logoURL": "https://play-lh.googleusercontent.com/D_KblLmWmgxRo07tVpTVj1ysGhJuJ3n5Rv_FC6xO5h3E9Pwmv6v7x6kYWztqX9VsAklR",
+      "categories": "Донат, Аккаунты, Гемы, Услуги, Дизайн, Другое"
+    },
+    {
+      "id": 14,
+      "title": "Clash of Clans",
+      "bannerURL": "https://staticg.sportskeeda.com/wp-content/uploads/2015/03/10386746_983938531630470_6622837490873195662_n-1427769479.png",
+      "logoURL": "https://playerok.com/file-storage/images/clash%20of%20clans.png?timestamp=1665395303",
+      "categories": "Донат, Аккаунты, Гемы, Буст, Золото столицы, Кланы, Дизайн, Услуги, Другое"
+    },
+    {
+      "id": 15,
+      "title": "Roblox",
+      "bannerURL": "https://youvteme.online/wp-content/uploads/2020/02/Roblox.jpg",
+      "logoURL": "https://playerok.com/file-storage/images/roblox.png?timestamp=1699973480",
+      "categories": "Робуксы, Adopt me, MM2, Pet simulator X, Roblox studio, BloxFruits, Услуги, Лимитки, Аккаунты, Позинг, Другое"
+    }
+  ],
+  "apps": [
+    {
+      "id": 1,
+      "title": "YouTube",
+      "logoURL": "https://playerok.com/file-storage/images/1ed608e3-d468-6e10-ca79-ff03956f49fb.png",
+      "categories": "Просмотр видео, Подписки, Лайки, Комментарии, Уведомления, Другое"
+    },
+    {
+      "id": 2,
+      "title": "Telegram",
+      "logoURL": "https://playerok.com/file-storage/images/1ed5d49c-99a4-65c0-1edf-75770bba4976.png",
+      "categories": "Обмен сообщениями, Каналы, Группы, Стикеры, Чат-боты, Другое"
+    },
+    {
+      "id": 3,
+      "title": "Steam",
+      "logoURL": "https://playerok.com/file-storage/images/1ed58b63-66f7-6640-2123-0da12023b087.png",
+      "categories": "Игры, Чат, Достижения, Видео, Другое"
+    },
+    {
+      "id": 4,
+      "title": "Likee",
+      "logoURL": "https://playerok.com/file-storage/images/1ee5a0b1-cc2e-69a0-b442-d2c376dc588f.png?timestamp=1695471503",
+      "categories": "Просмотр видео, Лайки, Подписки, Чат, Стикеры, Другое"
+    },
+    {
+      "id": 5,
+      "title": "TikTok",
+      "logoURL": "https://playerok.com/file-storage/images/1ed5d508-091d-6080-3903-b91e61c9c408.png?timestamp=1695470864",
+      "categories": "Просмотр видео, Лайки, Подписки, Чат, Стикеры, Другое"
+    },
+    {
+      "id": 6,
+      "title": "VK",
+      "logoURL": "https://playerok.com/file-storage/images/1ed5d4b7-618c-6aa0-b8d2-f5178f9d6680.png",
+      "categories": "Обмен сообщениями, Группы, Аудио, Видео, Новости, Другое"
+    },
+    {
+      "id": 7,
+      "title": "Play Station",
+      "logoURL": "https://playerok.com/file-storage/images/1ed58bf4-8c23-6b80-d15b-e3b88611e173.jpg",
+      "categories": "Обмен сообщениями, Группы, Аудио, Видео, Новости, Другое"
+    },
+    {
+      "id": 8,
+      "title": "Xbox",
+      "logoURL": "https://playerok.com/file-storage/images/1ed58ccc-6ab2-6130-dc81-77e14dd53400.png",
+      "categories": "Обмен сообщениями, Группы, Аудио, Видео, Новости, Другое"
+    },
+    {
+      "id": 9,
+      "title": "Nintendo",
+      "logoURL": "https://playerok.com/file-storage/images/1ed5958a-5f5f-6ff0-497e-8b8ecaf0c0e7.png",
+      "categories": "Обмен сообщениями, Группы, Аудио, Видео, Новости, Другое"
+    }
+  ]
 }
-  

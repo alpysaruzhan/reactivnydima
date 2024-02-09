@@ -14,8 +14,8 @@ const Step8ContentPage = ({ handleStepChange }) => {
     currency: 'RUB',
   });
   const marketAPI = new MarketApi(Instance);
-  const navigate = useNavigate()
-
+  const navigate = useNavigate();
+  
   useEffect(() => {
     const selectedLabel = localStorage.getItem('selectedLabel');
     console.log('Selected Label:', selectedLabel);
@@ -55,6 +55,8 @@ const Step8ContentPage = ({ handleStepChange }) => {
     const uploadedImage = localStorage.getItem('uploadedImage');
     const productDescription = localStorage.getItem('productDescription');
     const storedShortDescription = localStorage.getItem('shortDescription');
+    // const formData = new FormData();
+    // formData.append('image', image);
 
     // Add checks for undefined games or selectedItemId
     if (!selectedGameId) {
@@ -78,6 +80,12 @@ const Step8ContentPage = ({ handleStepChange }) => {
         }, 500)
       }
     }
+
+    localStorage.removeItem('uploadedImage');
+    localStorage.removeItem('shortDescription');
+    localStorage.removeItem('serviceFee');
+    localStorage.removeItem('revenueFromSale');
+    localStorage.removeItem('inputValue');
 
     if (selectedType === 'game') {
       marketAPI.productCreateProductApiV1ProductPost(JSON.stringify({

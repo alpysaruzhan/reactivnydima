@@ -97,7 +97,6 @@ input {
 }
 
 @media (max-width: 767px) {
-
   .header-input input {
     width: 100%;
     max-width: 300px;
@@ -142,8 +141,5 @@ input {
     align-items: center;
     margin: 0;
     padding: 0;
-    position: relative;
-
-    
   }
 }

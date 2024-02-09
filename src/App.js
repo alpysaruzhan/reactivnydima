@@ -94,7 +94,7 @@ class App extends Component {
             </div>
           </div>
           {/* <button onClick={toggleTheme}>Переключить тему</button> */}
-          {/* <Footer /> */}
+          <Footer /> 
         </div>
       </Router>
     );
