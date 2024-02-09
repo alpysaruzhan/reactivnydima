@@ -193,6 +193,8 @@
   .mobile-navbar-menu-list li a {
     text-decoration: none;
     display: flex;
+
+    
   }
 }
 

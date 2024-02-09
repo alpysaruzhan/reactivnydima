@@ -92,35 +92,42 @@ const Step8ContentPage = ({ handleStepChange }) => {
         name: selectedGame.name,
         text: productDescription,
         category_name: selectedCategoryName,
-        short_description: storedShortDescription,
+        short_description: "storedShortDescription",
         price: {
           amount: price.amount,
           currency: 'RUB',
         },
-        characteristics: [{ label: selectedLabel, value: 'someValue' }],
+        // characteristics: [{ label: selectedLabel, value: 'someValue' }],
+        characteristics: [],
         tags: [],
-      }), [uploadedImage], callback);
+        photos: [{"file_id": JSON.parse(uploadedImage).file_id}]
+      }), callback);
     } else if (selectedType === 'app') {
       marketAPI.productCreateProductApiV1ProductPost(JSON.stringify({
         name: selectedGame.name, // Use selectedGame instead of selectedApp
         text: productDescription,
         category_name: selectedCategoryName,
-        short_description: storedShortDescription,
+        short_description: "storedShortDescription",
         price: {
           amount: price.amount,
           currency: 'RUB',
         },
-        characteristics: [{ label: selectedLabel, value: 'someValue' }],
+        // characteristics: [{ label: selectedLabel, value: 'someValue' }],
+        characteristics: [],
         tags: [],
-      }), [uploadedImage], callback);
+        photos: [{"file_id": JSON.parse(uploadedImage).file_id}]
+      }), callback);
     }
   };
 
   return (
     <div className='sellall-con'>
       <div className='sel-h'>
-        <h1 className='h-cat'>&lt; Сумма товара:</h1>
-        <input  className='input-name' type='number'  value={price.amount} onChange={(e) => setPrice({ ...price, amount: e.target.value, handleInputChange})} />
+      <h1 className='h-cat'  onClick={() => handleStepChange(7)} >&lt; Сумма товара:</h1>
+
+        <input className='input-name' type='number' value={inputValue} onChange={handleInputChange} />
+        <input type='text' value={price.currency} onChange={(e) => setPrice({ ...price, currency: e.target.value })} />
+        <input type='number' value={price.amount} onChange={(e) => setPrice({ ...price, amount: e.target.value })} />
           <button onClick={() => CreateDraftProduct()} className='name-but'>
             Продолжить
           </button>

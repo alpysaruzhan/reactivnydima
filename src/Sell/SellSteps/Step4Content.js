@@ -15,17 +15,16 @@ const Step4ContentPage = ({ handleStepChange }) => {
   </svg>
   `;
   const [image, setImage] = useState(null);
-  const [fileData, setFileData] = useState([]) 
+  const [fileData, setFileData] = useState([])
 
   const handleFileChange = (e) => {
-    const file = e.target.files[0]; 
-    const fileApi = new FilesApi(Instance); 
-
+    const file = e.target.files[0];
+    const fileApi = new FilesApi(Instance);
     if (file) {
-      fileApi.fileUploadFileFormApiV1FileUploadFormPost(file, (error, data, response) => { 
-        if (error) { 
+      fileApi.fileUploadFileFormApiV1FileUploadFormPost(file, (error, data, response) => {
+        if (error) {
           console.error(error)
-        } else { 
+        } else {
           console.log(response.body)
           setFileData(response.body)
           localStorage.setItem("uploadedImage", JSON.stringify(response.body));
@@ -34,7 +33,7 @@ const Step4ContentPage = ({ handleStepChange }) => {
 
       const reader = new FileReader();
       reader.readAsDataURL(file)
-      
+
       reader.onloadend = () => {
         setImage(reader.result);
       }
@@ -42,36 +41,38 @@ const Step4ContentPage = ({ handleStepChange }) => {
   };
 
   return (
-    <div className='sellall-con'>
-      <h1 className='h-cat'>&lt; Фото:</h1>
-      <div className='n-sel'>
-        <div>
-          {imageBlob ? (
-            <div>
-              <img className='img-sel' src={URL.createObjectURL(imageBlob.get('image'))} alt="Uploaded" />
-            </div>
-          ) : (
-            <div className='div-photo'>
-              <div className='p-photo'>
-                <label htmlFor="photoInput" className='svg-sell'>
-                  <div className='svg-sell' dangerouslySetInnerHTML={{ __html: svgCode }} />
-                  <p>Нажми или перетащи нужную фотографию</p>
-                  <input
-                    type="file"
-                    id="photoInput"
-                    accept="image/*"
-                    onChange={handleFileChange}
-                    style={{ display: 'none' }}
-                  />
-                </label>
+
+    <div className='stepfour'>
+      <div className='stepfour-centerDiv'>
+        {/* <div className='sellall-con'> нахуя использовать чужой класс*/}
+        <h1 className='h-cat'  onClick={() => handleStepChange(3)} >&lt; Фото:</h1>
+        <div className='n-sel'>
+          <div>
+            {image ? (
+              <div>
+                <img className='img-sel' src={image} alt="Uploaded" />
               </div>
-            </div>
-          )}
+            ) : (
+              <div className='div-photo'>
+                <div className='p-photo'>
+                  <label htmlFor="photoInput" className='svg-sell'>
+                    <div className='svg-sell' dangerouslySetInnerHTML={{ __html: svgCode }} />
+                    <p>Нажми или перетащи нужную фотографию</p>
+                    <input
+                      type="file"
+                      id="photoInput"
+                      accept="image/*"
+                      onChange={handleFileChange}
+                      style={{ display: 'none' }}
+                    />
+                  </label>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
+        <button type="submit" onClick={() => handleStepChange(5)} className='photo-but'>Продолжить</button>
       </div>
-      <button type="submit" onClick={() => handleStepChange(5)} className='photo-but'>
-        Продолжить
-      </button>
     </div>
   );
 }

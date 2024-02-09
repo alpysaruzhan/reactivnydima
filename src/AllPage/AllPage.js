@@ -1,24 +1,15 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import productsData from "../ProductList/db.json";
 import "./AllPage.css";
 
 const AllPage = () => {
-  const sortedGames = productsData.games
-    .slice()
-    .sort((a, b) => a.title.localeCompare(b.title));
-  const groupedGames = sortedGames.reduce((groups, game) => {
-    const firstLetter = game.title[0].toUpperCase();
-    if (!groups[firstLetter]) {
-      groups[firstLetter] = [];
-    }
-    groups[firstLetter].push(game);
-    return groups;
-  }, {});
+
 
   const sortedApps = productsData.apps
     .slice()
     .sort((a, b) => a.title.localeCompare(b.title));
+
   const groupedApps = sortedApps.reduce((groups, app) => {
     const firstLetter = app.title[0].toUpperCase();
     if (!groups[firstLetter]) {
@@ -28,11 +19,53 @@ const AllPage = () => {
     return groups;
   }, {});
 
-  const [activec, setActivec] = useState("c1");
+  const sortedGames = productsData.games
+    .slice()
+    .sort((a, b) => a.title.localeCompare(b.title));
+
+  const groupedGames = sortedGames.reduce((groups, game) => {
+    const firstLetter = game.title[0].toUpperCase();
+    if (!groups[firstLetter]) {
+      groups[firstLetter] = [];
+    }
+    groups[firstLetter].push(game);
+    return groups;
+  }, {});
+
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredApps, setFilteredApps] = useState(groupedApps);
+  const [filteredGames, setFilteredGames] = useState(groupedGames);
+
+  const handleSearch = (event) => {
+    const term = event.target.value;
+    setSearchTerm(term);
+
+    const filteredAppsResult = Object.fromEntries(
+      Object.entries(groupedApps).map(([key, value]) => [
+        key,
+        value.filter((item) => item.title.toLowerCase().includes(term.toLowerCase())),
+      ]).filter(([key, value]) => value.length > 0)
+    );
+
+    setFilteredApps(filteredAppsResult);
+
+    const filteredGamesResult = Object.fromEntries(
+      Object.entries(groupedGames).map(([key, value]) => [
+        key,
+        value.filter((item) => item.title.toLowerCase().includes(term.toLowerCase())),
+      ]).filter(([key, value]) => value.length > 0)
+    );
+
+    setFilteredGames(filteredGamesResult);
+  };
+
+  const { type } = useParams();
+
+  const [activec, setActivec] = useState(type);
   const handlecClick = (c) => {
     setActivec(c);
   };
-
+  console.log(groupedApps);
   return (
     <div className="ultra-all-page">
       <div className="all-page">
@@ -41,8 +74,11 @@ const AllPage = () => {
           <div className="cs">
             <input
               className="input-tit"
-              placeholder="Введите название игры ..."
-            ></input>
+              type="text"
+              placeholder="Search by title"
+              value={searchTerm}
+              onChange={handleSearch}
+            />
             <div className="cs-button">
               <button
                 className={activec === "c1" ? "butprill activeeew" : "butprill"}
@@ -63,7 +99,7 @@ const AllPage = () => {
         <div className="c-content">
           {activec === "c1" && (
             <div className="gsel">
-              {Object.entries(groupedGames).map(([letter, games]) => (
+              {Object.entries(filteredGames).map(([letter, games]) => (
                 <div key={letter} className="letter-block">
                   <div className="firs">
                     <h2 className="letter">{letter}</h2>
@@ -93,7 +129,7 @@ const AllPage = () => {
           )}
           {activec === "c2" && (
             <div className="gsel">
-              {Object.entries(groupedApps).map(([letter, apps]) => (
+              {Object.entries(filteredApps).map(([letter, apps]) => (
                 <div key={letter} className="letter-block">
                   <div className="firs">
                     <h2 className="letter">{letter}</h2>

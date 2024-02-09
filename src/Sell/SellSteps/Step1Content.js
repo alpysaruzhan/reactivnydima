@@ -38,7 +38,7 @@ const Step1ContentPage = ({ handleStepChange }) => {
 
   return (
     <div className='sellall-con'>
-      <div>
+      <div className="css-input">
         <div>
           <p className='pp-sel'>&lt; Выберите игру/приложение</p>
         </div>

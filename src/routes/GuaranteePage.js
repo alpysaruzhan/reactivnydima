@@ -48,30 +48,26 @@ const BenefitsSection = () => (
   <section id="почему-gamehub">
     <h3>Почему GameHub?</h3>
     <ul>
-      <div  >
-        <li >
-          {/* <img  src={guarantee1} alt="Надежные продавцы" /> */}
-          <h2>Надежные продавцы</h2>
-        </li>
-      </div>
-      <div  >
-        <li >
-          {/* <img  src={guarantee2} alt="Поддержка 24/7" /> */}
-          <h2>Поддержка 24/7</h2>
-        </li>
-      </div>
-      <div  >
-        <li >
-          {/* <img  src={guarantee3} alt="Экономия времени" /> */}
-          <h2>Экономия времени</h2>
-        </li>
-      </div>
-      <div  >
-        <li >
-          {/* <img  src={guarantee4} alt="Безопасность" /> */}
-          <h2>Безопасность</h2>
-        </li>
-      </div>
+
+      <li >
+        <img src={guarantee1} alt="Надежные продавцы" />
+        <h2>Надежные продавцы</h2>
+      </li>
+
+      <li >
+        <img src={guarantee2} alt="Поддержка 24/7" />
+        <h2>Поддержка 24/7</h2>
+      </li>
+
+      <li >
+        <img src={guarantee3} alt="Экономия времени" />
+        <h2>Экономия времени</h2>
+      </li>
+
+      <li >
+        <img src={guarantee4} alt="Безопасность" />
+        <h2>Безопасность</h2>
+      </li>
     </ul>
     <p>
       GameHub - это надежная платформа, которая обеспечивает безопасность, эффективность и поддержку пользователей.

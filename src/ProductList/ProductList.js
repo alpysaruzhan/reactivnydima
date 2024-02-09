@@ -74,7 +74,7 @@ const ProductList = () => {
 
   } else {
     itemsPerRow2 = 2;
-  }
+  } 
 
   //const gamesToShow = //slice(0, itemsPerRow * 2);
   return (
@@ -82,7 +82,7 @@ const ProductList = () => {
       <div className='gm'>
         <div className='ProductList-block'>
           <h1 className='ProductList-tit'>Популярные игры</h1>
-          <NavLink className='ProductList-allbutt' to={"/all"}>
+          <NavLink className='ProductList-allbutt' to={"/all/c1"}>
             <button className='game-button '>Все игры &#707;</button>
             <button className='game-button  game-button-mini'>&#707;</button>
 
@@ -104,7 +104,7 @@ const ProductList = () => {
       <div className='ap'>
         <div className='ProductList-block'>
           <h1 className='ProductList-tit'>Приложения</h1>
-          <NavLink className='ProductList-allbutt' to={"/app"}>
+          <NavLink className='ProductList-allbutt' to={"/all/c2"}>
             <button className='game-button'>Все приложения &#707;</button>
             <button className='game-button game-button-mini'> &#707;</button>
           </NavLink>

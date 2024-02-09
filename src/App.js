@@ -60,8 +60,8 @@ class App extends Component {
                 <Routes>
                   <Route path="/" element={<HomePage />} />
                   <Route path="/home" element={<HomePage />} />
-                  <Route path="/all" element={<AllPage />} />
-                  <Route path='/app' element={<AllApps />} />
+                  <Route path="/all/:type" element={<AllPage />} />
+                  {/* <Route path='/app' element={<AllApps />} /> */}
                   <Route path="/profile" element={<ProfilePage />} />
                   <Route path="/profile/review" element={<ProfileReview />} />
 
@@ -94,7 +94,7 @@ class App extends Component {
             </div>
           </div>
           {/* <button onClick={toggleTheme}>Переключить тему</button> */}
-          <Footer />
+          <Footer /> 
         </div>
       </Router>
     );

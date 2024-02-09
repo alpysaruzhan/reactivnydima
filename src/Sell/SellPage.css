@@ -6,7 +6,7 @@
 
 
 
-.divsa{
+.divsa {
     width: 100%;
     display: flex;
     margin-top: 20px;
@@ -53,79 +53,93 @@
     margin-top: 10px;
     margin-bottom: 10px;
     width: 18.2%;
-    transition: background-color 0.3s ease, color 0.3s ease; 
-  
+    transition: background-color 0.3s ease, color 0.3s ease;
+
     &:hover {
-      background-color: #d8d4d4;
-      color: black;
+        background-color: #d8d4d4;
+        color: black;
     }
-  
+
     &:active,
-    &.active { 
-      background-color: #808080;
-      color: white; 
+    &.active {
+        background-color: #808080;
+        color: white;
     }
-  }
-  
+}
+
 
 
 @media screen and (max-width: 600px) {
-    .divsa{
+    .divsa {
         display: block;
     }
+
     .greensel,
-    .redsel{
+    .redsel {
         width: 93%;
     }
-    .sell-bbu{
+
+    .sell-bbu {
         width: 93%;
     }
-    .sell-con{
+
+    .sell-con {
         width: 100%;
     }
 }
 
-.sell-con{
+.sell-con {
     width: 1060px;
     margin: 0 auto;
-    margin-bottom: 20px;
+       height: 100vh;
 }
 
-.sellall-con{
+.sellall-con {
+
     width: 1060px;
     margin-top: 30px;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 30px;
-
 }
 
 @media screen and (max-width: 1300px) {
-    .sell-con{
+    .sell-con {
         width: 100%;
     }
+
     .greensel,
-    .redsel{
+    .redsel {
         width: 93%;
     }
-    .sellall-con{
+
+    .sellall-con {
         width: auto;
+        /* border: 1px solid red; */
+        display: flex;
+        flex-direction: column;
     }
-    .div-label{
+
+   
+   
+  
+
+    .div-label {
         flex-wrap: wrap;
         display: flex;
         width: auto;
     }
-    .input-name{
+
+    .input-name {
         width: 100%;
         margin-top: 10px;
         margin-bottom: 10px;
         margin: 0 auto;
     }
-    
+
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
     .glab {
         margin-top: 10px;
         margin-bottom: 10px;
