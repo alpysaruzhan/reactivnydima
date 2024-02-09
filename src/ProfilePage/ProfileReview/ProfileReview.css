@@ -1,86 +1,116 @@
-.nazad {
+.otzivview-nazad {
     display: flex;
-    /* border: 1px solid green; */
-
+    /* border: 1px solid red; */
 }
 
-.nazad-icon {
+.otzivview-nazad-icon {
     font-size: 32px;
-    /* border: 1px solid green; */
     margin-right: 10px;
+    /* border: 1px solid green; */
+    width: auto;
 }
 
-.otziv-top2 {
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-}
-
-.otziv-text {
-    margin-top: 15px;
-
-    font-size: 18px;
-    /* font-weight: 600; */
-
-}
-
-.otziv-nn {
-    display: flex;
-    mask-type: alpha;
-}
-
-.nazad-name {
+.otzivview-nazad-name {
     font-size: 32px;
     color: black;
     font-weight: 600;
 }
 
-.containeraman {
-    /* border: 1px solid green; */
-    margin: 45px;
-}
-.containergalmjan{
-    width: 100%;
-
-}
-.otzivamana {
-    /* max-width: 500px; */
+.otzivview-top2 {
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    background-color: rgb(245, 245, 245);
-    border: 1px solid rgb(220, 220, 220);
-    border-radius: 10px;
-    width: 500px;
-    margin-bottom: 30px;
-    /* border: 1px solid purple; */
+    margin-top: 30px;
+}
+
+.otzivview-text {
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.otzivview-rating {
+    color: #4A307F;
+    font-size: 55px;
+    font-weight: 600;
+    width: auto;
 
 }
+.otzivview-top-right{
+    /* border: 1px solid red; */
+    margin-left: 10px;
+    margin-top: 5px;
+    width: auto;
+
+}
+
+.otzivview-count {
+    color: #4A307F;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.otzivview-nn {
+    display: flex;
+}
+
+
+.containeraman {
+    margin: 45px;
+}
+
+.containergalmjan {
+    width: 100%;
+}
+
+
 
 .sectionotzivamana {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /*
-    gap: 35px;
-    flex-wrap: nowrap;
-    margin-bottom: 45px;
-    padding-bottom: 45px;
-    border: 1px solid red;
-
-    */
 }
-.otziv-spisoktop{
-    /* border: 1px solid red; */
+
+.otzivview-spisokmid {
+    display: flex;
+    margin-top: 15px;
+}
+
+.otzivview-stars {
+    /* border: 1px solid rgba(147, 147, 147, 0.12); */
+    font-size: 50px;
+}
+.otzivview-stars-little{
+    font-size: 22px;
 
 }
-.otziv-spisok {
-    /* border: 1px solid red; */
-        font-size: 22px;
-    /* font-weight: 600; */
+.otzivview-spisok {
+    font-size: 22px;
     margin-left: auto;
     margin-top: auto;
     margin-top: 20px;
     margin-bottom: 20px;
+}
 
+.otzivview-button {
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(147, 147, 147, 0.12);
+    background: #FAFAFA;
+
+    color: #000;
+    font-size: 20px;
+    font-weight: 461;
+
+    width: auto;
+}
+
+
+@media (max-width: 600px) {
+
+    .otzivview-button {
+        font-size: 16px;
+        margin: 5px;
+        
+    }
 }

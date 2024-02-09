@@ -1,45 +1,28 @@
-// import React from 'react';
-// import "./SellPage.css";
-// import { Link } from 'react-router-dom';
-
-// const SellPage = () => {
-//   return (
-//     <div className='login'>
-//       <h2 className='hh'>Перед тем как <br></br> приступить к продаже:</h2>
-      // <div className='divsa'>
-      //   <div className='greensel'></div>
-      //   <div className='redsel'></div>
-      // </div>
-      // <div>
-      //   <Link to={"/policy"}>
-      //     <p className='p-sel'>Нажимая «Начать продажу», Вы принимаете Условия продажи</p>
-      //   </Link>
-      //   <Link to={"/sellall"}>
-      //   <button type="submit" className='sell-bbu'>Приступить к продаже</button>
-      //   </Link>
-      // </div>
-//     </div>
-//   );
-// }
-
-// export default SellPage;
-
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useCookies } from "react-cookie";
-import gmail from "../img/Ellipse50.png";
-import vk from "../img/Ellipse49.png";
-import { Instance, setToken } from '../GateWay/base';
-import { AuthApi } from 'market_place';
-import { AUTH_KEY, TEMP_EMAIL_KEY } from '../GateWay/consts';
+import { Link } from "react-router-dom";
+import Step1ContentPage from './SellSteps/Step1Content';
+import Step2ContentPage from './SellSteps/Step2Content';
+import Step3ContentPage from './SellSteps/Step3Content';
+import Step4ContentPage from './SellSteps/Step4Content';
+import Step6ContentPage from './SellSteps/Step6Content';
+import Step7ContentPage from './SellSteps/Step7Content';
+import Step8ContentPage from './SellSteps/Step8Content';
 
-const SellPage = (props) => {
+const SellPage = () => {
+  const [currentStep, setCurrentStep] = useState(0);
+
+  const handleStepChange = (step) => {
+    setCurrentStep(step);
+    console.log("tep", currentStep)
+  };
 
   return (
     <div className="sell-con">
       <div className="login-contt">
+
+        {currentStep === 0 && <>
           <div className="login-tit">
-            <h2 className='hh'>Перед тем как <br></br> приступить к продаже:</h2>
+            <h2 className='hh'>Перед тем как <br /> приступить к продаже:</h2>
           </div>
           <div className="log-form">
             <div className='divsa'>
@@ -50,11 +33,23 @@ const SellPage = (props) => {
               <Link to={"/policy"}>
                 <p className='p-sel'>Нажимая «Начать продажу», Вы принимаете Условия продажи</p>
               </Link>
-              <Link to={"/sellall"}>
-                <button type="submit" className='sell-bbu'>Приступить к продаже</button>
-              </Link>
+              <button type="submit" className='sell-bbu' onClick={() => handleStepChange(currentStep + 1)}>
+                Приступить к продаже
+              </button>
             </div>
           </div>
+        </>}
+            <div>
+
+
+            </div>
+        {currentStep === 1 && <Step1ContentPage  handleStepChange={handleStepChange} />}
+        {currentStep === 2 && <Step2ContentPage  handleStepChange={handleStepChange} />}
+        {currentStep === 3 && <Step3ContentPage  handleStepChange={handleStepChange} />}
+        {currentStep === 4 && <Step4ContentPage  handleStepChange={handleStepChange} />}
+        {currentStep === 5 && <Step6ContentPage  handleStepChange={handleStepChange} />}
+        {currentStep === 6 && <Step7ContentPage  handleStepChange={handleStepChange} />}
+        {currentStep === 7 && <Step8ContentPage  handleStepChange={handleStepChange} />}
       </div>
     </div>
   );

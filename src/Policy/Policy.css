@@ -1,0 +1,31 @@
+.PolicyPage{
+    max-width: 1040px;
+    margin: 10px;
+
+}
+
+.PolicyPage body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.PolicyPage p {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: black;
+}
+
+.PolicyPage h2 {
+    margin-top: 18px;
+    margin-bottom: 18px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.PolicyPage h1 {
+    margin-top: 18px;
+    margin-bottom: 18px;
+    font-size: 24px;
+    font-weight: 600;
+
+}

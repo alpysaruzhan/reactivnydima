@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import "./SellPage.css";
+import "../SellPage.css";
 
-const ProInfoPage = () => {
+const Step7ContentPage = ({ handleStepChange }) => {
+    const [textareaValue, setTextareaValue] = useState('');
+    const handleTextareaChange = (e) => {
+        const value = e.target.value;
+        setTextareaValue(value);
+        localStorage.setItem("productTextareaValue", value);
+    };
+
     return (
         <div className='sellall-con'>
             <div className='sel-hh'>
-                <h1 className='h-cat'>&lt; Данные товара:</h1>
+            <h1 className='h-cat'  onClick={() => handleStepChange(6)} >&lt; Данные товара:</h1>
+
                 <div className='inpu-name'>
-                    <input className='inpu-r' placeholder='Здравствуйте!' /></div>
-                <Link to={"/name"}>
-                    <button type="submit" className='name-but'>Продолжить</button>
-                </Link>
+                    <textarea
+                        className='inpu-r'
+                        placeholder='Здравствуйте!'
+                        value={textareaValue}
+                        onChange={handleTextareaChange}
+                    />
+                </div>
+                <button onClick={() => handleStepChange(7)} type="submit" className='name-but'>Продолжить</button>
                 <div>
                     <Link className="link-sec">🔒 Безопасность сделки</Link>
                 </div>
@@ -26,4 +38,4 @@ const ProInfoPage = () => {
     );
 }
 
-export default ProInfoPage;
+export default Step7ContentPage;

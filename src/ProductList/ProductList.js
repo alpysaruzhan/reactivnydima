@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import productsData from "./db.json";
+// import productsData from "./db.json";
 import './ProductList.css';
+import { MarketApi } from "market_place"
+import { Instance, asFileUrl } from "../GateWay/base";
 
 const ProductList = () => {
   const settings = {
@@ -13,32 +15,50 @@ const ProductList = () => {
   };
 
 
-
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [gamesToShow, setGamesToShow] = useState([]);
+  const [appsToShow, setAppsToShow] = useState([]);
 
   useEffect(() => {
+    const market = new MarketApi(Instance)
+
+    market.getGamesApiV1GameGet(
+      {
+        limit: 12, 
+        offset: 0, 
+      }, (error, data, response) => { 
+      if (error) { 
+        console.error(error)
+      } else { 
+        console.log("getGamesApiV1GameGet", data)
+        setGamesToShow(data.objects)
+      }
+    })
+
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
 
-    // Добавляем слушатель события изменения размера окна
     window.addEventListener('resize', handleResize);
 
-    // Удаляем слушатель при размонтировании компонента
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [])
+
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   let itemsPerRow;
   if (windowWidth >= 1600) {
     itemsPerRow = 6;
   } else if (windowWidth >= 1400) {
     itemsPerRow = 5;
-  }else if (windowWidth <= 600) {
-    itemsPerRow = 5;
+  } else if (windowWidth <= 1000 && windowWidth >= 800) {
+    itemsPerRow = 3;
+  } else if (windowWidth <= 800) {
+    itemsPerRow = 2.5;
 
-  }else {
+  } else {
     itemsPerRow = 4;
   }
 
@@ -47,44 +67,57 @@ const ProductList = () => {
     itemsPerRow2 = 4;
   } else if (windowWidth >= 1400) {
     itemsPerRow2 = 3;
-  } else if (windowWidth <= 600) {
+  } else if (windowWidth <= 1000 && windowWidth >= 800) {
+    itemsPerRow2 = 3;
+  } else if (windowWidth <= 800) {
     itemsPerRow2 = 2.5;
-  }else {
-    itemsPerRow2 = 2;
-  }
 
-  const gamesToShow = productsData.games.slice(0, itemsPerRow * 2);
-  const appsToShow = productsData.apps.slice(0, itemsPerRow2 * 2);
+  } else {
+    itemsPerRow2 = 2;
+  } 
+
+  //const gamesToShow = //slice(0, itemsPerRow * 2);
   return (
     <div className='co'>
       <div className='gm'>
-        <div className='block'>
-          <h1 className='tit'>Популярные игры</h1>
-          <NavLink className='' to={"/all"}><button className='game-button'>Все игры &#707;</button></NavLink>
+        <div className='ProductList-block'>
+          <h1 className='ProductList-tit'>Популярные игры</h1>
+          <NavLink className='ProductList-allbutt' to={"/all/c1"}>
+            <button className='game-button '>Все игры &#707;</button>
+            <button className='game-button  game-button-mini'>&#707;</button>
+
+          </NavLink>
         </div>
         <div className="under-block">
           <div className="product-list">
             {gamesToShow.map((game) => (
-              <Link key={game.id} to={`/game/${game.id}`} className="product-card">
-                <img src={game.logoURL} alt={game.title} className="product-logo" />
-                <p className="product-name">{game.title}</p>
-              </Link>
+              game.type === 'GAME' ? 
+                <Link key={game.id} to={`/game/${game.id}`} className="product-card">
+                  <img src={asFileUrl(game.logo.fileUrl)} alt={game.title} className="product-logo" />
+                  <p className="product-name">{game.name}</p>
+                </Link>
+              : null 
             ))}
           </div>
         </div>
       </div>
       <div className='ap'>
-        <div className='block'>
-          <h1 className='tit'>Приложения</h1>
-          <NavLink to={"/app"}><button className='game-button2'>Все приложения &#707;</button></NavLink>
+        <div className='ProductList-block'>
+          <h1 className='ProductList-tit'>Приложения</h1>
+          <NavLink className='ProductList-allbutt' to={"/all/c2"}>
+            <button className='game-button'>Все приложения &#707;</button>
+            <button className='game-button game-button-mini'> &#707;</button>
+          </NavLink>
         </div>
         <div className="under-block">
           <div className="product-list">
-            {appsToShow.map((app) => (
-              <Link key={app.id} to={`/app/${app.id}`} className="product-card-app">
-                <img src={app.logoURL} alt={app.title} className="product-logo" />
-                <p className="product-name">{app.title}</p>
-              </Link>
+            {gamesToShow.map((app) => (
+              app.type === 'APPLICATION' ? 
+                <Link key={app.id} to={`/app/${app.id}`} className="product-card-app">
+                  <img src={asFileUrl(app.logo.fileUrl)} alt={app.title} className="product-logo" />
+                  <p className="product-name">{app.title}</p>
+                </Link>
+              : null 
             ))}
           </div>
         </div>

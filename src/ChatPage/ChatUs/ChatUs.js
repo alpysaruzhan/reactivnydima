@@ -8,7 +8,7 @@ import defaultImage from "../../img/default.png";
 const ChatUs = (props) => {
 
     const [newMessage, setNewMessage] = useState("");
-    console.log("propchat ebani", props);
+    // console.log("propchat ebani", props.currChat.type);
     const chatId = props.currChat.id //  props.chat.chatId //useParams();
     const [user, setUser] = useState([]);
     const [messages, setMessages] = useState([]);
@@ -66,13 +66,9 @@ const ChatUs = (props) => {
 
     return (
         <div className='right-chat'>
-
-
-
-
-
             <div className='chat-header'>
-                <div className="chat-img-div">
+                <div className="chat-img-div" >
+                    <img  style={{ display: props.isDivVisible  ? 'none' : 'block' }}  onClick={props.toggleVisibility} src="https://www.kindpng.com/picc/m/233-2338375_go-back-icon-png-transparent-png.png" className="chat-img" />
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Breezeicons-actions-22-mail-attachment.svg/2048px-Breezeicons-actions-22-mail-attachment.svg.png" className="chat-img" />
                 </div>
                 <div className="chat-mid">
@@ -90,9 +86,9 @@ const ChatUs = (props) => {
 
                     </div>
                 ))}
-
             </div>
-            {/* {chatObj.type !== "NOTIFICATION" ? */}
+
+            {props.currChat.type !== "NOTIFICATIONS" ?
             <div className='chat-footer'>
 
                 <div className="upload">
@@ -115,10 +111,10 @@ const ChatUs = (props) => {
                     <img className="send-img" src="https://w7.pngwing.com/pngs/368/96/png-transparent-fly-messager-send-communication-email-message-glyphs-icon.png" />
                 </button>
             </div>
-            {/* :
+            :
                 <div>
                     <p>Этот чат только для нотификации, в него нельзя писать</p>
-                </div>} */}
+                </div>} 
         </div>
 
 

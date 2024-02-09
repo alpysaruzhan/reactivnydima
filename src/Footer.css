@@ -1,8 +1,13 @@
 .footer {
   background-color: black;
   color: #ffffff;
-  padding: 10px;
-  width: auto;
+  padding-left: 225px;
+  width: 100%;
+  margin: 0;
+  bottom: 0;
+  padding-bottom: 0;
+  left: 0;
+  height: auto;
 }
 
 .footer-title {
@@ -62,6 +67,9 @@
 .footer {
   flex-shrink: 0;
   flex: 0 0 auto;
+
+  /* border: 2px solid green; */
+
 }
 
 .footer-popa {
@@ -69,10 +77,16 @@
 
 }
 
+@media screen and (max-width: 1220px) and (min-width: 600px) {
+  .footer {
+    padding-left: 100px;
+  }
+}
+
 /* Стили для мобильной версии (экраны шириной менее 768px) */
 @media screen and (max-width: 600px) {
   .footer {
-    margin-bottom: 70px;
+    padding-left: 0px;
   }
 
   .footer-icons {

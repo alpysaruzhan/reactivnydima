@@ -6,7 +6,6 @@ import { AuthApi, ChatApi, MessageApi, UsersApi } from 'market_place';
 import { Instance } from '../GateWay/base';
 
 const ChatPage = (props) => {
-  // chatId = React.useParams();
   const [currChat, setCurrChat] = useState(null);
   const Chat = new ChatApi(Instance);
   const Message = new MessageApi(Instance);
@@ -17,6 +16,28 @@ const ChatPage = (props) => {
   const [user, setUser] = useState([]);
   const [chatObj, setChatObj] = useState([]);
 
+
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+
+  const [isDivVisible, setDivVisibility] = useState(true);
+  const [isMobile, setIsMobile] = useState((windowWidth < 1000));
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+
+      setIsMobile(window.innerWidth < 1000)
+
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+
   useEffect(() => {
     if (currChat != null) {
       console.log("currChat", currChat);
@@ -25,6 +46,9 @@ const ChatPage = (props) => {
           console.error(error);
         } else {
           setMessages(data.objects);
+          if (isMobile) {
+            setDivVisibility(!isDivVisible);
+          }
           console.log("Fetched messages jopa:", data);
         }
       });
@@ -32,43 +56,28 @@ const ChatPage = (props) => {
 
   }, [currChat])
   useEffect(() => {
-    // Users.usersCurrentUserApiV1UsersMeGet((error, data, reponse) => {
-    //   if (error) {
-    //     console.error(error)
-    //   } else {
-    //     setUser(data)
-    //   }
-    // });
 
     Chat.chatGetChatsApiV1ChatGet((error, data, response) => {
       if (error) {
         console.error(error);
       } else {
-        // console.log("Fetched chats bebra:", data);
         setChats(data.objects);
-        // data.objects.forEach((v) => {
-        //   if (v.id === chatId) {
-        //     setChatObj(v)
-        //   }
-        // }) 
       }
     });
 
   }, [])
 
-  // console.log("chatObj",  chatObj);
-  // console.log("chats", chats );
-  // console.log("messages", messages );
-  // console.log("user", user );
+
 
   return (
 
     <div className='ChatPage'>
-      <div className='AllChat'>
+      <div className='AllChat ' style={{ display: !isDivVisible && isMobile ? 'none' : 'block' }}>
+        <h1 className='AllChat-h1'>Мессенджер</h1>
         <AllChat setCurrChat={setCurrChat} chats={chats} />
       </div>
-      <div className='ChatUs'>
-        {currChat != null && messages != null ? <ChatUs currChat={currChat} messages={messages} /> : <h1>НЕТ ЧАТОВ!</h1>}
+      <div className='ChatUs' style={{ display: isDivVisible && isMobile ? 'none' : 'block' }}>
+        {currChat != null && messages != null ? <ChatUs isDivVisible={isDivVisible} toggleVisibility={() => setDivVisibility(!isDivVisible)} currChat={currChat} messages={messages} /> : <h1>НЕТ ЧАТОВ!</h1>}
       </div>
     </div>
   );
