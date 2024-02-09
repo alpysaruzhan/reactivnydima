@@ -9,7 +9,7 @@ const ProductCard = () => {
   return (
     <div className="alll">
       <div className="block">
-        <h1 className="tit">Премиум товары</h1>
+        <h1 className="tit">Все товары</h1>
         <NavLink to={"/all"}>
           <button className="game-button3">Выставить свой товар &#707;</button>
         </NavLink>
