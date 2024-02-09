@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 // import productsData from "./db.json";
 import './ProductList.css';
-import { MarketApi } from "market_place"
+import { MarketApi, ProductApi } from "market_place"
 import { Instance, asFileUrl } from "../GateWay/base";
 
 const ProductList = () => {
@@ -15,7 +15,7 @@ const ProductList = () => {
   };
 
 
-  const [gamesToShow, setGamesToShow] = useState([]);
+  const [games, setGames] = useState([]);
   const [appsToShow, setAppsToShow] = useState([]);
 
   useEffect(() => {
@@ -23,26 +23,30 @@ const ProductList = () => {
 
     market.getGamesApiV1GameGet(
       {
-        limit: 12, 
-        offset: 0, 
-      }, (error, data, response) => { 
-      if (error) { 
-        console.error(error)
-      } else { 
-        console.log("getGamesApiV1GameGet", data)
-        setGamesToShow(data.objects)
-      }
-    })
+        limit: 12,
+        offset: 0,
+      }, (error, data, response) => {
+        if (error) {
+          console.error(error)
+        } else {
+          console.log("GameGet", data)
+          setGames(data.objects)
+        }
+      })
+
+
+   
+
 
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
-
     window.addEventListener('resize', handleResize);
-
     return () => {
       window.removeEventListener('resize', handleResize);
     };
+
+
   }, [])
 
 
@@ -74,9 +78,9 @@ const ProductList = () => {
 
   } else {
     itemsPerRow2 = 2;
-  } 
+  }
 
-  //const gamesToShow = //slice(0, itemsPerRow * 2);
+  const gamesToShow = games.slice(0, itemsPerRow * 2);
   return (
     <div className='co'>
       <div className='gm'>
@@ -91,12 +95,12 @@ const ProductList = () => {
         <div className="under-block">
           <div className="product-list">
             {gamesToShow.map((game) => (
-              game.type === 'GAME' ? 
+              game.type === 'GAME' ?
                 <Link key={game.id} to={`/game/${game.id}`} className="product-card">
                   <img src={asFileUrl(game.logo.fileUrl)} alt={game.title} className="product-logo" />
                   <p className="product-name">{game.name}</p>
                 </Link>
-              : null 
+                : null
             ))}
           </div>
         </div>
@@ -112,12 +116,12 @@ const ProductList = () => {
         <div className="under-block">
           <div className="product-list">
             {gamesToShow.map((app) => (
-              app.type === 'APPLICATION' ? 
+              app.type === 'APPLICATION' ?
                 <Link key={app.id} to={`/app/${app.id}`} className="product-card-app">
                   <img src={asFileUrl(app.logo.fileUrl)} alt={app.title} className="product-logo" />
                   <p className="product-name">{app.title}</p>
                 </Link>
-              : null 
+                : null
             ))}
           </div>
         </div>

@@ -22,7 +22,7 @@ const ProductCard = () => {
       if (error) { 
         console.error(error)
       } else { 
-        console.log(data)
+        console.log("getProduct", data)
         setCardsToShow(data.objects)
       }
     })

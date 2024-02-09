@@ -44,13 +44,19 @@
 
 .chat-footer {
   display: flex;
-  /* border: 1px solid red; */
   height: 50px;
   justify-content: center;
   /* margin-left: 10%; */
 }
-
-.upload>input {
+.chat-upload{
+  
+  width: auto;
+}
+.chat-send{
+  
+  width: auto;
+}
+.chat-upload>input {
   visibility: hidden;
   width: 0;
   height: 0

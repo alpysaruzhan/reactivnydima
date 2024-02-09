@@ -68,7 +68,7 @@ const ChatUs = (props) => {
         <div className='right-chat'>
             <div className='chat-header'>
                 <div className="chat-img-div" >
-                    <img  style={{ display: props.isDivVisible  ? 'none' : 'block' }}  onClick={props.toggleVisibility} src="https://www.kindpng.com/picc/m/233-2338375_go-back-icon-png-transparent-png.png" className="chat-img" />
+                    <img style={{ display: props.isDivVisible ? 'none' : 'block' }} onClick={props.toggleVisibility} src="https://www.kindpng.com/picc/m/233-2338375_go-back-icon-png-transparent-png.png" className="chat-img" />
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Breezeicons-actions-22-mail-attachment.svg/2048px-Breezeicons-actions-22-mail-attachment.svg.png" className="chat-img" />
                 </div>
                 <div className="chat-mid">
@@ -89,32 +89,31 @@ const ChatUs = (props) => {
             </div>
 
             {props.currChat.type !== "NOTIFICATIONS" ?
-            <div className='chat-footer'>
+                <div className='chat-footer'>
 
-                <div className="upload">
-                    <label for="upload-input">
-                        <img className="upload-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Breezeicons-actions-22-mail-attachment.svg/2048px-Breezeicons-actions-22-mail-attachment.svg.png" />
-                    </label>
-                    <input id="upload-input" type="file" onClick={handleImageChange} />
+                    <div className="chat-upload">
+                        <label for="upload-input">
+                            <img className="upload-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Breezeicons-actions-22-mail-attachment.svg/2048px-Breezeicons-actions-22-mail-attachment.svg.png" />
+                        </label>
+                        <input id="upload-input" type="file" onClick={handleImageChange} />
+                    </div>
+
+                    <input
+                        className="chat-input"
+                        type="text"
+                        placeholder="Cообщение"
+                        value={newMessage}
+                        onChange={(e) => setNewMessage(e.target.value)}
+                    />
+
+                    <button className="chat-send" onClick={sendMessage} >
+                        <img className="send-img" src="https://w7.pngwing.com/pngs/368/96/png-transparent-fly-messager-send-communication-email-message-glyphs-icon.png" />
+                    </button>
                 </div>
-
-                <input
-                    className="chat-input"
-                    type="text"
-                    placeholder="Cообщение"
-                    value={newMessage}
-                    onChange={(e) => setNewMessage(e.target.value)}
-                />
-
-                <button onClick={sendMessage}>
-
-                    <img className="send-img" src="https://w7.pngwing.com/pngs/368/96/png-transparent-fly-messager-send-communication-email-message-glyphs-icon.png" />
-                </button>
-            </div>
-            :
+                :
                 <div>
                     <p>Этот чат только для нотификации, в него нельзя писать</p>
-                </div>} 
+                </div>}
         </div>
 
 

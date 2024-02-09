@@ -6,6 +6,8 @@ import cardData from "../../card.json";
 import { NavLink } from "react-router-dom";
 import { CategoryApi, MarketApi } from 'market_place';
 import { Instance } from '../../GateWay/base';
+import {asFileUrl} from "../../GateWay/base";
+import ProductComponent from '../../ProductComponent/ProductComponent';
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -16,90 +18,103 @@ const ProductDetailPage = () => {
   const [currCategory, setCurrCategory] = useState([]);
   const [cardsToShow, setCardsToShow] = useState([]);
   //
-
+  // let cardsToShow = [];
   useEffect(() => {
     const market = new MarketApi(Instance)
     market.getGameApiV1GameGameIdGet(id, (error, data, response) => {
       if (error) {
         console.error(error)
       } else {
+        console.log("MarketApi", data)
+
         setGame(data)
+
         let names = []
         data.categories.forEach((value) => {
           names.push(value.name)
         })
         setCategoriesName(names)
-        setCurrCategory(data.categories[0])
-        console.log("currCategory", data.categories[0])
 
+        setCurrCategory(names[0])
       }
     })
-
-  }, [id])
+  }, [])
 
   useEffect(() => {
-    if (currCategory != []) {
+
+    if (currCategory.length !== 0) {
       const category = new CategoryApi(Instance)
       category.categoryGetCategoryProductsApiV1CategoryCategoryNameGet(currCategory, (error, data, response) => {
         if (error) {
           console.error(error)
         } else {
-          console.log("data.objects", data.objects)
+          console.log("CategoryApi", data.objects)
           //setCurrCategory(data.objects[0])
           setCardsToShow(data.objects)
+          console.log("cardsToShow", cardsToShow);
         }
       })
+      console.log("currCategory", currCategory);
     }
 
-
   }, [currCategory])
+
+
   return (
     <div className="maindiv">
       <div className="game-detail">
-        {game === undefined ? <h1>sadssa</h1> : <><img src={game === undefined ? game.logo.fileUrl : null} alt={game.name} className="game-banner" />
+        {game === undefined ? <h1>sadssa</h1> : <>
+          <img src={game === undefined ? asFileUrl(game.logo.fileUrl) : null} alt={game.name} className="game-banner" />
           <div className='overlay'>
-            <img src={game === undefined ? game.logo.fileUrl : null} alt={game.name} className='overlay-img' />
+            <img src={game === undefined ? asFileUrl(game.banner.fileUrl) : null} alt={game.name} className='overlay-img' />
             <h2 className='overlay-text'> {game.name}</h2>
-          </div></>}
+          </div>
+        </>}
 
 
       </div>
       <div className="some-bar">
         {categoriesNames.map((category) =>
-          <div className={`product-category ${currCategory == category ? 'category-active' : ''}  `} onClick={() => (setCurrCategory(category))} >
+          <div key={category} className={`product-category ${currCategory == category ? 'category-active' : ''}  `} onClick={() => (setCurrCategory(category))} >
+            <h4>{category}</h4>
+          </div>)}
+           {categoriesNames.map((category) =>
+          <div key={category} className={`product-category ${currCategory == category ? 'category-active' : ''}  `} onClick={() => (setCurrCategory(category))} >
             <h4>{category}</h4>
           </div>)}
       </div>
       <div className="card-list2">
-        {cardsToShow.map((card) => (
-          <div className="product-card2">
-            <NavLink
-              key={card.id}
-              to={`/product/${card.id}`}
-              className="product-card-link"
-            >
-              <div className="firstline-card">
-                <img src={card.logo} alt={card.title} className="card-logo" />
-                <div className="text-card">
-                  <p className="product-name2">{card.title}</p>
-                  <p className="card-category2">{card.category}</p>
-                </div>
-              </div>
-              <img
-                src={card.image}
-                alt={card.title}
-                className="product-logo1"
-              />
+        {(cardsToShow.length > 0) ? cardsToShow.map((card) => (
+          <ProductComponent card={card} />
 
-              <div className="card-description">
-                <p className="product-name3">{card.price} ₽</p>
-                <p className="descrip-prod">{card.description} </p>
-                <p className="product-name3">{card.rating}</p>
-              </div>
-            </NavLink>
-          </div>
+          // <div className="product-card2" key={card.id}>
+          //   <NavLink
 
-        ))}
+          //     to={`/product/${card.id}`}
+          //     className="product-card-link"
+          //   >
+
+          //     <div className="firstline-card">
+          //       <img src={asFileUrl(card.photos[0].fileUrl)} alt={card.text} className="card-logo" />
+          //       <div className="text-card">
+          //         <p className="card-category2">{card.category.name}</p>
+          //       </div>
+          //     </div>
+          //     <img
+          //       src={asFileUrl(card.photos[0].fileUrl)}
+          //       alt={card.title}
+          //       className="product-logo1"
+          //     />
+
+          //     <div className="card-description">
+          //       <p className="product-name3">{card.basePrice.amount} {card.basePrice.currency}</p>
+          //       <p className="descrip-prod">{card.text} </p>
+          //       <p className="product-name3">{card.rating}</p>
+          //     </div>
+          //   </NavLink>
+          // </div>
+        )):
+        <h1>ПУСТО</h1>}
       </div>
 
       <button className='showmore-button'>Показать еще</button>

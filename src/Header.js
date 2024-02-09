@@ -39,7 +39,9 @@ const Header = ({ authorized }) => {
           <NavLink to="/login/code" className="registracia">
             <button className="header-button2">Регистрация</button>
           </NavLink>
-        </div> : <button className="header-button2">Выйти</button>
+        </div> : <button onClick={()=>({
+        
+        })} className="header-button2">Выйти</button>
         }
       </div>
 
