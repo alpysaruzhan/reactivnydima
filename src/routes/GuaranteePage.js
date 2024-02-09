@@ -23,7 +23,7 @@ const FaqSection = ({ faqQuestions }) => {
 
   return (
     <section id="ответы-на-вопросы">
-      <h3>Ответы на вопросы</h3>
+      {/* <h3>Ответы на вопросы</h3>
       <div className="faq-content">
         {faqQuestions.map((faqQuestion) => (
           <div key={faqQuestion.id} className="faq-question">
@@ -39,7 +39,7 @@ const FaqSection = ({ faqQuestions }) => {
             )}
           </div>
         ))}
-      </div>
+      </div> */}
     </section>
   );
 };
@@ -50,25 +50,25 @@ const BenefitsSection = () => (
     <ul>
       <div  >
         <li >
-          <img  src={guarantee1} alt="Надежные продавцы" />
+          {/* <img  src={guarantee1} alt="Надежные продавцы" /> */}
           <h2>Надежные продавцы</h2>
         </li>
       </div>
       <div  >
         <li >
-          <img  src={guarantee2} alt="Поддержка 24/7" />
+          {/* <img  src={guarantee2} alt="Поддержка 24/7" /> */}
           <h2>Поддержка 24/7</h2>
         </li>
       </div>
       <div  >
         <li >
-          <img  src={guarantee3} alt="Экономия времени" />
+          {/* <img  src={guarantee3} alt="Экономия времени" /> */}
           <h2>Экономия времени</h2>
         </li>
       </div>
       <div  >
         <li >
-          <img  src={guarantee4} alt="Безопасность" />
+          {/* <img  src={guarantee4} alt="Безопасность" /> */}
           <h2>Безопасность</h2>
         </li>
       </div>
@@ -102,7 +102,7 @@ const GuaranteePage = () => {
   return (
     <div className="guarantee-page">
       <div className='banner'>
-        <img src={banner} className='banner-img' />
+        {/* <img src={banner} className='banner-img' /> */}
       </div>
       <div className='ponpon'>
         <div className="about-section">

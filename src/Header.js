@@ -15,13 +15,7 @@ const Header = ({ authorized }) => {
   return (
     <header className="header">
       <div className="mobile">
-        <div><div className="logo">
-
-          {/* <NavLink to="/">
-            <img className="logo-img" src={logo} alt="" />
-            <img className="logo-img2" src={logowithout} alt="" />
-          </NavLink> */}
-        </div></div>
+        <div></div>
       </div>
       {/* <div className="header-input">
         <p className="pi">

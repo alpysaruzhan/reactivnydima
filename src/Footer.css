@@ -2,8 +2,12 @@
   background-color: black;
   color: #ffffff;
   padding-left: 225px;
-  width: auto;
-
+  width: 100%;
+  margin: 0;
+  bottom: 0;
+  padding-bottom: 0;
+  left: 0;
+  height: auto;
 }
 
 .footer-title {
@@ -72,7 +76,6 @@
 
 @media screen and (max-width: 1220px) and (min-width: 600px) {
   .footer {
-    margin-bottom: 70px;
     padding-left: 100px;
   }
 }
@@ -80,7 +83,6 @@
 /* Стили для мобильной версии (экраны шириной менее 768px) */
 @media screen and (max-width: 600px) {
   .footer {
-    margin-bottom: 70px;
     padding-left: 0px;
   }
 
