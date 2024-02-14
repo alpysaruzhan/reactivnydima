@@ -77,7 +77,7 @@ export const SelectorCharactersitics = ({ options, onLabelClick }) => {
   const [activeLabel, setActiveLabel] = useState(null);
 
   const handleLabelClick = (label) => {
-    setActiveLabel(label);
+    setActiveLabel(label.label);
     onLabelClick && onLabelClick(label);
   };
 
@@ -94,7 +94,7 @@ export const SelectorCharactersitics = ({ options, onLabelClick }) => {
                 <div
                   className={`glab ${activeLabel === option.label ? 'active' : ''}`}
                   key={option.label}
-                  onClick={() => handleLabelClick(option.label)}
+                  onClick={() => handleLabelClick(option)}
                 >
                   <div className="label-sel">
                     <label>{option.label}</label>
