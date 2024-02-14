@@ -8,32 +8,39 @@ import ProductComponent from '../ProductComponent/ProductComponent';
 import OtzivComponent from "../OtzivComponent/OtzivComponent.js";
 import { CategoryApi, MarketApi } from 'market_place';
 import { Instance } from '../GateWay/base';
+import { asFileUrl } from "../GateWay/base";
 
 const ProductCardPage = () => {
   const { id } = useParams();
 
   const product = cardData.cards.find((card) => card.id === parseInt(id));
-
   const cardsToShow = cardData.cards.slice(0, 10);
-  console.log(123);
+  const [productstate, setProductstate] = useState([]);
 
   useEffect(() => {
-
-    console.log("id",id);
+    console.log("id", id);
     const market = new MarketApi(Instance)
     market.productGetProductByIdApiV1ProductProductIdGet(id, (error, data, response) => {
       if (error) {
         console.error(error)
       } else {
         console.log("game", data)
-
+        // market.getGameApiV1GameGameIdGet(data.category.gameName, (error, data, response) => {
+        //   if (error) {
+        //     console.error(error)
+        //   } else {
+        //     console.log("MarketApi", data)
+        //     // setGame(data)
+        //   }
+        // })
+        setProductstate(data)
       }
     })
+
 
   }, [])
 
   // useEffect(() => {
-
   //   if (currCategory.length !== 0) {
   //     const category = new CategoryApi(Instance)
   //     category.categoryGetCategoryProductsApiV1CategoryCategoryNameGet(currCategory, (error, data, response) => {
@@ -66,9 +73,9 @@ const ProductCardPage = () => {
     };
   }, []);
   const products = [product, product, product, product, product];
-  if (!product) {
-    return <div>Товар не найден</div>;
-  }
+  // if (!product) {
+  //   return <div>Товар не найден</div>;
+  // }
 
   let itemsPerRow2 = 0;
   // const [productsToShow, setProductsToShow] = React.useState(products.slice(0, itemsPerRow2));
@@ -85,87 +92,90 @@ const ProductCardPage = () => {
 
   const productsToShow = products.slice(0, itemsPerRow2)
   return (
-    <div className="cont4">
-      <Link to={"/"} className="link-secc">
-        <p className="hei">&#706;</p>
-        <img className="imggback" src={product.logo} alt={product.title} />
-        <div className="tttt">
-          <p className="titlog">{product.title}</p>
-          <p className="plog">{product.category}</p>
-        </div>
-      </Link>
+    <>
+      {productstate.id ?
+        <div className="cont4">
 
-      <div className="carddd">
-        <img
-          className="img-product-card-page"
-          src={product.image}
-          alt={product.title}
-        />
-        <div className="descr-product">
-          <div className="desr-first">
-            <p className="price-product">{product.price} ₽</p>
-            <p className="decr-prod">{product.description}</p>
-          </div>
-          <div className="second-desc-prod">
-            <Link className="link-sec">🔒 Безопасность сделки</Link>
-
-            <div className="second-prof">
-              <div className="rwe">
-                <h2 className="rating-prof"> {product.rating}</h2>
-                <h2>{renderStars(product.rating)}</h2>
-              </div>
-              <p className="prof-rev"> {product.reviews} отзывов</p>
+          <Link to={"/"} className="link-secc">
+            <p className="hei">&#706;</p>
+            <img className="imggback" src={asFileUrl(productstate.photos[0].fileUrl)}alt={productstate.photos[0].fileName} />
+            <div className="tttt">
+              <p className="titlog">{productstate.category.gameName}</p>
+              <p className="plog">{productstate.category.name}</p>
             </div>
+          </Link>
 
-            <button className="button-prod">Купить</button>
-          </div>
-        </div>
-      </div>
-
-      <div className="section-category">
-        <div className="opisaniye-prod">
-          <p className="des-prod">Описание:</p>
-          <p className="prod-opi">{product.opisaniye}</p>
-        </div>
-        <div>
-          <p className="des-prod">Категории:</p>
-          <ul className="categ-div">
-            {product.characteristics.map((characteristic, index) => (
-              <div className="div-char">
-                <p className="character-name">{characteristic.name}:</p>
-                <p className="character-quantity" key={index}>
-                  {characteristic.quantity}
-                </p>
+          <div className="carddd">
+            <img
+              className="img-product-card-page"
+              src={asFileUrl(productstate.photos[0].fileUrl)}
+              alt={productstate.photos[0].fileName}
+            />
+            <div className="descr-product">
+              <div className="desr-first">
+                <p className="price-product">{productstate.basePrice.amount} {productstate.basePrice.currency} </p>
+                <p className="decr-prod">{productstate.name}</p>
               </div>
-            ))}
-          </ul>
-        </div>
-      </div>
+              <div className="second-desc-prod">
+                <Link className="link-sec">🔒 Безопасность сделки</Link>
 
-      <div className="otziv-top">
-        <h2 className="otziv-rating">{product.rating}</h2>
-        <div className="otziv-top-right">
-          <h2 className="otziv-count"> {product.reviews} отзывов</h2>
-          <h2>{renderStars(product.rating)}</h2>
-        </div>
-        <u className="otziv-vse">Все отзывы (1430) </u>
-      </div>
+                <div className="second-prof">
+                  <div className="rwe">
+                    <h2 className="rating-prof"> {productstate.user.rating}</h2>
+                    <h2>{renderStars(productstate.user.rating)}</h2>
+                  </div>
+                  <p className="prof-rev"> {productstate.user.reviewsCount} отзывов</p>
+                </div>
 
-      <div className="section-otzivi">
-        {/* {productsToShow.map((product) => (
+                <button className="button-prod">Купить</button>
+              </div>
+            </div>
+          </div>
+
+          <div className="section-category">
+            <div className="opisaniye-prod">
+              <p className="des-prod">Описание:</p>
+              <p className="prod-opi">{productstate.text}</p>
+            </div>
+            <div>
+              <p className="des-prod">Категории:</p>
+              <ul className="categ-div">
+                {product.characteristics.map((characteristic, index) => (
+                  <div className="div-char" key={index}>
+                    <p className="character-name">{characteristic.name}:</p>
+                    <p className="character-quantity" >
+                      {characteristic.quantity}
+                    </p>
+                  </div>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="otziv-top">
+            <h2 className="otziv-rating">{product.rating}</h2>
+            <div className="otziv-top-right">
+              <h2 className="otziv-count"> {product.reviews} отзывов</h2>
+              <h2>{renderStars(product.rating)}</h2>
+            </div>
+            <u className="otziv-vse">Все отзывы (1430) </u>
+          </div>
+
+          <div className="section-otzivi">
+            {/* {productsToShow.map((product) => (
           // <OtzivComponent product={product} />
         ))} */}
-      </div>
+          </div>
 
-      <p className="des-prod">Товары из этой категории:</p>
+          <p className="des-prod">Товары из этой категории:</p>
 
-      <div className="card-list2">
-        {/* {cardsToShow.map((card) => (
+          <div className="card-list2">
+            {/* {cardsToShow.map((card) => (
           // <ProductComponent card={card} />
 
         ))} */}
-      </div>
-    </div>
+          </div> </div> : null}
+    </>
   );
 };
 

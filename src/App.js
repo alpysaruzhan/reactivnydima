@@ -17,6 +17,7 @@ import Login from './Login/Login';
 import Footer from './Footer';
 import ProductDetailPage from './ProductList/ProductDetailPage/ProductDetailPage';
 import ProductCardPage from './ProductCardPage/ProductCardPage';
+import AppDetailPage from './AppDetailPage/AppDetailPage';
 import AllPage from './AllPage/AllPage';
 import ProductList from './ProductList/ProductList';
 import AllApps from './AllApps/AllApps';
@@ -84,6 +85,7 @@ class App extends Component {
                   <Route path="/product/:id" element={<ProductCardPage />} />
                   <Route path="/" element={<ProductList />} />
                   <Route path="/game/:id" element={<ProductDetailPage />} />
+                  <Route path="/app/:id" element={<AppDetailPage />} />
                   <Route path='/cookie' element={<CookiePage />} />
                   <Route path='/policy' element={<PolicyPage />} />
                   <Route path='/privacy' element={<UserdocPage />} />

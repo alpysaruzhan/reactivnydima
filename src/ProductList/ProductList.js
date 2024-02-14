@@ -23,7 +23,7 @@ const ProductList = () => {
 
     market.getGamesApiV1GameGet(
       {
-        limit: 12,
+        limit: 1000,
         offset: 0,
       }, (error, data, response) => {
         if (error) {
