@@ -55,6 +55,7 @@ const Step8ContentPage = ({ handleStepChange }) => {
     const uploadedImage = localStorage.getItem('uploadedImage');
     const productDescription = localStorage.getItem('productDescription');
     const storedShortDescription = localStorage.getItem('shortDescription');
+    const selectedAttributes = localStorage.getItem('selectedAttributes'); 
     // const formData = new FormData();
     // formData.append('image', image);
 
@@ -97,8 +98,8 @@ const Step8ContentPage = ({ handleStepChange }) => {
           amount: price.amount,
           currency: 'RUB',
         },
-        // characteristics: [{ label: selectedLabel, value: 'someValue' }],
-        characteristics: [],
+        characteristics: JSON.parse(selectedAttributes),
+        // characteristics: [],
         tags: [],
         photos: [{"file_id": JSON.parse(uploadedImage).file_id}]
       }), callback);
@@ -112,8 +113,8 @@ const Step8ContentPage = ({ handleStepChange }) => {
           amount: price.amount,
           currency: 'RUB',
         },
-        // characteristics: [{ label: selectedLabel, value: 'someValue' }],
-        characteristics: [],
+        characteristics: JSON.parse(selectedAttributes),
+        // characteristics: [],
         tags: [],
         photos: [{"file_id": JSON.parse(uploadedImage).file_id}]
       }), callback);

@@ -32,9 +32,9 @@ const Step3ContentPage = ({ handleStepChange }) => {
         });
     }, [categoryName]);
 
-    const handleLabelClick = (label) => {
-        setSelectedLabel(label);
-        addAttributes(label, 'someValue');
+    const handleLabelClick = (option) => {
+        setSelectedLabel(option.field);
+        addAttributes(option.field, option.value);
     };
 
     return (
