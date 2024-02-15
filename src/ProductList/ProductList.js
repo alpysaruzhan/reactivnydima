@@ -22,6 +22,7 @@ const ProductList = () => {
     const market = new MarketApi(Instance)
 
     market.getGamesApiV1GameGet(
+      "GAME", 
       {
         limit: 12,
         offset: 0,
@@ -34,8 +35,19 @@ const ProductList = () => {
         }
       })
 
-
-   
+      market.getGamesApiV1GameGet(
+        "APPLICATION", 
+        {
+          limit: 12,
+          offset: 0,
+        }, (error, data, response) => {
+          if (error) {
+            console.error(error)
+          } else {
+            console.log("Application get", data)
+            setAppsToShow(data.objects)
+          }
+        })
 
 
     const handleResize = () => {
