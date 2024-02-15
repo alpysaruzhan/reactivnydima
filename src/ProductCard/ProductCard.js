@@ -30,6 +30,7 @@ const ProductCard = () => {
 
   return (
     <div className="alll">
+     
       <div className="ProductList-block">
         <h1 className="ProductList-tit">Товары</h1>
         <NavLink to={"/all"}>
