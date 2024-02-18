@@ -10,11 +10,19 @@ const Step1ContentPage = ({ handleStepChange }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    marketAPI.getGamesApiV1GameGet({}, (error, data, response) => {
+    marketAPI.getGamesApiV1GameGet('APPLICATION', {limit: 20}, (error, data, response) => {
       if (error) {
         console.error(error);
       } else {
-        setGames(data.objects);
+        setGames([...data.objects, ...games]);
+        console.log(data.objects);
+      }
+    });
+    marketAPI.getGamesApiV1GameGet('GAME', {limit: 20}, (error, data, response) => {
+      if (error) {
+        console.error(error);
+      } else {
+        setGames([...data.objects, ...games]);
         console.log(data.objects);
       }
     });
