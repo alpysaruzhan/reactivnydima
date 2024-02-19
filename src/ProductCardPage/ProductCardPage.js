@@ -10,12 +10,16 @@ import { CategoryApi, MarketApi } from 'market_place';
 import { Instance } from '../GateWay/base';
 import { asFileUrl } from "../GateWay/base";
 
+import Modal from '../Modal';
+
 const ProductCardPage = () => {
   const { id } = useParams();
 
   const product = cardData.cards.find((card) => card.id === parseInt(id));
-  const cardsToShow = cardData.cards.slice(0, 10);
+  // const cardsToShow = cardData.cards.slice(0, 10);
   const [productstate, setProductstate] = useState([]);
+
+  const [cardsToShow, setCardsToShow] = useState([]);
 
   useEffect(() => {
     console.log("id", id);
@@ -40,23 +44,25 @@ const ProductCardPage = () => {
 
   }, [])
 
-  // useEffect(() => {
-  //   if (currCategory.length !== 0) {
-  //     const category = new CategoryApi(Instance)
-  //     category.categoryGetCategoryProductsApiV1CategoryCategoryNameGet(currCategory, (error, data, response) => {
-  //       if (error) {
-  //         console.error(error)
-  //       } else {
-  //         console.log("CategoryApi", data.objects)
-  //         //setCurrCategory(data.objects[0])
-  //         setCardsToShow(data.objects)
-  //         console.log("cardsToShow", cardsToShow);
-  //       }
-  //     })
-  //     console.log("currCategory", currCategory);
-  //   }
 
-  // }, [currCategory])
+
+  useEffect(() => {
+
+    if (productstate.category !== undefined ) {
+      const category = new CategoryApi(Instance)
+      category.categoryGetCategoryProductsApiV1CategoryCategoryNameGet(productstate.category.name, (error, data, response) => {
+        if (error) {
+          console.error(error)
+        } else {
+          console.log("CategoryApi", data.objects)
+          //setCurrCategory(data.objects[0])
+          setCardsToShow(data.objects)
+          // console.log("cardsToShow", cardsToShow);
+        }
+      })
+    }
+
+  }, [productstate.category])
 
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
   React.useEffect(() => {
@@ -91,14 +97,38 @@ const ProductCardPage = () => {
   }
 
   const productsToShow = products.slice(0, itemsPerRow2)
+
+
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedApp, setSelectedApp] = useState(null);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleSelectApp = (appId) => {
+    setSelectedApp(appId);
+    // Добавьте здесь логику для выбора приложения
+  };
+
+
+
   return (
     <>
-      {productstate.id ?
+
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal} onSelect={handleSelectApp} product_id={productstate.id} />
+
+      {productstate.id &&
         <div className="cont4">
 
           <Link to={"/"} className="link-secc">
             <p className="hei">&#706;</p>
-            <img className="imggback" src={asFileUrl(productstate.photos[0].fileUrl)}alt={productstate.photos[0].fileName} />
+            <img className="imggback" src={asFileUrl(productstate.photos[0].fileUrl)} alt={productstate.photos[0].fileName} />
             <div className="tttt">
               <p className="titlog">{productstate.category.gameName}</p>
               <p className="plog">{productstate.category.name}</p>
@@ -127,7 +157,7 @@ const ProductCardPage = () => {
                   <p className="prof-rev"> {productstate.user.reviewsCount} отзывов</p>
                 </div>
 
-                <button className="button-prod">Купить</button>
+                <button className="button-prod" onClick={handleOpenModal}>Купить</button>
               </div>
             </div>
           </div>
@@ -163,18 +193,18 @@ const ProductCardPage = () => {
 
           <div className="section-otzivi">
             {/* {productsToShow.map((product) => (
-          // <OtzivComponent product={product} />
-        ))} */}
+              <OtzivComponent product={product} />
+            ))} */}
           </div>
 
           <p className="des-prod">Товары из этой категории:</p>
 
           <div className="card-list2">
-            {/* {cardsToShow.map((card) => (
-          // <ProductComponent card={card} />
-
-        ))} */}
-          </div> </div> : null}
+            {cardsToShow.map((card) => (
+              <ProductComponent card={card} />
+            ))}
+          </div>
+        </div>}
     </>
   );
 };

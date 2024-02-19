@@ -35,6 +35,7 @@
     /* border: 3px solid rgb(68, 40, 76); */
     display: flex;
     margin-top: 15px;
+    margin-bottom: 15px;
     align-items: baseline;
 
 }

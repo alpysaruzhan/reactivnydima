@@ -1,8 +1,13 @@
 .img-product-card-page {
-    width: 58%;
+    /* width: 58%;
     object-fit: cover;
     height: 40%;
+    border-radius: 10px; */
+
     border-radius: 10px;
+    aspect-ratio: 16 / 10;
+    width: 58%;
+    object-fit: cover;
 }
 
 .status-product {
@@ -19,18 +24,29 @@
 .cont4 {
     margin-top: 20px;
     padding: 16px;
-    max-width: 1600px;
+    /* background-color: #dedede; */
+    /* border: 1px solid red; */
+    width: 100%;
+    max-width: 1200px;
 }
 
 .carddd {
     display: flex;
     margin-top: 20px;
     justify-content: space-between;
+        /* border: 1px solid red; */
+
 }
 
 .descr-product {
     text-align: left;
     width: 40%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
 }
 
 .link-sec {
@@ -217,6 +233,7 @@
 .div-char {
     height: 60px;
     display: flex;
+    flex-direction: column;
 }
 
 @media (max-width: 600px) {

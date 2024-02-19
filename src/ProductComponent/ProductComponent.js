@@ -29,7 +29,7 @@ const ProductComponent = ({ card }) => {
 
         <div className="ProductComponent-card-description">
           <p className="ProductComponent-product-name3">{card.basePrice.amount} {card.basePrice.currency}</p>
-          <p className="ProductComponent-descrip-prod">{card.text} </p>
+          <p className="ProductComponent-descrip-prod">{card.text.substring(0, 100 - 3) + "..."} </p>
           <div className="ProductComponent-rating">
             <p className="ProductComponent-product-rating-left">{card.user.rating}  {renderStars(card.user.rating)} </p>
             <p className="ProductComponent-product-rating-right">{card.user.reviewsCount} Отзывов</p>
