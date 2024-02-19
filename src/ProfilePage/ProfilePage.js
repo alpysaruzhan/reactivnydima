@@ -9,6 +9,7 @@ import cardData from "../card.json";
 import { AuthApi, ChatApi, WalletApi, UsersApi } from 'market_place';
 import { Instance } from '../GateWay/base';
 import { MarketApi } from "market_place"
+import {asFileUrl} from "../GateWay/base";
 
 
 const ProfilePage = () => {
@@ -71,7 +72,7 @@ const ProfilePage = () => {
   return (
     <div className="cont2">
       <div className="first">
-        <img className="profile-img" src={userData.avatar} alt="Профиль" />
+        <img className="profile-img" src={userData.avatar ? asFileUrl(userData.avatar.fileUrl) : "https://www.pinclipart.com/picdir/big/332-3324748_confused-person-clipart.png"} alt="Профиль" />
 
         <div className="left-prof">
           <p className="nickname">{userData.username}</p>

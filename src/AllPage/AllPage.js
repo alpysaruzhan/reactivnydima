@@ -1,17 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import productsData from "../ProductList/db.json";
 import "./AllPage.css";
-
+import { MarketApi, ProductApi } from "market_place"
+import { Instance, asFileUrl } from "../GateWay/base";
 const AllPage = () => {
 
+  const [apps, setApps] = useState([]);
+  const [games, setGames] = useState([]);
 
-  const sortedApps = productsData.apps
+  const sortedApps = apps
     .slice()
-    .sort((a, b) => a.title.localeCompare(b.title));
+    .sort((a, b) => a.name.localeCompare(b.name));
 
   const groupedApps = sortedApps.reduce((groups, app) => {
-    const firstLetter = app.title[0].toUpperCase();
+    const firstLetter = app.name[0].toUpperCase();
     if (!groups[firstLetter]) {
       groups[firstLetter] = [];
     }
@@ -19,12 +22,12 @@ const AllPage = () => {
     return groups;
   }, {});
 
-  const sortedGames = productsData.games
+  const sortedGames = games
     .slice()
-    .sort((a, b) => a.title.localeCompare(b.title));
+    .sort((a, b) => a.name.localeCompare(b.name));
 
   const groupedGames = sortedGames.reduce((groups, game) => {
-    const firstLetter = game.title[0].toUpperCase();
+    const firstLetter = game.name[0].toUpperCase();
     if (!groups[firstLetter]) {
       groups[firstLetter] = [];
     }
@@ -43,7 +46,7 @@ const AllPage = () => {
     const filteredAppsResult = Object.fromEntries(
       Object.entries(groupedApps).map(([key, value]) => [
         key,
-        value.filter((item) => item.title.toLowerCase().includes(term.toLowerCase())),
+        value.filter((item) => item.name.toLowerCase().includes(term.toLowerCase())),
       ]).filter(([key, value]) => value.length > 0)
     );
 
@@ -52,7 +55,7 @@ const AllPage = () => {
     const filteredGamesResult = Object.fromEntries(
       Object.entries(groupedGames).map(([key, value]) => [
         key,
-        value.filter((item) => item.title.toLowerCase().includes(term.toLowerCase())),
+        value.filter((item) => item.name.toLowerCase().includes(term.toLowerCase())),
       ]).filter(([key, value]) => value.length > 0)
     );
 
@@ -65,7 +68,52 @@ const AllPage = () => {
   const handlecClick = (c) => {
     setActivec(c);
   };
-  console.log(groupedApps);
+
+  console.log(filteredGames);
+
+
+
+  useEffect(() => {
+    const market = new MarketApi(Instance)
+
+    market.getGamesApiV1GameGet(
+      "GAME",
+      {
+        limit: 1000,
+        offset: 0,
+      }, (error, data, response) => {
+        if (error) {
+          console.error(error)
+        } else {
+          console.log("GameGet", data)
+          setGames(data.objects)
+        
+        }
+      })
+
+    market.getGamesApiV1GameGet(
+      "APPLICATION",
+      {
+        limit: 12,
+        offset: 0,
+      }, (error, data, response) => {
+        if (error) {
+          console.error(error)
+        } else {
+          console.log("Application get", data)
+          setApps(data.objects)
+
+        }
+      })
+
+
+
+
+
+  }, [])
+
+
+
   return (
     <div className="ultra-all-page">
       <div className="all-page">
@@ -75,7 +123,6 @@ const AllPage = () => {
             <input
               className="input-tit"
               type="text"
-              placeholder="Search by title"
               value={searchTerm}
               onChange={handleSearch}
             />
@@ -113,12 +160,12 @@ const AllPage = () => {
                         className="game-card"
                       >
                         <img
-                          src={game.logoURL}
-                          alt={game.title}
+                          src={asFileUrl(game.logo.fileUrl)}
+                          alt={game.name}
                           className="game-logo"
                         />
                         <p className="game-title2">
-                          {letter} - {game.title}
+                          {letter} - {game.name}
                         </p>
                       </Link>
                     ))}
@@ -143,12 +190,12 @@ const AllPage = () => {
                         className="game-card"
                       >
                         <img
-                          src={app.logoURL}
-                          alt={app.title}
+                          src={asFileUrl(app.logo.fileUrl)}
+                          alt={app.name}
                           className="game-logo"
                         />
                         <p className="game-title2">
-                          {letter} - {app.title}
+                          {letter} - {app.name}
                         </p>
                       </Link>
                     ))}

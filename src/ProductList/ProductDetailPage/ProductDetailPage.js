@@ -78,10 +78,7 @@ const ProductDetailPage = () => {
           <div key={category} className={`product-category ${currCategory == category ? 'category-active' : ''}  `} onClick={() => (setCurrCategory(category))} >
             <h4>{category}</h4>
           </div>)}
-           {categoriesNames.map((category) =>
-          <div key={category} className={`product-category ${currCategory == category ? 'category-active' : ''}  `} onClick={() => (setCurrCategory(category))} >
-            <h4>{category}</h4>
-          </div>)}
+        
       </div>
       <div className="card-list2">
         {(cardsToShow.length > 0) ? cardsToShow.map((card) => (
@@ -117,7 +114,7 @@ const ProductDetailPage = () => {
         <h1>ПУСТО</h1>}
       </div>
 
-      <button className='showmore-button'>Показать еще</button>
+      {/* <button className='showmore-button'>Показать еще</button> */}
     </div>
 
 

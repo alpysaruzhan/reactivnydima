@@ -77,7 +77,7 @@ const ChatPage = (props) => {
         <AllChat setCurrChat={setCurrChat} chats={chats} />
       </div>
       <div className='ChatUs' style={{ display: isDivVisible && isMobile ? 'none' : 'block' }}>
-        {currChat != null && messages != null ? <ChatUs isDivVisible={isDivVisible} toggleVisibility={() => setDivVisibility(!isDivVisible)} currChat={currChat} messages={messages} /> : <h1>НЕТ ЧАТОВ!</h1>}
+        {currChat != null && messages != null ? <ChatUs isDivVisible={isDivVisible} toggleVisibility={() => setDivVisibility(!isDivVisible)} currChat={currChat} messages={messages} /> : <h1></h1>}
       </div>
     </div>
   );
