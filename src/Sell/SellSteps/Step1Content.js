@@ -35,6 +35,7 @@ const Step1ContentPage = ({ handleStepChange }) => {
   const handleGameClick = (gameId) => {
     localStorage.setItem('selectedType', 'game');
     localStorage.setItem('selectedGameId', gameId);
+    console.log("my game",gameId);
     handleStepChange(2);
   };
 

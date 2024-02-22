@@ -28,7 +28,7 @@ const ProductCardPage = () => {
       if (error) {
         console.error(error)
       } else {
-        console.log("game", data)
+        console.log("setProductstate", data)
         // market.getGameApiV1GameGameIdGet(data.category.gameName, (error, data, response) => {
         //   if (error) {
         //     console.error(error)
@@ -170,7 +170,7 @@ const ProductCardPage = () => {
             <div>
               <p className="des-prod">Категории:</p>
               <ul className="categ-div">
-                {product.characteristics.map((characteristic, index) => (
+                {productstate.characteristics.map((characteristic, index) => (
                   <div className="div-char" key={index}>
                     <p className="character-name">{characteristic.name}:</p>
                     <p className="character-quantity" >
@@ -183,10 +183,10 @@ const ProductCardPage = () => {
           </div>
 
           <div className="otziv-top">
-            <h2 className="otziv-rating">{product.rating}</h2>
+            {/* <h2 className="otziv-rating">{  .rating}</h2> */}
             <div className="otziv-top-right">
-              <h2 className="otziv-count"> {product.reviews} отзывов</h2>
-              <h2>{renderStars(product.rating)}</h2>
+              {/* <h2 className="otziv-count"> {product.reviews} отзывов</h2> */}
+              {/* <h2>{renderStars(product.rating)}</h2> */}
             </div>
             <u className="otziv-vse">Все отзывы (1430) </u>
           </div>

@@ -13,8 +13,8 @@ const Step3ContentPage = ({ handleStepChange }) => {
     let categoryName = localStorage.getItem("selectedCategoryName");
     const [category, setCategory] = useState([]);
 
-    const addAttributes = (label, value) => {
-        const updatedAttributes = [...attributes, { label, value }];
+    const addAttributes = (name, value) => {
+        const updatedAttributes = [...attributes, { name, value }];
         setAttributes(updatedAttributes);
         localStorage.setItem('selectedAttributes', JSON.stringify(updatedAttributes));
     }
@@ -34,6 +34,9 @@ const Step3ContentPage = ({ handleStepChange }) => {
 
     const handleLabelClick = (option) => {
         setSelectedLabel(option.field);
+        // console.log(option.field);
+        // localStorage.setItem('selectedLabel', option.field);
+
         addAttributes(option.field, option.value);
     };
 

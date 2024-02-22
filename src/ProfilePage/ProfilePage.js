@@ -9,7 +9,7 @@ import cardData from "../card.json";
 import { AuthApi, ChatApi, WalletApi, UsersApi } from 'market_place';
 import { Instance } from '../GateWay/base';
 import { MarketApi } from "market_place"
-import {asFileUrl} from "../GateWay/base";
+import { asFileUrl } from "../GateWay/base";
 
 
 const ProfilePage = () => {
@@ -26,29 +26,28 @@ const ProfilePage = () => {
   const [usetWalet, setUsetWalet] = useState([]);
 
   useEffect(() => {
-    
-    Users.usersCurrentUserApiV1UsersMeGet((error, data, response)=>{
+    Users.usersCurrentUserApiV1UsersMeGet((error, data, response) => {
       if (error) {
         console.error(error);
       } else {
         setUserData(data)
-        console.log("Fetched messages jopa:", data);
+        console.log("Fetched user data:", data);
       }
     })
 
-    Wallet.getUserWalletApiV1WalletGet((error, data, response)=>{
+    Wallet.getUserWalletApiV1WalletGet((error, data, response) => {
       if (error) {
         console.error(error);
       } else {
         setUsetWalet(data)
-        console.log("Fetched messages popa:", data);
+        console.log("Fetched Walet data:", data);
       }
-    })  
-    
+    })
+
   }, [])
-  
-   
-  const [cardsToShow, setCardsToShow] = useState([]); 
+
+
+  const [cardsToShow, setCardsToShow] = useState([]);
 
 
   useEffect(() => {
@@ -56,16 +55,14 @@ const ProfilePage = () => {
 
     market.getUserProductsApiV1ProductUserGet(
       {
-
-        
-      }, (error, data, response) => { 
-      if (error) { 
-        console.error(error)
-      } else { 
-        console.log("data",data)
-        // setCardsToShow(data.objects)
-      }
-    })
+      }, (error, data, response) => {
+        if (error) {
+          console.error(error)
+        } else {
+          console.log("data", data)
+          setCardsToShow(data.objects)
+        }
+      })
   }, [])
 
 
@@ -125,11 +122,11 @@ const ProfilePage = () => {
         </div>
         <div className="tab-content">
           {activeTab === "tab1" && (
-             <div className="card-list2">
-             {cardsToShow.map((card) => (
-               <ProductComponent card={card} />
-             ))}
-           </div>
+            <div className="card-list2">
+              {cardsToShow.map((card) => (
+                <ProductComponent card={card} />
+              ))}
+            </div>
           )}
           {activeTab === "tab2" && (
             <div>

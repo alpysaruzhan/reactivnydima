@@ -27,7 +27,7 @@ const Step8ContentPage = ({ handleStepChange }) => {
     if (storedShortDescription) {
       setShortDescription(storedShortDescription);
     }
-    marketAPI.getGamesApiV1GameGet({limit: 100, offset: 0}, (error, data, response) => { 
+    marketAPI.getGamesApiV1GameGet("GAME",{limit: 100, offset: 0}, (error, data, response) => { 
       if (error) { 
         console.error(error)
       } else { 
@@ -66,6 +66,7 @@ const Step8ContentPage = ({ handleStepChange }) => {
     }
 
     const selectedGame = games.find((game) => game.id === selectedGameId);
+    console.log(selectedGameId);
 
     if (!selectedGame) {
       console.error('Selected game not found in the games array.');

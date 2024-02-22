@@ -1,13 +1,15 @@
 
 import React, { useState, useEffect } from 'react';
 import './Modal.css'; // подключаем файл стилей
-import {  PaymentApi } from 'market_place';
+import { PaymentApi } from 'market_place';
 import { Instance } from './GateWay/base';
+import { useNavigate } from "react-router-dom";
 
-const Modal = ({ isOpen, onClose, product_id  }) => {
+const Modal = ({ isOpen, onClose, product_id }) => {
     // Создаем состояние для хранения выбранного приложения
     const [selectedApp, setSelectedApp] = useState(null);
     const [applications, setApplications] = useState(null);
+    const navigate = useNavigate();
 
     // Обработчик изменения состояния выбора приложения
     const handleAppSelection = (appName) => {
@@ -16,7 +18,7 @@ const Modal = ({ isOpen, onClose, product_id  }) => {
     const payment = new PaymentApi(Instance)
 
     useEffect(() => {
-        payment.getProvidersApiV1ProvidersGet( (error, data, response) => {
+        payment.getProvidersApiV1ProvidersGet((error, data, response) => {
             if (error) {
                 console.error(error)
             } else {
@@ -38,13 +40,27 @@ const Modal = ({ isOpen, onClose, product_id  }) => {
     const handleSelect = () => {
         // Делаем что-то с выбранным приложением
         console.log("Выбранное приложение:", selectedApp);
-            
+
         payment.initiatePurchaseApiV1PurchaseProductIdPost(product_id, selectedApp.id, (error, data, response) => {
             if (error) {
                 console.error(error)
             } else {
-                console.log("initiate purches", data.objects)
-                setApplications(data.objects)
+                console.log("initiate purches", data)
+                if (data.transaction.providerId == "LOCAL") {
+                    console.log("initiate purches", data.transaction.props.successUrl)
+
+                    setTimeout(() => {
+                        navigate(data.transaction.props.successUrl);
+
+                    }, 1000);
+
+                } else {
+                    console.log("на потом ")
+
+                    // console.log("initiate purches", data.transaction.props.successUrl)
+
+
+                }
             }
         })
 

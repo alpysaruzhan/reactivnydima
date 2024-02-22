@@ -23,6 +23,7 @@ import ProductList from './ProductList/ProductList';
 import AllApps from './AllApps/AllApps';
 import CookiePage from './Cookie/Cookie';
 import PolicyPage from './Policy/Policy';
+import Transaction from './Transaction';
 
 import BalancePage from './Balance/Balance';
 import ChatPage from './ChatPage/ChatPage';
@@ -45,16 +46,16 @@ class App extends Component {
       'authorized': isAuthorized(cookies),
     }
   }
-  
+
 
   render() {
     const { authorized } = this.state;
 
     return (
       <Router>
-        <div > 
+        <div >
           <div className="app">
-            <Sidebar />
+            <Sidebar authorized={authorized} />
             <div className="content">
               <Header authorized={authorized} />
               <div className='com'>
@@ -63,17 +64,31 @@ class App extends Component {
                   <Route path="/home" element={<HomePage />} />
                   <Route path="/all/:type" element={<AllPage />} />
                   {/* <Route path='/app' element={<AllApps />} /> */}
-                  <Route path="/profile" element={<ProfilePage />} />
-                  <Route path="/profile/review" element={<ProfileReview />} />
 
-                  <Route path="/chat" element={<ChatPage />} />
+
+                  {authorized ?
+                    <>
+                      <Route path="/profile" element={<ProfilePage />} />
+                      <Route path="/profile/review" element={<ProfileReview />} />
+                      <Route path='/sell' element={<SellPage />} />
+                      <Route path='/balance' element={<BalancePage />} />
+                      <Route path="/chat" element={<ChatPage />} />
+                    </> :
+                    <>
+                      <Route path="/profile" element={<Regcod />} />
+                      <Route path="/profile/review" element={<Regcod />} />
+                      <Route path='/sell' element={<Regcod />} />
+                      <Route path='/balance' element={<Regcod />} />
+                      <Route path="/chat" element={<Regcod />} />
+                    </>
+
+                  }
 
                   {/* <Route path="/chat" element={<AllChat />} /> */}
                   {/* <Route path="/chat/:chatId" element={<Chat />} /> */}
 
                   <Route path="/guarantee" element={<GuaranteePage />} />
                   <Route path='/register' element={<Register />} />
-                  <Route path='/sell' element={<SellPage />} />
 
                   <Route path='/login' element={
                     <CookiesProvider>
@@ -83,20 +98,20 @@ class App extends Component {
                   <Route path='/login/code' element={<Regcod />} />
                   <Route path='/login/auth' element={<Auth />} />
                   <Route path="/product/:id" element={<ProductCardPage />} />
-                  <Route path="/" element={<ProductList />} />
+                  <Route path="/transaction/:id" element={<Transaction />} />
+                  {/* <Route path="/" element={<ProductList />} /> */}
                   <Route path="/game/:id" element={<ProductDetailPage />} />
                   <Route path="/app/:id" element={<AppDetailPage />} />
                   <Route path='/cookie' element={<CookiePage />} />
                   <Route path='/policy' element={<PolicyPage />} />
                   <Route path='/privacy' element={<UserdocPage />} />
-                  <Route path='/balance' element={<BalancePage />} />
 
                 </Routes>
               </div>
             </div>
           </div>
           {/* <button onClick={toggleTheme}>Переключить тему</button> */}
-          <Footer /> 
+          <Footer />
         </div>
       </Router>
     );
