@@ -128,7 +128,7 @@ const ProductCardPage = () => {
 
           <Link to={"/"} className="link-secc">
             <p className="hei">&#706;</p>
-            <img className="imggback" src={asFileUrl(productstate.photos[0].fileUrl)} alt={productstate.photos[0].fileName} />
+            <img className="imggback" src={productstate.photos === null ? asFileUrl(productstate.photos[0].fileUrl) : null} alt={productstate.photos === null ? asFileUrl(productstate.photos[0].fileName) : null} />
             <div className="tttt">
               <p className="titlog">{productstate.category.gameName}</p>
               <p className="plog">{productstate.category.name}</p>
@@ -138,8 +138,8 @@ const ProductCardPage = () => {
           <div className="carddd">
             <img
               className="img-product-card-page"
-              src={asFileUrl(productstate.photos[0].fileUrl)}
-              alt={productstate.photos[0].fileName}
+              src={productstate.photos === null ? asFileUrl(productstate.photos[0].fileUrl) : null}
+              alt={productstate.photos === null ? asFileUrl(productstate.photos[0].fileName) : null}
             />
             <div className="descr-product">
               <div className="desr-first">

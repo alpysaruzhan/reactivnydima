@@ -15,14 +15,14 @@ const ProductComponent = ({ card }) => {
         className="ProductComponent-product-card-link"
       >
         <div className="ProductComponent-firstline-card">
-          <img src={asFileUrl(card.photos[0].fileUrl)} alt={card.title} className="ProductComponent-card-logo" />
+          <img src={card.photos === null ? asFileUrl(card.photos[0].fileUrl) : null} alt={card.title} className="ProductComponent-card-logo" />
           <div className="ProductComponent-text-card">
             <p className="ProductComponent-product-name2">{card.category.gameName}</p>
             <p className="ProductComponent-card-category2">{card.category.name}</p>
           </div>
         </div>
         <img
-          src={asFileUrl(card.photos[0].fileUrl)}
+          src={card.photos === null ? asFileUrl(card.photos[0].fileUrl) : null}
           alt={card.title}
           className="ProductComponent-product-logo1"
         />
