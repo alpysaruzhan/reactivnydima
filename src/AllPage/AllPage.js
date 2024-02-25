@@ -42,6 +42,10 @@ const AllPage = () => {
   const handleSearch = (event) => {
     const term = event.target.value;
     setSearchTerm(term);
+    setChanges(term)
+  }
+
+  const setChanges = (term) => {
 
     const filteredAppsResult = Object.fromEntries(
       Object.entries(groupedApps).map(([key, value]) => [
@@ -87,7 +91,7 @@ const AllPage = () => {
         } else {
           console.log("GameGet", data)
           setGames(data.objects)
-        
+              
         }
       })
 

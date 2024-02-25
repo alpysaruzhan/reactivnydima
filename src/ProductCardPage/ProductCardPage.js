@@ -138,8 +138,8 @@ const ProductCardPage = () => {
           <div className="carddd">
             <img
               className="img-product-card-page"
-              src={productstate.photos === null ? asFileUrl(productstate.photos[0].fileUrl) : null}
-              alt={productstate.photos === null ? asFileUrl(productstate.photos[0].fileName) : null}
+              src={productstate.photos !== null ? asFileUrl(productstate.photos[0].fileUrl) : null}
+              alt={productstate.photos !== null ? asFileUrl(productstate.photos[0].fileName) : null}
             />
             <div className="descr-product">
               <div className="desr-first">
